@@ -1,0 +1,227 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*https://developer.mozilla.org/en-US/docs/Web/CSS/line-height*/
+
+body
+{
+	width: 100%;
+	box-sizing:border-box;
+	border: 0%;
+	padding: 0%;
+	margin: 0%;
+	
+}
+
+/*___________________image containers___________________________________*/
+
+
+#cover{
+	position:absolute;
+	width: 100%;
+	padding:5% 0% 5% 0%;
+	margin:0% 0% 0% 0%;
+	border:none;
+	
+	background-image:url("../images/white_fondo_elephant_1073@0,75x.png");
+ 	background-size:200%;
+	background-position:0% 18%;
+	background-repeat:no-repeat;
+	background-color:#F92E00;
+	opacity:1;
+}
+
+/*__________________general container __________________________________*/
+
+
+#container{
+	
+	width: 100%;
+	padding:1% 0% 5% 0%;
+	margin:0% 0% 0% 0%;
+	background-color: darkgray;
+	border:none;
+	box-size:border-box;
+
+
+	
+}
+
+/*__________________text___________________________________*/
+
+
+#name{
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:3em;
+	font-weight:bold;
+	word-break: normal;
+	word-wrap: normal;
+	word-spacing: normal;
+	line-height:1.1;
+}
+
+#intro_text{
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-size:1em;
+	font-weight:normal;
+	line-height:1.5;
+	text-align: left;
+	word-break: normal;
+	word-wrap: break-word;
+	word-spacing: normal;
+}
+
+.link_btn{
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:1.3em;
+	font-weight:normal;
+}
+
+.subtitle_section{
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:1.3em;
+	font-weight:bolder;
+}
+
+.intro_section{
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:1em;
+	font-weight:normal;
+	line-height: 1.5;	
+}
+
+p::first-line{
+	line-height: 1.5;
+}
+
+p{
+	line-height: 1.5;	
+}
+
+
+/*___________________sections___________________________________*/
+
+.section{
+	width:80%;
+	padding:5% 0% 5% 20%;
+	margin: 0% 0% 0% 0%;
+	background-color: darkgray;
+	float:none;
+}
+	
+.box{
+	width: 90%;
+	margin: 5% 5% 2% 5%;
+	background-color: darkgray;
+}
+
+
+.subtitle_section
+{ 
+	width: 90%;
+	margin: 5% 5% 5% 5%;
+	border-style:solid;
+	border-width:1px 0px 1px 0px;
+	padding: 5% 0% 5% 0%;
+}
+
+.intro_section
+{ 
+	width: 90%;
+	margin: 5% 5% 5% 5%;
+}
+
+.link_btn
+{ 
+	width: 90%;
+	margin: 5% 5% 5% 5%;
+}
+	
+#logo {
+	width:30%;
+	padding:0% 5% 5% 5%;
+	margin:5% 5% 0% 0%;
+}
+
+#name{
+	box-sizing:border-box;
+	color:black;
+	background-color: transparent;
+	border-width:1px 0px 0px 0px;
+	border-style: solid;
+	
+}
+
+#intro_text{
+	color:black;
+	border-width:1px 0px 10px 0px;
+	border-style: solid;
+	margin:80% 0% 0% 5%;
+}
+
+#section1{
+	display:block;
+}
+
+/*#section1, #section2, #section3 {
+	border-width:0px 0px 20px 0px;
+	border-style:solid;
+	border-color: grey;
+}*/
+
+#section0{
+	position:relative;
+	width: 80%;
+	top:2%;
+	left:auto;
+	padding:5% 0% 150% 0%;
+	margin: 2% 0% 8% 20%;
+	background-color: transparent;
+	float:none;
+}
+
+
+
+
+/*-----------------------------------------------*/
+
+#fli, #tmb {display:none;}
+
+/*------------------------------------*/
+
+
+
+
+/*-------------canary------------------*/
+
+.stylenumber{
+	position:fixed;
+	z-index:3;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-size:4em;
+	top:3%;
+	color:white;
+}	
+#dos, #tres, #uno {display:none;}
+#cuatro{display:block}
+
+
+/*___________________psection patches ___________________________________*/
+
+
+/*-------------------------------*/
+a:visited {
+    text-decoration: none;
+	
+}
+a:link {
+	text-decoration: none;
+	
+}
+
+a:hover {
+	font-style: oblique;
+	text-decoration: underline;
+	font-weight: bolder;
+	color:black;
+}

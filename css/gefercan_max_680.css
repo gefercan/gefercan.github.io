@@ -1,0 +1,264 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*https://developer.mozilla.org/en-US/docs/Web/CSS/line-height*/
+
+body
+{
+	width: 100%;
+	box-sizing:border-box;
+	border: 0% 0% 0% 0%;
+	padding: 0% 0% 0% 0%;
+	margin: 0% 0% 0% 0%;
+	background-image:url("../images/white_fondo_elephant_1073.jpg");
+ 	background-size:90%;
+	background-position:center;
+	background-repeat:no-repeat;
+	background-color:#fb280b;
+	background-attachment: fixed;
+	opacity:1;
+}
+
+/*___________________image containers___________________________________*/
+
+/*
+#cover{
+
+	width: 100%;
+	padding:15% 0% 10% 0%;
+	margin:0% 0% 0% 0%;
+	border:none;
+	
+
+}*/
+
+/*__________________general container __________________________________*/
+
+@media only screen and (max-width: 1699px) {
+  	#container{
+	width: 100%;
+	padding:1% 1% 45% 0%;
+	margin:5% 0% 0% 0%;
+	background-color: darkgray;
+	border:none;
+	box-size:border-box;
+	opacity:0.9;	
+	}
+}
+
+@media only screen and (max-width: 1440px) {
+  	#container{
+	width: 100%;
+	padding:1% 1% 50% 0%;
+	margin:5% 0% 0% 0%;
+	background-color: darkgray;
+	border:none;
+	box-size:border-box;
+	opacity:0.9;
+	}
+}
+
+@media only screen and (max-width: 1366px) {
+  	#container{
+	
+	width: 100%;
+	padding:1% 1% 50% 0%;
+	margin:5% 0% 0% 0%;
+	background-color: darkgray;
+	border:none;
+	box-size:border-box;
+	opacity:0.9;
+	}
+}
+
+
+@media only screen and (max-width: 1280px) {
+  	#container{
+	
+	width: 100%;
+	padding:1% 1% 50% 0%;
+	margin:15% 0% 0% 0%;
+	background-color: darkgray;
+	border:none;
+	box-size:border-box;
+	opacity:0.9;
+	}
+}
+
+/*__________________text___________________________________*/
+
+
+#name{
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:2.2em;
+	font-weight:bold;
+	word-break: normal;
+	word-wrap: normal;
+	word-spacing: normal;
+	
+}
+
+#intro_text{
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-size:1em;
+	font-weight:normal;
+	line-height:1.5;
+	text-align: left;
+	word-break: normal;
+	word-wrap: break-word;
+	word-spacing: normal;
+}
+
+
+.link_btn{
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:1em;
+	font-weight:normal;
+	line-height:1.5;
+}
+
+
+.subtitle_section{
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:1.2em;
+	font-weight:bolder;
+	line-height:1.5;
+}
+
+.intro_section{
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:1em;
+	font-weight:normal;
+	line-height:1.5;
+}
+
+p::first-line{
+line-height: 1.5;
+}
+
+p{
+line-height: 1.5;	
+}
+
+
+/*___________________sections___________________________________*/
+
+.section{
+	width: 20%;
+	padding:0% 1% 0% 1%;
+	margin: 1% 1% 2% 1%;
+	float:left;
+}
+
+
+
+
+.box{
+	width: 100%;
+	margin: 1% 5% 2% 5%;
+	float:left;
+}
+
+
+.subtitle_section
+{ 
+	width: 90%;
+	margin: 2% 5% 2% 0%;
+	border-style:solid;
+	border-width:1px 0px 1px 0px;
+	padding: 5% 0% 5% 0%;
+}
+
+.link_btn
+{ 
+	width: 100%;
+	margin: 5% 5% 8% 0%;
+}
+
+#logo {
+	width:30%;
+	padding:0% 5% 5% 0%;
+	margin:0% 5% 5% 0%;
+}
+
+
+#name{
+	box-sizing:border-box;
+	color:black;
+	background-color: darkgray;
+	border-width:10px 0px 0px 0px;
+	border-style: solid;
+	
+}
+
+#intro_text{
+	
+	border-style:solid;
+	border-width:1px 0px 0px 0px;
+	padding: 5% 0% 5% 0%;
+}
+
+#section1{
+	display:block;
+}
+
+/*#section1, #section2, #section3 {
+	border-width:1px 0px 0px 0px;
+	border-style:solid;
+	border-color: grey;
+}
+*/
+
+/*-----------------------------------------------*/
+
+#fli, #tmb {display:none;}
+
+
+
+/*___________________psection patches ___________________________________*/
+#section0{
+	width:20%;
+
+}
+/*___________________end patches ___________________________________*/
+
+/*-------------canary------------------*/
+
+
+.stylenumber{
+	position:fixed;
+	z-index:3;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-size:4em;
+	top:3%;
+	color:white;
+}
+#cuatro, #tres, #uno {display:none;}
+#dos{display:block}
+/*___________________image containers___________________________________*/
+
+
+
+#fli, #tmb {display:none;}
+
+/*___________________image containers___________________________________*/
+
+
+			
+/*-------------------------------*/
+a:visited {
+    text-decoration: none;
+	
+}
+a:link {
+	text-decoration: none;
+	color:#403E3E;
+	
+}
+
+a:hover {
+	font-style: oblique;
+	text-decoration: underline;
+	font-weight: bolder;
+	color:black;
+}

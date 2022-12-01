@@ -1,0 +1,277 @@
+/*@charset "utf-8";
+/* CSS Document */
+
+@media only screen and (orientation: portrait) {
+body
+{
+	width: 100%;
+	box-sizing:border-box;
+	border: 0%;
+	padding: 0%;
+	margin: 0%;
+	background-image:url("../images/white_fondo_elephant_1073@0,75x.png");
+ 	background-size:300%;
+	background-position:bottom;
+	background-repeat:no-repeat;
+	background-color:#F92E00;
+	background-attachment: fixed;
+	
+
+
+	}
+}
+
+@media only screen and (orientation: landscape) {
+body
+{
+
+	background-position:right;
+	}
+}
+/*___________________image containers___________________________________*/
+
+
+#cover{
+	
+	
+	width: 100%;
+	padding:5% 0% 5% 0%;
+	margin:0% 0% 0% 0%;
+	border:none;
+	
+	
+
+}
+
+/*__________________general container __________________________________*/
+
+@media only screen and (orientation: portrait) {
+	#container{
+	
+	width: 100%;
+	padding:2% 2% 0% 1%;
+	margin:2% 12% 0% 0%;
+	background-color:darkgray;
+	border:none;
+	box-size:border-box;
+	position: relative;
+	
+	}
+
+	
+}
+
+@media only screen and (orientation: landscape) {
+	#container{
+	
+	width: 100%;
+	padding:2% 0% 0% 0%;
+	margin:2% 0% 0% 0%;
+	background-color:darkgray;
+	border:none;
+	box-size:border-box;
+	position: relative;
+	z-index: 23;
+	}
+
+	
+}
+
+/*__________________text___________________________________*/
+
+
+#name{
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:3em;
+	font-weight:bold;
+	word-break: normal;
+	word-wrap: normal;
+	word-spacing: normal;
+	line-height:1.1;
+}
+
+#intro_text{
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-size:1.2em;
+	font-weight:normal;
+	line-height:1.5;
+	text-align: left;
+	word-break: normal;
+	word-wrap: break-word;
+	word-spacing: normal;
+}
+
+.link_btn{
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:1.5em;
+	font-weight:normal;
+}
+
+.subtitle_section{
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:1.3em;
+	font-weight:bolder;
+}
+
+
+.intro_section{
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:1em;
+	font-weight:normal;
+	line-height:1.5;
+}
+
+
+p::first-line{
+	line-height: 1.5;
+}
+
+p{
+	line-height: 1.5;
+}
+
+
+/*___________________sections___________________________________*/
+
+
+@media only screen and (orientation: portrait) {
+
+.section{
+	width: 40%;
+	padding:1% 5% 1% 5%;
+	margin: 1% 1% 1% 45%;
+	background-color: darkgray;
+	float:none;
+
+	} 
+	
+#section0{
+	position:relative;
+	left:10%;
+	top:5%;
+	width: 40%;
+	padding:5% 5% 5% 0%;
+	margin: 5% 0% 5% 0%;
+	background-color: transparent;
+	float:none;
+	} 
+}
+
+
+@media only screen and (orientation: landscape) {
+
+.section{
+	width: 20%;
+	padding:2% 5% 5% 5%;
+	margin: 1% 1% 1% 5%;
+	background-color: darkgray;
+	float:none;
+	} 
+	
+#section0{
+	position:fixed;
+	right:0%;
+	top:0%;
+	width: 40%;
+	padding:5% 5% 5% 0%;
+	margin: 5% 0% 5% 0%;
+	background-color: transparent;
+	float:none;
+	z-index: 13;
+	} 
+}
+
+
+.box{
+	width: 80%;
+	margin: 5% 5% 2% 0%;
+	background-color: darkgray;
+}
+
+
+.subtitle_section
+{ 
+	width: 80%;
+	margin: 5% 5% 5% 0%;
+}
+
+.link_btn
+{ 
+	width: 100%;
+	margin: 5% 5% 5% 0%;
+}
+
+
+#logo {
+	width:30%;
+	padding:0% 5% 5% 0%;
+	margin:0% 5% 5% 0%;
+	float:left;
+}
+
+
+#name{
+	box-sizing:border-box;
+	color:black;
+	background-color: transparent;
+	border-width:10px 0px 0px 0px;
+	border-style: solid;
+	float:left;
+	
+}
+
+#intro_text{
+	border:none;
+	background-color: transparent;
+	color:black;
+}
+
+#section1{
+	display:block;
+}
+
+/*#section1, #section2, #section3 {
+	border-width:5px  0px 0px 0px ;
+	border-style:solid;
+	border-color: grey;
+}*/
+
+
+/*-----------------------------------------------*/
+
+#fli, #tmb {display:none;}
+
+
+/*-------------canary------------------*/
+
+.stylenumber{
+	position:fixed;
+	z-index:3;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-size:4em;
+	top:3%;
+	color:white;
+}	
+#dos, #cuatro, #uno {display:none;}
+#tres{display:block}
+
+
+/*---------------links----------------*/
+
+a:visited {
+    text-decoration: none;
+	
+}
+a:link {
+	text-decoration: none;
+	
+}
+
+a:hover {
+	font-style: oblique;
+	text-decoration: underline;
+	font-weight: bolder;
+	color:black;
+}
+
+
