@@ -1,0 +1,560 @@
+@charset "utf-8";
+/* CSS Document */
+html {
+  	scroll-behavior: smooth;
+
+}
+
+body{
+	width:100%;
+	padding:0px;
+	margin:0px;
+	background-color:orangered;
+	border:none;
+
+}
+
+#container{
+	padding:0%;
+	margin:0%;
+	width:100%;
+}
+/*_________cover____________________*/
+
+#cover{
+	display:block;
+	position:fixed;
+	width:80%;
+	background-color:white;
+	padding:30% 5% 80% 15%;
+	margin:0%;
+	z-index: 325;
+	
+}
+
+#title{
+	display:block;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-size: 3em;
+	font-weight: 700;
+}
+
+#intro_text, #tech_specs{
+	display:block;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-size: 1em;
+	font-weight: 300;
+}
+
+#enter{
+	display:block;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-size: 1em;
+	font-weight: 300;
+	width:70%;
+	padding: 5%;
+	z-index: 425;
+}
+
+/*_________layers____________________*/
+
+
+#layer1_box{
+	display:block;
+	width:100%;
+	height:100%;
+	z-index:45;
+	opacity:0;
+	left:0px;
+	top:0px;
+	padding: 0% 0% 0% 0%;
+	margin: 0% 0% 0% 0%;
+	
+	animation-name: aparition_layer;
+	animation-duration: 2s; 
+	animation-delay:1s;
+	animation-fill-mode: forwards;
+
+
+}
+
+#layer2_box{
+	display:block;
+	width:100%;
+	z-index:15;
+	opacity:0;
+	padding: 0% 0% 0% 0%;
+	margin: 0% 0% 0% 0%;
+	
+	animation-name: aparition_layer;
+	animation-duration: 4s; 
+	animation-delay:4s;
+	animation-fill-mode: forwards;
+
+}
+
+#layer3_box{
+	display:block;
+	
+	z-index:10;
+	opacity:0;
+	padding: 0% 0% 0% 0%;
+	margin: 0% 0% 0% 0%;
+	animation-name: aparition_layer;
+	animation-duration: 5s; 
+	animation-delay:5s;
+	animation-fill-mode: forwards;
+}
+
+#layer4_box{
+	display:block;
+	
+	opacity:0.5;
+}
+
+#base_background{
+	display:block;
+	
+	z-index:0;
+	opacity:0;
+	padding: 0% 0% 0% 0%;
+	margin: 0% 0% 0% 0%;
+	animation-name: aparition_layer;
+	animation-duration: 5s; 
+	animation-delay:3s;
+	animation-fill-mode: forwards;
+}
+
+
+
+@keyframes aparition_layer{
+	
+	0% {opacity:0;}
+	20% {opacity:0.2;}
+	50% {opacity:0.5;}
+	100% {opacity:1;}
+}
+
+/*_________fonts_______________*/
+
+#cartel{
+
+	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", "sans-serif";
+	font-size: 3em;
+	font-weight: 300;
+
+}
+
+#letras2{
+
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	font-weight:900;
+	font-size: 8vh;
+	text-decoration-line: underline;
+	text-transform: uppercase;
+	writing-mode: vertical-rl;
+	word-wrap: break-word;
+	word-break: break-all;
+
+}
+
+#letras3 {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	font-weight:900;
+	font-size: 6vh;
+	word-wrap: break-word;
+	word-break: normal;
+}
+
+.column1{
+
+	font-size:2.2vh;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-weight: bold;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+
+.subgrid-item {
+	font-size:1em;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-weight: bold;
+}
+
+
+
+/*_________layer 0 elements_______________*/
+
+#base_background{
+	background-size:cover;
+	background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0b168c33698238.56b417d3ae5a4.jpg');
+
+}
+
+#film{
+	width:100%;
+	z-index:1;
+	top:0px;
+	left:0%;
+	opacity: 0.5;
+	position:fixed;
+	padding:0% 0% 0% 0%;
+	margin:0% 0% 0% 0%;;
+}
+
+/*_________layer 1 elements_______________*/
+
+#flowera{
+	max-width: 30%;
+	max-height: 40%;
+	display:block;
+	position:fixed;
+	bottom:0px;
+	left:0px;
+	z-index:45;
+	
+}
+
+#flowerb{
+	max-width: 30%;
+	max-height: 40%;
+	display:block;
+	position:fixed;
+	bottom:0px;
+	right:0px;
+	z-index:45;
+	
+}
+
+#being1{
+	max-width: 30%;
+	max-height: 40%;
+	display:block;
+	position:fixed;
+	top:0px;
+	left:0px;
+	z-index:45;
+	
+}
+
+#being2{
+	max-width: 30%;
+	max-height: 40%;
+	display:block;
+	position: fixed;
+	top:0px;
+	right:0px;
+	z-index:45;
+}
+
+#flowerbox1{
+	max-width: 30%;
+	max-height: 40%;
+	position: absolute;
+	padding:5%;	
+	left:120%;
+	z-index:45;
+}
+
+
+/*_________layer 2 elements_______________*/
+
+
+#cinta{
+	max-width: 40%;
+	max-height: 40%;
+	display:block;
+	position:absolute;
+	bottom:-9px;
+	right:11%;
+	z-index:23;
+	transform:rotate(-80deg);
+	filter:brightness(44%);
+	
+}
+
+#cinta1{
+	max-width: 30%;
+	max-height: 50%;
+	display:block;
+	position:fixed;
+	bottom:1px;
+	left:34%;
+	z-index:25;
+	transform:rotate(-80deg);
+	
+}
+
+
+#cinta2{
+	max-width:40%;
+	max-height: 40%;
+	display:block;
+	position:fixed;
+	bottom:2px;
+	left:12%;
+	z-index:24;
+	transform:rotate(-80deg);
+	filter:brightness(34%);
+	
+}
+
+/*_________layer 3 elements_______________*/
+
+#headtopimage{
+	position:fixed;
+	max-width: 20%;
+	min-height: 10%;
+	bottom:58%;
+	left:45%;
+	z-index: 12;
+	filter:brightness(44%);
+}
+
+#headfaceimage{
+	position:fixed;
+	width: 60%;
+	height:auto;
+	bottom:20%;
+	left:25%;
+	z-index: 12;
+}
+
+#cartel{
+	width:40%;
+	position:fixed;
+	bottom:0%;
+	left:15%;
+	color: grey;
+	background-color: black;
+	border-style: solid;
+	border-color: grey;
+	border-width: 1em 1em 0em 1em;
+	padding: 3% 3% 0% 3%;
+	z-index: 12;
+} 
+.letras{
+	position:relative;
+	z-index:12;	
+}
+
+#letras1{
+	width:82%;
+	height:100%;
+	padding:0px;
+	margin:0% 0% 0% 0%;
+	color: #B0A9A9;
+	font-size: 8vh;
+	font-weight:900;
+
+	border-style: solid;
+	border-color: black;
+	border-width: 1em 0.5em 1em 0.5em;
+	left:0px;
+	top:0vh;
+	word-wrap: break-word;
+	word-break: break-all;
+	writing-mode: vertical-lr;
+
+}
+
+
+
+#letras2{
+	width:50%;
+	padding:0%;
+	color:#2F3622;
+	opacity: 0.9;
+	top:30px;
+
+}
+
+#letras3 {
+	top: 0px;
+}
+
+/*_________layer 4 elements_______________*/
+
+
+.grid{
+
+	background-image:url('https://2.bp.blogspot.com/-cN9MC34hsPs/U7_RMjq1_II/AAAAAAAABUs/3hN-amdf670/s1600/2erta.jpg');
+	
+}
+
+#grid1{
+	
+	width:100%;
+	margin:0px;
+	border:0px;
+	padding: 0% 0% 8% 0%;
+
+
+}
+
+#grid2{
+	width:100%;
+	margin:0px;
+	border:0px;
+	padding: 0% 0% 8% 0%;
+}
+
+
+
+
+#grid-item2{
+	width:100%;
+	margin:0px;
+	top:0px;
+	padding: 0% 0% 8% 0%;
+}
+
+
+
+
+.row{
+	display:grid;
+	width: 100%;
+	grid-template-columns: 20% 20% 20% 20% 20%;
+	grid-template-rows:100%;
+	background-color:#13605A;
+	
+	}
+.column1{
+	width:80%;
+	display:flex;
+	position:relative;
+	padding:2% 2% 8% 2%;
+	margin:0.8vh;
+	opacity: 1;
+	justify-content: center;
+	border-radius: 0vh 0vh 3vh 3vh;
+	background-color: red;
+	background-position:left;
+}
+
+#grid-item1{
+	width:100%;
+	background-color:blue;
+	opacity:0.6;
+	margin:0px;
+	padding:0px;
+}
+
+#package0{
+	width:100%;
+	opacity: 0.5;
+	background-color: darkgray;
+	z-index: inherit;
+	padding:0% 0% 19% 0%;
+	}
+
+.subgrid-item {
+
+	width:60%;
+	padding:5% 10% 25% 10%;
+	margin:0% 10% 20% 10%;
+	color: white;
+	opacity: 0.7;
+	align-content: center;
+	border-style: solid;
+	border-color: blue;
+	border-width: 1% 0% 4% 0%;
+	background-color: black;
+}
+
+#package1{
+	width:98%;
+	opacity: 0.5;
+	background-color: darkgray;
+	z-index: inherit;
+	padding:1% 1% 19% 1%;
+}
+
+.subgrid-item2{
+	display:flex;
+	padding:7% 3% 9% 3%;
+	margin: 0%;
+	font-size:2em;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	justify-content: center;
+	background-color: gray;
+	
+	border-style: solid;
+	border-color: white;
+	border-width: 1em 1em 2em 1em;
+	word-wrap: break-word;
+	word-break: break-all;
+	background-image: url("./images/tide1.jpg");
+	background-attachment: fixed;
+	background-repeat: repeat;
+	background-size:auto;
+}
+
+#grid-item2a{
+
+	background-color:red;
+
+}
+
+#package2 {
+
+	opacity: 0.9;
+	background-color: darkgray;
+	z-index: 8;
+	padding:1% 0% 1% 0%;
+	top:0px;
+	}
+
+#package3 {
+	display:grid;
+	width:100%;
+	grid-template-columns: auto ;
+	grid-template-rows:auto auto auto auto;
+	grid-row-gap: 5%;
+	opacity: 0.9;
+	background-color: white;
+	padding:1% 1% 1% 1%;
+	z-index:18;
+	top:0px;
+	}
+
+
+
+
+
+
+
+
+#grid-item3{
+	background-color:purple;
+	z-index: 11;
+
+}
+
+#woman{
+	width:auto;
+	background-color:yellowgreen;
+	z-index: 11;
+}
+
+#portraitwoman{
+	max-height: 50%;
+	top:0%;
+	position:absolute;
+	left:10%;
+}
+
+
+
+
+
+
+#row1,#row2,#row3, #row4{
+	background-image: url("./images/axedrez.png");
+	background-repeat: repeat;
+	background-size:9%;
+	background-attachment: fixed;
+}
+
+
