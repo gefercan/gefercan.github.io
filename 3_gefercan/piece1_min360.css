@@ -1,0 +1,192 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	background-color:orangered;
+	border:none;
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-image:url('https://2.bp.blogspot.com/-cN9MC34hsPs/U7_RMjq1_II/AAAAAAAABUs/3hN-amdf670/s1600/2erta.jpg');
+}
+
+#middle {
+box-sizing:border-box;
+position:fixed;
+top:0px;
+left:0px;
+display:block;
+z-index:6;
+width: 100%;
+padding: 0%;
+border:none;
+}
+
+#front {
+box-sizing:border-box;
+position:fixed;
+top:0px;
+left:0px;
+z-index: 13;
+width: 100%;
+padding: 0%;
+border:none;
+}
+
+
+#base {
+box-sizing:border-box;
+position:fixed;
+top:0px;
+left:0px;
+z-index: -2;
+background-size: cover;
+width: 100%;
+padding: 0%;
+margin:0px;
+border:none;
+
+}
+
+#base2{
+box-sizing:border-box;
+position:fixed;
+borde:none;
+display:block;
+width:100%;
+padding:25% 0% 0% 0%;
+z-index:2;
+background-color:gray;
+opacity:0.8;
+}
+
+/*____________________________________*/
+
+#being1{
+	display:block;
+	position:fixed;
+	box-sizing:border-box;
+	margin-top:0.1em;
+	margin-left:0.1em;
+	padding:1%;
+	font-family:"Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	font-weight: bolder;
+	font-size: 3em;
+	background-image:url('https://1.bp.blogspot.com/-vfGXgVeuBuc/XLIBQMJm_mI/AAAAAAAAWto/yC50twUbHvEpZh9eu-2Pfe9jKpS2yTlhgCLcBGAs/s1600/floating_being.png');
+	background-size:contain;
+	background-repeat:no-repeat;
+}
+
+#next{
+	
+}
+
+#being3 {
+	position:fixed;
+	box-sizing:border-box;
+	margin-right:0%;
+	top:0.1em;
+	right:0.1em;
+	padding:6%;
+	background-image:url('https://1.bp.blogspot.com/-vfGXgVeuBuc/XLIBQMJm_mI/AAAAAAAAWto/yC50twUbHvEpZh9eu-2Pfe9jKpS2yTlhgCLcBGAs/s1600/floating_being.png');
+	background-size:contain;
+	background-repeat:no-repeat;
+	
+	
+	-moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+		font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+		font-size: 2em;
+	
+}
+
+#film {
+position:fixed;
+min-width: 100%;
+min-height: 100%;
+width:auto;
+height:auto;
+background-color:#EF4043;
+background-size: cover;
+
+}
+video {
+	width:100%;
+}
+
+#head1 {
+	display:block;
+	position:fixed;
+	top:25%;
+	padding:5%;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-size: 3em;
+	border-color: #433737;
+	border-width: 3em;
+	margin-left: 50%;
+	background-image:url('https://1.bp.blogspot.com/-PCvd5LrC684/XLIBQ7r0XhI/AAAAAAAAWt0/02HGNRhBltUvr_VkWlWn0kb5RG2_cGiAwCLcBGAs/s1600/headtop1.png');
+	background-size:cover;
+	backgorund-repeat:no-repeat;
+
+}
+#head2 {
+	display:block;
+	position:fixed;
+	padding:7%;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-size: 2em;
+	margin-left: 50%;
+	bottom:0.5%;
+	background-image:url('https://4.bp.blogspot.com/-dyDWyRvwEqc/XLIBQfBuaFI/AAAAAAAAWtw/kRSbiavJbvUEuFa0_UPWEQ26UKRWXdy0wCLcBGAs/s1600/head.png');
+	background-size:contain;
+	background-repeat:no-repeat;
+
+	
+}
+
+#flower1{
+	position:absolute;
+	top:-200%;
+	font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, "serif";
+	font-size: 3em;
+	background-image:url('https://1.bp.blogspot.com/-IyK8LLoCZWo/XLIBQIXivXI/AAAAAAAAWts/TEvebt2zR3gliwp1SpTKAgQXAsyui0HkgCLcBGAs/s1600/floating_flower.png');
+	background-size:cover;
+}
+#bird1{
+	position:fixed;
+	float:left;
+	left:-100%;
+	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+	font-size: 4em;
+	padding:20%;
+	background-image:url('https://1.bp.blogspot.com/-0-6ALzVq4N8/XLIerLKUO9I/AAAAAAAAWuE/tPEqHgix0jYT-6R-yuoS48LZblPUgPrAQCLcBGAs/s1600/floating_head.png');
+	background-size:contain;
+}
+
+#a,#s,#d{
+	position:fixed;
+	float:left;
+	bottom:10%;
+	left:15%;
+	padding:1em;
+	color:black;
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-size:4em;
+}
+
+.flower{
+	-webkit-animation: rotation 126s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
+	
+}
