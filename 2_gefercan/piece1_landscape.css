@@ -277,7 +277,7 @@ body{
 	max-width: 30%;
 	max-height: 50%;
 	display:block;
-	position:fixed;
+	position:absolute;
 	bottom:1px;
 	left:34%;
 	z-index:25;
