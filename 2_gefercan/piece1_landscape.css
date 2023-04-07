@@ -278,7 +278,7 @@ body{
 	max-height: 50%;
 	display:block;
 	position:absolute;
-	bottom:1px;
+	bottom:-20%;
 	left:34%;
 	z-index:25;
 	transform:rotate(-80deg);
