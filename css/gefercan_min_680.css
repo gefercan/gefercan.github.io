@@ -1,7 +1,8 @@
-/*@charset "utf-8";
+@charset "utf-8";
 /* CSS Document */
 
-@media only screen and (orientation: portrait) {
+/*https://developer.mozilla.org/en-US/docs/Web/CSS/line-height*/
+
 body
 {
 	width: 100%;
@@ -9,71 +10,63 @@ body
 	border: 0%;
 	padding: 0%;
 	margin: 0%;
-	background-image:url("../images/white_fondo_elephant_1073@0,75x.png");
- 	background-size:300%;
-	background-position:bottom;
-	background-repeat:no-repeat;
-	background-color:#F92E00;
-	background-attachment: fixed;
-	
-
-
-	}
+	background-color:#19647B;
 }
 
-@media only screen and (orientation: landscape) {
-body
-{
-
-	background-position:right;
-	}
-}
 /*___________________image containers___________________________________*/
 
+@media (min-aspect-ratio: 1/1) {
+  .video-container iframe {
+    /* height = 100 * (9 / 16) = 56.25 */
+    height: 100vw;
+  }
+}
+    
+@media (max-aspect-ratio: 1/1) {
+  .video-container iframe {
+    /* width = 100 / (9 / 16) = 177.777777 */
+    width: 50vh;
+  }
+}
 
+iframe {
+  position: fixed;
+  top: -15%;
+  left: 0%;
+  width: 150vw;
+  height: 150vh;
+  z-index: -3;
+  opacity:0.4;
+  /*transform: translate(-50%, -50%);
+	*/
+}
 #cover{
-	
-	
+	position:absolute;
 	width: 100%;
-	padding:5% 0% 5% 0%;
+	padding:0% 0% 5% 0%;
 	margin:0% 0% 0% 0%;
 	border:none;
-	
-	
-
+	/*
+ 	background-size:200%;
+	background-position:0% 18%;
+	background-repeat:no-repeat;
+	background-color:#F92E00;
+	opacity:1;*/
 }
 
 /*__________________general container __________________________________*/
 
-@media only screen and (orientation: portrait) {
-	#container{
+
+#container{
 	
 	width: 100%;
-	padding:2% 2% 0% 1%;
-	margin:2% 12% 0% 0%;
-	background-color:darkgray;
+	padding:5% 0% 5% 0%;
+	margin:0% 0% 0% 0%;
+	background-color: #122C39;
 	border:none;
 	box-size:border-box;
-	position: relative;
-	
-	}
-
-	
-}
-
-@media only screen and (orientation: landscape) {
-	#container{
-	
-	width: 100%;
-	padding:2% 0% 0% 0%;
-	margin:2% 0% 0% 0%;
-	background-color:darkgray;
-	border:none;
-	box-size:border-box;
-	position: relative;
-	z-index: 23;
-	}
-
+	color:white;
+	opacity:0.9;
 	
 }
 
@@ -92,7 +85,7 @@ body
 
 #intro_text{
 	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
-	font-size:1.2em;
+	font-size:1em;
 	font-weight:normal;
 	line-height:1.5;
 	text-align: left;
@@ -103,127 +96,93 @@ body
 
 .link_btn{
 	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size:1.5em;
-	font-weight:normal;
+	font-size:1.3em;
+	font-weight:normal; 
 }
 
 .subtitle_section{
 	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size:1.3em;
-	font-weight:bolder;
+	font-weight:bolder;display: inline-block;
 }
+
 
 
 .intro_section{
 	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size:1em;
 	font-weight:normal;
-	line-height:1.5;
+	line-height: 1.5;	
 }
-
 
 p::first-line{
 	line-height: 1.5;
 }
 
 p{
-	line-height: 1.5;
+	line-height: 1.5;	
 }
 
 
 /*___________________sections___________________________________*/
 
-
-@media only screen and (orientation: portrait) {
-
 .section{
-	width: 40%;
-	padding:1% 5% 1% 5%;
-	margin: 1% 1% 1% 45%;
-	background-color: darkgray;
+	width:80%;
+	padding:5% 0% 5% 20%;
+	margin: 0% 0% 0% 0%;
+	background-color: none;
 	float:none;
-
-	} 
-	
-#section0{
-	position:relative;
-	left:10%;
-	top:5%;
-	width: 40%;
-	padding:5% 5% 5% 0%;
-	margin: 5% 0% 5% 0%;
-	background-color: transparent;
-	float:none;
-	} 
-}
-
-
-@media only screen and (orientation: landscape) {
-
-.section{
-	width: 20%;
-	padding:2% 5% 5% 5%;
-	margin: 1% 1% 1% 5%;
-	background-color: darkgray;
-	float:none;
-	} 
-	
-#section0{
-	position:fixed;
-	right:0%;
-	top:0%;
-	width: 40%;
-	padding:5% 5% 5% 0%;
-	margin: 5% 0% 5% 0%;
-	background-color: transparent;
-	float:none;
-	z-index: 13;
-	} 
 }
 
 
 .box{
-	width: 80%;
-	margin: 5% 5% 2% 0%;
-	background-color: darkgray;
+	width: 90%;
+	margin: 5% 5% 2% 5%;
+	background-color: none;
 }
 
 
 .subtitle_section
 { 
-	width: 80%;
-	margin: 5% 5% 5% 0%;
+	width: 90%;
+	margin: 5% 5% 5% 5%;
+	border-style:solid;
+	border-width:1px 0px 1px 0px;
+	padding: 5% 0% 5% 0%;
+}
+
+.intro_section
+{ 
+	width: 90%;
+	margin: 5% 5% 5% 5%;
 }
 
 .link_btn
 { 
-	width: 100%;
-	margin: 5% 5% 5% 0%;
+	width: 90%;
+	margin: 5% 5% 5% 5%;
 }
-
-
+	
 #logo {
 	width:30%;
-	padding:0% 5% 5% 0%;
-	margin:0% 5% 5% 0%;
-	float:left;
+	padding:0% 5% 5% 5%;
+	margin:5% 5% 0% 0%;
 }
-
 
 #name{
 	box-sizing:border-box;
-	color:black;
+	color:white;
 	background-color: transparent;
-	border-width:10px 0px 0px 0px;
+	border-width:1px 0px 0px 0px;
 	border-style: solid;
-	float:left;
 	
 }
 
 #intro_text{
-	border:none;
-	background-color: transparent;
-	color:black;
+	color:white;
+	border-width:0px 0px 10px 0px;
+	border-style: solid;
+	margin:5% 0% 15% 5%;
 }
 
 #section1{
@@ -231,15 +190,33 @@ p{
 }
 
 /*#section1, #section2, #section3 {
-	border-width:5px  0px 0px 0px ;
+	border-width:0px 0px 20px 0px;
 	border-style:solid;
 	border-color: grey;
 }*/
+
+#section0{
+	position:relative;
+	width: 80%;
+	top:2%;
+	left:auto;
+	padding:5% 0% 40% 0%;
+	margin: 52% 0% 8% 20%;
+	background-color: transparent;
+	float:none;
+	border-bottom:0px;
+}
+
+
 
 
 /*-----------------------------------------------*/
 
 #fli, #tmb {display:none;}
+
+/*------------------------------------*/
+
+
 
 
 /*-------------canary------------------*/
@@ -252,26 +229,26 @@ p{
 	top:3%;
 	color:white;
 }	
-#dos, #cuatro, #uno {display:none;}
-#tres{display:block}
+#dos, #tres, #uno {display:none;}
+#cuatro{display:block}
 
 
-/*---------------links----------------*/
+/*___________________psection patches ___________________________________*/
 
+
+/*-------------------------------*/
 a:visited {
     text-decoration: none;
 	
 }
 a:link {
 	text-decoration: none;
-	
+	color:white;
 }
 
 a:hover {
 	font-style: oblique;
 	text-decoration: underline;
 	font-weight: bolder;
-	color:black;
+	color:white;
 }
-
-
