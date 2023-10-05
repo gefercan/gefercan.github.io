@@ -12,25 +12,46 @@ body
 	padding: 0% 0% 0% 0%;
 	margin: 0% 0% 0% 0%;
 	
-	background-image:url("../images/white_fondo_elephant_1073.jpg");
  	background-size:80%;
 	background-position:center;
 	background-repeat:no-repeat;
-	background-color:#d8c7c3;
+	background-color:#19647B;
 	background-attachment: fixed;
 	opacity:1;
 }
 
 /*___________________image containers___________________________________*/
 
-
+@media (min-aspect-ratio: 16/9) {
+  .video-container iframe {
+    /* height = 100 * (9 / 16) = 56.25 */
+    height: 56.25vw;
+  }
+}
+    
+@media (max-aspect-ratio: 16/9) {
+  .video-container iframe {
+    /* width = 100 / (9 / 16) = 177.777777 */
+    width: 177.78vh;
+  }
+}
+iframe {
+  position: fixed;
+  top: -6%;
+  left: 0%;
+  width: 125vw;
+  height: 125vh;
+  z-index: -3;opacity:0.3;
+  /*transform: translate(-50%, -50%);
+	*/
+}
 #cover{
 
-	width: 100%;
+	/*width: 100%;
 	min-height: 100%;
 	padding:0% 0% 0% 0%;
 	margin:0% 0% 0% 0%;
-	border:none;
+	border:none;*/
 	
 
 }
@@ -40,10 +61,10 @@ body
 
 #container{
 	
-	width: 100%;/*60%;*/
-	padding:2% 0% 45% 0%;
-	margin:1% 0% 0% 0%; /*22% 0% 0% 10%;*/
-	background-color: darkgray;
+	width: 90%;/*60%;*/
+	padding:1% 0% 35% 0%;
+	margin:10% 0% 0% 4%; /*22% 0% 0% 10%;*/
+	background-color:#333441 ;
 	border:none;
 	box-size:border-box;
 	opacity:0.9;
@@ -53,7 +74,6 @@ body
 }
 
 /*__________________text___________________________________*/
-
 
 #name{
 	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -109,14 +129,16 @@ p{
 
 
 
+
+
 /*___________________sections___________________________________*/
 
-
-.section{
+	.section{
 	width: 10%;
-	padding:0% 2% 0% 2%;
-	margin: 1% 2% 0% 2%;
-	float:left;
+	padding:1% 2% 0% 2%;
+	margin: 1% 1% 0% 1%;
+	float:left;color:white;
+	/*background-color: darkgray;*/
 }
 
 
@@ -125,7 +147,7 @@ p{
 	width: 100%;
 	padding:0% 2% 0% 0%;
 	margin: 0% 5% 2% 0%;
-	float:left;
+	float:left;color:white;
 }
 
 
@@ -135,13 +157,14 @@ p{
 	margin: 5% 5% 5% 0%;
 	border-style:solid;
 	border-width:1px 0px 1px 0px;
-	padding: 5% 0% 5% 0%;
+	padding: 5% 0% 5% 0%;color:white;
 }
 
 .link_btn
 { 
 	width: 100%;
 	margin: 5% 0% 5% 0%;
+	color:white;
 }
 	
 #logo {
@@ -152,8 +175,8 @@ p{
 
 #name{
 	box-sizing:border-box;
-	color:black;
-	background-color: darkgray;
+	color:white;/*___________________sections___________________________________*/
+	/*background-color: darkgray;*/
 	border-width:1px 0px 0px 0px;
 	border-style: solid;
 	padding: 5% 0% 5% 0%;
@@ -176,6 +199,7 @@ p{
 	border-style:solid;
 	border-color: grey;
 }*/
+
 
 
 /*-----------------------------------------------*/
@@ -201,7 +225,8 @@ p{
 	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
 	font-size:4em;
 	top:3%;
-	color:white;
+	color:black;
+	opacity:0.1;
 }	
 #dos, #tres, #cuatro {display:none;}
 #uno{display:block}
@@ -224,7 +249,7 @@ a:hover {
 	font-style: oblique;
 	text-decoration: underline;
 	font-weight: bolder;
-	color:black;
+	color:white;
 }
 
 
