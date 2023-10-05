@@ -10,25 +10,48 @@ body
 	border: 0%;
 	padding: 0%;
 	margin: 0%;
-	
+	background-color:#19647B;
 }
 
 /*___________________image containers___________________________________*/
 
+@media (min-aspect-ratio: 1/1) {
+  .video-container iframe {
+    /* height = 100 * (9 / 16) = 56.25 */
+    height: 100vw;
+  }
+}
+    
+@media (max-aspect-ratio: 1/1) {
+  .video-container iframe {
+    /* width = 100 / (9 / 16) = 177.777777 */
+    width: 50vh;
+  }
+}
 
+iframe {
+  position: fixed;
+  top: -15%;
+  left: 0%;
+  width: 135vw;
+  height: 135vh;
+  z-index: -3;
+  opacity:0.3;
+  /*transform: translate(-50%, -50%);
+	*/
+}
 #cover{
 	position:absolute;
 	width: 100%;
-	padding:5% 0% 5% 0%;
+	padding:0% 0% 5% 0%;
 	margin:0% 0% 0% 0%;
 	border:none;
-	
-	background-image:url("../images/white_fondo_elephant_1073@0,75x.png");
+	/*
  	background-size:200%;
 	background-position:0% 18%;
 	background-repeat:no-repeat;
-	background-color:#d8c7c3;
-	opacity:1;
+	background-color:#F92E00;
+	opacity:1;*/
 }
 
 /*__________________general container __________________________________*/
@@ -37,13 +60,13 @@ body
 #container{
 	
 	width: 100%;
-	padding:1% 0% 5% 0%;
+	padding:5% 0% 5% 0%;
 	margin:0% 0% 0% 0%;
-	background-color: darkgray;
+	background-color: #122C39;
 	border:none;
 	box-size:border-box;
-
-
+	color:white;
+	opacity:0.9;
 	
 }
 
@@ -105,14 +128,15 @@ p{
 	width:80%;
 	padding:5% 0% 5% 20%;
 	margin: 0% 0% 0% 0%;
-	background-color: darkgray;
+	background-color: none;
 	float:none;
 }
-	
+
+
 .box{
 	width: 90%;
 	margin: 5% 5% 2% 5%;
-	background-color: darkgray;
+	background-color: none;
 }
 
 
@@ -123,13 +147,6 @@ p{
 	border-style:solid;
 	border-width:1px 0px 1px 0px;
 	padding: 5% 0% 5% 0%;
-}
-
-#subtitle_section2
-{ 
-
-	border-width:0px 0px 1px 0px;
-
 }
 
 .intro_section
@@ -152,7 +169,7 @@ p{
 
 #name{
 	box-sizing:border-box;
-	color:black;
+	color:white;
 	background-color: transparent;
 	border-width:1px 0px 0px 0px;
 	border-style: solid;
@@ -160,10 +177,10 @@ p{
 }
 
 #intro_text{
-	color:black;
-	border-width:1px 0px 10px 0px;
+	color:white;
+	border-width:0px 0px 10px 0px;
 	border-style: solid;
-	margin:80% 0% 0% 5%;
+	margin:20% 0% 15% 5%;
 }
 
 #section1{
@@ -181,10 +198,11 @@ p{
 	width: 80%;
 	top:2%;
 	left:auto;
-	padding:5% 0% 150% 0%;
-	margin: 2% 0% 8% 20%;
+	padding:5% 0% 40% 0%;
+	margin: 62% 0% 8% 20%;
 	background-color: transparent;
 	float:none;
+	border-bottom:0px;
 }
 
 
@@ -223,12 +241,12 @@ a:visited {
 }
 a:link {
 	text-decoration: none;
-	
+	color:white;
 }
 
 a:hover {
 	font-style: oblique;
 	text-decoration: underline;
 	font-weight: bolder;
-	color:black;
+	color:white;
 }
