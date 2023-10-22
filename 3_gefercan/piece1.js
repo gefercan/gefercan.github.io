@@ -10,19 +10,19 @@ window.onload= function(){
 	function myFunction() {
 //objeto JSON
 		var objetos ={
-					a : document.getElementById ("head1"),
-	         		b: document.getElementById ("head2"),
-	         		c: document.getElementById ("bird1"),
-	         		d : document.getElementById ("flower1"),
-	         		e : document.getElementById ("film"),//video//
-	         		f : document.getElementById ("a"),//text//
-	         		g : document.getElementById ("s"),//text//
-	         		h : document.getElementById ("being1"),
-	         		i : document.getElementById ("being3"),
-	         		j : document.getElementById ("head1"),
-	         		k : document.getElementById ("head2"),
-		 					l:document.getElementById("box1"),
-		 					ll:document.getElementById("box2")
+					fondo: document.body,
+					cover : document.getElementById ("cover"),
+	         		mujer: document.getElementById ("head2"),
+					anfora: document.getElementById ("base4"),
+					nube: document.getElementById ("base"),
+					letters1 : document.getElementById ("a"),
+	         		letters2 : document.getElementById ("s"),//text//
+	         		letters3 : document.getElementById ("d"),//text//
+	         		being1 : document.getElementById ("being1"),
+	         		being3 : document.getElementById ("being3"),
+	         		poema: document.getElementById ("package"),
+		 			l:document.getElementById("box1"),
+		 			ll:document.getElementById("box2")
 			   }
 
 		//textos object with the phrases to be picked
@@ -35,7 +35,7 @@ window.onload= function(){
 			      	text5:"The flowers, always the flowers, surround the statement",
 					text6:"Nevertheless, the dust in the video card does not allow you to see clearly",
 					text7:"and the fragile petals are numbered and indexed",
-					text8:"and the grains of sand area a variable that it is not here, not there, obliique",
+					text8:"and the grains of sand area a variable that it is not here, not there, oblique",
 					text9: "but believing the night was here, they went back and throw a stone into the sea",
 					text10:"the birds look at you, thinking: WTF?, but mainly you ignore them, as well",
 					text11:"but you cannot help but scare them, and count them on the sky and forget about it later",
@@ -89,12 +89,24 @@ window.onload= function(){
 /*-------------------------------------------------*/
 
 		//animations
+		function anima0(){
+			//declaration timeline
+			var tl = gsap.timeline({repeat: 4, repeatDelay: 2});
+			//nube
+			tl.from("#base3", {x:-500, y:190,opacity: "1",duration: 0.5, delay:0})
+			tl.from("#base", {x:-500, y:100,opacity: "1",duration: 1, delay:0})
+			
+			tl.to("#base3", {x:2459, y:190,opacity: "1",duration: 9, delay:0.1})
+
+		
+			tl.to("#base", {x:2459, y:390,opacity: "1",duration: 9, delay:0.1})
+			
+			console.log("anima0");
+		}
+
 		function anima1(){
 			//declaration timeline
 			var tl = gsap.timeline({repeat: 0, repeatDelay: 0});
-			//nube
-			tl.from("#base3", {x:-500, y:190,opacity: "1",duration: 0.1, delay:0})
-			tl.to("#base3", {x:2459, y:190,opacity: "1",duration: 2.5, delay:0.1})
 			
 			//cratera/flor
 			gsap.from("#base4", {x:window.InnerWidth/2,y:-window.InnerHeight/2,opacity: "1", duration: 1, delay: 0.1});
@@ -103,15 +115,12 @@ window.onload= function(){
 			tl.to("#base4", {opacity: "0.3",duration: 1, delay: 0.1})
 			tl.to("#base4", {opacity: "1",duration: 1, delay:0.1});
 
-			//nube repeat
-			tl.from("#base3", {x:-500, y:190,opacity: "1",duration: 0.1, delay:0})
-			tl.to("#base3", {x:2459, y:190,opacity: "1",duration: 2.5, delay:0.1})
-
 			console.log("anima1");
 		}
 
 
 		function anima2(){
+			//declaration timeline
 			var tl = gsap.timeline();
 
 			gsap.from("#base4", {y:-2250,opacity: "1", duration: 1, delay: 0.1});
@@ -170,27 +179,29 @@ window.onload= function(){
 		// hide the cover
 		function hide1(){
 						//local variables
-						var as = document.getElementById("cover");
-						var anfora = document.getElementById("base4");
-						var nube = document.getElementById("base3");
-						var letters = document.getElementById("d");
-						var letters2 = document.getElementById("a");
-						var letters3 = document.getElementById("s");
-
+				
+						objetos.cover.style.display = ("none");
 						txts.innerHTML=textos.text10;
-						letters.innerHTML=""+"x"+textos.text8;
-						as.style.display = ("none");
-						letters.style.display = ("none");
-						letters2.style.display = ("none");
-						nube.style.top=nube.style.top+2;
-						letters3.style.opacity = ("0.3");
+					
+						objetos.letters3.innerHTML="in the end we could be wrong, however well intentioned, but the words and the objects could be present, the birds stay there"+""+textos.text8;
+						
+						objetos.letters1.style.display = ("none");
+						objetos.letters2.style.display = ("none");
+						objetos.letters3.style.display = ("block");
+						objetos.letters3.style.opacity = ("0.3");
 
+						function textChange1(){
+						
+						}
 						//callback functions
 						fallingFlowers();
 						anima1();
-						removebuttton(anfora,hide1);
-						clickingHead (anfora,hide2);
-						clickingHead (nube,hide3);
+						removebuttton(objetos.anfora,hide1);
+						clickingHead (objetos.anfora,hide2);
+						clickingHead (objetos.nube,hide3);
+						clickingHead (objetos.letters3,hide2);
+						clickingHead (txts,hide3);
+
 
 						console.log("hide1");
 				}
@@ -199,25 +210,23 @@ window.onload= function(){
 		//first moment
 		function hide2(){
 						//local variables
-						var anfora = document.getElementById("base4");
-						var mujer = document.getElementById("head2");
-						var letters3 = document.getElementById("s");
-						var fondos = document.body;
-
+						
+						objetos.letters1.style.display=("block");
+						objetos.letters1.innerHTML=textos.text6;
 						txts.innerHTML=textos.text11;
-						objetos.h.style.display="block";
-						objetos.i.style.display="block";
-						anfora.style.display="block";
-						mujer.style.display="none";
-						letters3.innerHTML="nowhere is still available the signal or the sound" ;
-						fondos.style.backgroundColor=("magenta")
+						objetos.being1.style.display="block";
+						objetos.being3.style.display="block";
+						objetos.anfora.style.display="block";
+						objetos.mujer.style.display="none";
+						objetos.letters3.innerHTML="nowhere is still available the signal or the sound, "+textos.text7 ;
+						objetos.fondo.style.backgroundColor=("magenta");
 
 						//callback functions
 						fallingFlowers()
-						anima3();
-						removebuttton(anfora,hide2);
-						clickingHead (anfora,hide3);
-						clickingHead (letters3,hide3);
+						anima2();
+						removebuttton(objetos.anfora,hide2);
+						clickingHead (objetos.anfora,hide3);
+						clickingHead (objetos.letters3,hide3);
 						
 						console.log("hide2");
 		}
@@ -225,33 +234,24 @@ window.onload= function(){
 
 
 		function hide3(){
-						//var tl = gsap.timeline();
-
-						var pajaro1 = document.getElementById("being1");
-						var pajaro2 = document.getElementById("being3");
-						var anfora = document.getElementById("base4");
-						var mujer = document.getElementById("head2");
-						var fondos = document.body;
-						var poema = document.getElementById("package1");
-						var letrero = document.getElementById("texto_box");
-						var video = document.getElementById("base");
-						
+		
+						objetos.letters2.style.display=("block");
+						objetos.letters1.innerHTML=textos.text10;
+						objetos.letters2.innerHTML=textos.text2;
+						objetos.letters3.innerHTML=textos.text5;
 						txts.innerHTML=textos.text7;
-						letrero.innerHTML=textos.text8;
-						setTimeout(function(){ letrero.innerHTML=textos.text2; }, 2000);
-						setTimeout(function(){ letrero.innerHTML=textos.text7; }, 2000);
-					
-						anfora.style.display="none";
-						mujer.style.display="block";
-						video.style.display="block";
-						poema.style.display="block";
-						fondos.style.backgroundColor=("purple");
-
-						anima2();
-						fallingFlowers();
-						clickingHead (mujer,hide4);
 						
-						tl.from("#package1", {opacity: "0",duration: 1, delay: 0.5});
+						objetos.anfora.style.display="none";
+						objetos.mujer.style.display="block";
+						
+						objetos.poema.style.display="block";
+						objetos.poema.style.zIndex="-10";
+
+						objetos.fondo.style.backgroundColor=("blue");
+
+						anima3();
+						fallingFlowers();
+						clickingHead (mujer,hide4);	
 
 						console.log("hide3");
 		}
@@ -260,7 +260,7 @@ window.onload= function(){
 		function hide4(){
 						var pajaro1 = document.getElementById("being1");
 						var pajaro2 = document.getElementById("being3");
-						var video = document.getElementById("base");
+						//var video = document.getElementById("base");
 						var letrero = document.getElementById("texto_box");
 						var mujer = document.getElementById("head2");
 						var letters = document.getElementById("s");
@@ -269,10 +269,10 @@ window.onload= function(){
 						setTimeout(function(){ letrero.innerHTML=textos.text11; }, 2000);
 						pajaro1.style.display="none";
 						pajaro2.style.display="none";
-						video.style.display="none";
+						//video.style.display="none";
 						letters.innerHTML= textos.text4;
 						
-						anima2();
+						anima4();
 						fallingFlowers()
 						removebuttton(mujer,hide4);
 						clickingHead (mujer,hide5);
@@ -287,7 +287,7 @@ window.onload= function(){
 						fondos.style.backgroundImage="url('https://2.bp.blogspot.com/-cN9MC34hsPs/U7_RMjq1_II/AAAAAAAABUs/3hN-amdf670/s1600/2erta.jpg')";
 						letters.innerHTML=textos.text11;
 
-						anima3();
+						anima5();
 						fallingFlowers()
 						resizeSize(anima1,anima2);
 						removebuttton(mujer,hide5);
@@ -304,7 +304,7 @@ window.onload= function(){
 			var ex1 = document.getElementById("enter");
 			//initial state after clicking enter
 			ex1.addEventListener("click", hide1 );
-			anima1();
+			anima0();
 		}
 
 
@@ -313,7 +313,7 @@ window.onload= function(){
 	function fallingFlowers(){
 
 		var a1 = document.getElementById("flower1");
-		var a1b = document.getElementById("film");
+		//var a1b = document.getElementById("film");
 		var s2 = document.createElement("img");
 		var s1 = document.createElement("div");
 		var s3 = document.getElementById("a");
@@ -336,7 +336,7 @@ window.onload= function(){
 		s1.style.width = "5%";
 		s1.style.float = "left";
 		/*------big text at the upper corner----------------*/
-		s3.innerHTML= a1b.currentTime +txts.txt5;
+		s3.innerHTML= textos.text6;
 		s3.style.fontSize = (3*4) + "em";
 		s3.style.padding =" 3em";
 		s3.style.color="white";
