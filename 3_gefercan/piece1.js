@@ -91,7 +91,7 @@ window.onload= function(){
 		//animations
 		function anima1(){
 			//declaration timeline
-			var tl = gsap.timeline();
+			var tl = gsap.timeline({repeat: 0, repeatDelay: 0});
 			//nube
 			tl.from("#base3", {x:-500, y:190,opacity: "1",duration: 0.1, delay:0})
 			tl.to("#base3", {x:2459, y:190,opacity: "1",duration: 2.5, delay:0.1})
@@ -106,6 +106,8 @@ window.onload= function(){
 			//nube repeat
 			tl.from("#base3", {x:-500, y:190,opacity: "1",duration: 0.1, delay:0})
 			tl.to("#base3", {x:2459, y:190,opacity: "1",duration: 2.5, delay:0.1})
+
+			console.log("anima1");
 		}
 
 
@@ -118,6 +120,8 @@ window.onload= function(){
 			tl.to("#base4", {opacity: "1",duration: 1, delay: 0.1})
 			tl.to("#base4", {opacity: "0.3",duration: 1, delay: 0.1})
 			tl.to("#base4", {opacity: "1",duration: 1, delay:0.1});
+
+			console.log("anima2");
 		}
 
 		function anima3(){
@@ -143,25 +147,21 @@ window.onload= function(){
 			tl.to("#base4", {opacity: "1",duration: 1, delay:0.1});
 			tl.to("#being1", {opacity: "1",duration: 1, delay:0.1})
 			tl.to("#being3", {opacity: "1",duration: 1, delay:0.1});
+			console.log("anima3");
 
 		}
 
 		function anima4(){
-			var s1 = document.createElement("div");
-			s1.class = ("flowers");
-			s1.style.zIndex = ("13");
-			s1.style.position = ("fixed");
-			s1.style.padding = ("1em");
-			s2.style.backgroundSize = ("cover");
+			var tl = gsap.timeline();
+			
+;
 			console.log("700px");
 		}
 
 		function anima5(){
-			var s1 = document.createElement("div");
-			s1.class = ("flowers");
-			s1.style.zIndex = ("13");
-			s1.style.position = ("fixed");
-			s1.style.padding = ("4em");
+			var tl = gsap.timeline();
+
+
 			console.log("3700px");
 		}
 
@@ -202,6 +202,7 @@ window.onload= function(){
 						var anfora = document.getElementById("base4");
 						var mujer = document.getElementById("head2");
 						var letters3 = document.getElementById("s");
+						var fondos = document.body;
 
 						txts.innerHTML=textos.text11;
 						objetos.h.style.display="block";
@@ -209,6 +210,7 @@ window.onload= function(){
 						anfora.style.display="block";
 						mujer.style.display="none";
 						letters3.innerHTML="nowhere is still available the signal or the sound" ;
+						fondos.style.backgroundColor=("magenta")
 
 						//callback functions
 						fallingFlowers()
@@ -217,13 +219,13 @@ window.onload= function(){
 						clickingHead (anfora,hide3);
 						clickingHead (letters3,hide3);
 						
-						console.log("hide2, anima3");
+						console.log("hide2");
 		}
 
 
 
 		function hide3(){
-						var tl = gsap.timeline();
+						//var tl = gsap.timeline();
 
 						var pajaro1 = document.getElementById("being1");
 						var pajaro2 = document.getElementById("being3");
@@ -234,6 +236,7 @@ window.onload= function(){
 						var letrero = document.getElementById("texto_box");
 						var video = document.getElementById("base");
 						
+						txts.innerHTML=textos.text7;
 						letrero.innerHTML=textos.text8;
 						setTimeout(function(){ letrero.innerHTML=textos.text2; }, 2000);
 						setTimeout(function(){ letrero.innerHTML=textos.text7; }, 2000);
@@ -242,9 +245,10 @@ window.onload= function(){
 						mujer.style.display="block";
 						video.style.display="block";
 						poema.style.display="block";
+						fondos.style.backgroundColor=("purple");
 
-						anima4();
-						fallingFlowers()
+						anima2();
+						fallingFlowers();
 						clickingHead (mujer,hide4);
 						
 						tl.from("#package1", {opacity: "0",duration: 1, delay: 0.5});
@@ -261,6 +265,7 @@ window.onload= function(){
 						var mujer = document.getElementById("head2");
 						var letters = document.getElementById("s");
 
+						txts.innerHTML=textos.text2;
 						setTimeout(function(){ letrero.innerHTML=textos.text11; }, 2000);
 						pajaro1.style.display="none";
 						pajaro2.style.display="none";
