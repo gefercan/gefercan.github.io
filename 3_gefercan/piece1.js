@@ -21,7 +21,7 @@ window.onload= function(){
 	         		being1 : document.getElementById ("being1"),
 	         		being3 : document.getElementById ("being3"),
 	         		poema : document.getElementById ("package1"),
-		 			l:document.getElementById("box1"),
+		 			next:document.getElementById("next"),
 		 			ll:document.getElementById("box2")
 			   }
 
@@ -42,7 +42,12 @@ window.onload= function(){
 					text12:"look around the flowering tree that is there, just there",
 					text13:"is this waiting the time,<br>waiting the time, monologous, monotonous",
 					text14:"waiting the time,<br>waiting the time<br> but somehow<br> living (*)",
-					text15:"waiting<br>|||||,<br>:::::<br> *X*X*X*X<br> living (*)"
+					text15:"as soon as the machine breaths and huff and puff, there it is",
+					text16:"waiting for the sound, the crunch, the elliptical response",
+					text17:"waiting<br>|||||,<br>:::::<br> *X*X*X*X<br> living (*)",
+					text18:"the absurdity of it all, completely, otherwise, completely logical",
+					text19:"waiting<br>|||||,<br>:::::<br> *X*X*X*X<br> living (*)",
+					text20:"waiting<br>|||||,<br>:::::<br> *X*X*X*X<br> living (*)"
 					}
 
 		//text box where texts are placed
@@ -133,17 +138,23 @@ window.onload= function(){
 			tl.from("#being3", {x:-259, y:890,opacity: "0.1",duration: 1, delay:0.1})
 			tl.to("#being3", {opacity: "0.3",duration: 1, delay: 0.1})
 						
-			tl.to("#base4", {x:-259, y:890,opacity: "0.3",duration: 1, delay: 2})
-			tl.to("#base4", {x:159, y:890,opacity: "1",duration: 1, delay: 0.1})
+			tl.to("#base4", {x:-259, y:190,opacity: "0.3",duration: 1, delay: 2})
+			tl.to("#base4", {x:1159, y:390,opacity: "1",duration: 1, delay: 0.1})
 			tl.to("#base4", {x:59, y:890,opacity: "0.3",duration: 1, delay: 0.1})
-			tl.to("#base4", {x:-259, y:890,opacity: "1",duration: 1, delay:0.1});
+			tl.to("#base4", {x:59, y:190,opacity: "1",duration: 1, delay:0.1});
 
 			console.log("anima2");
 		}
 
 		function anima3(){
-			var tl = gsap.timeline();
+			var tl = gsap.timeline({repeat:3, repeatDelay: 0.1});
 
+			/* //seresalados1
+			tl.to("#being1", {x:-259,y:-1190,opacity: "0.1",duration: 0.5, delay: 0})
+			tl.to("#being1", {x:159,y:290,opacity: "0.3",duration: 0.5, delay: 0.1})
+			tl.to("#being1", {x:859,y:290,opacity: "0.3",duration: 0.5, delay: 0.1})
+			tl.to("#being1", {x:-1159,y:290,opacity: "0.3",duration: 0.5, delay: 0.1}) */
+			
 			//opacidades
 			tl.to("#base4", {opacity: "0.3",duration: 1, delay: 2})
 			tl.to("#base4", {opacity: "1",duration: 1, delay: 0.1})
@@ -160,8 +171,9 @@ window.onload= function(){
 		function anima4(){
 			var tl = gsap.timeline();
 			//flower
-			tl.to(".flower", {x:180,y:-250,opacity: "0.3",duration: 0.3, delay: 0})
-			tl.to(".flower", {x:-180,y:-650,opacity: "0.3",duration: 1, delay: 0});
+			tl.from(".flower", {x:180,y:-250,opacity: "0.3",duration: 0.3, delay: 0})
+			tl.to(".flower", {x:-180,y:-650,opacity: "0.5",duration: 1, delay: 0});
+			tl.to(".flower", {x:2299,y:450,opacity: "0.3",duration: 0.5, delay: 0});
 			console.log("anima4");
 		}
 
@@ -182,7 +194,7 @@ window.onload= function(){
 						txts.innerHTML=textos.text10;
 					
 						objetos.letters3.innerHTML="in the end we could be wrong, however well intentioned, but the words and the objects could be present, the birds stay there"+" "+textos.text8;
-						
+
 						objetos.letters1.style.display = ("none");
 						objetos.letters2.style.display = ("none");
 						objetos.letters3.style.display = ("block");
@@ -213,16 +225,20 @@ window.onload= function(){
 		function hide2(){
 						//local variables
 						
+						txts.innerHTML= "the awakening of the adolescence, sounds like a morning " +textos.text11;
+						setTimeout(function(){ txts.innerHTML="verbiloquam: "+textos.text4; },2000);
+						
 						objetos.letters1.style.display=("block");
 						objetos.letters2.style.display = ("none");
 						objetos.letters3.style.display = ("block");
 						objetos.letters1.innerHTML="but there is some emotion" + textos.text6;
 						setTimeout(function(){ objetos.letters1.innerHTML=textos.text12; }, 2000);
-
+						objetos.next.innerHTML="peripheric";
+						setTimeout(function(){ objetos.next.innerHTML=textos.text3; }, 1000);
+						setTimeout(function(){ objetos.next.innerHTML="next"; },2000);
 						objetos.letters3.innerHTML="nowhere is still available the signal or the sound, " + textos.text7;
-
-						txts.innerHTML= "the awakening of the adolescence, sounds like a morning " +textos.text11;
-
+						setTimeout(function(){ objetos.letters3.innerHTML=textos.text16 + "" + textos.text15; },2500);
+						
 						objetos.being1.style.display="block";
 						objetos.being3.style.display="block";
 						objetos.anfora.style.display="block";
@@ -264,8 +280,10 @@ window.onload= function(){
 						setTimeout(function(){ objetos.letters3.innerHTML=textos.text9; }, 2000);
 
 						txts.innerHTML=textos.text7;
-						setTimeout(function(){ txts.innerHTML=textos.text11; }, 2000);
+						setTimeout(function(){ txts.innerHTML=textos.text5; }, 2000);
 
+						setTimeout(function(){ objetos.next.innerHTML=textos.text13; }, 1000);
+						setTimeout(function(){ objetos.next.innerHTML="next"; },2000);
 
 						objetos.fondo.style.backgroundColor=("blue");
 
@@ -281,7 +299,7 @@ window.onload= function(){
 						var pajaro1 = document.getElementById("being1");
 						var pajaro2 = document.getElementById("being3");
 
-						txts.innerHTML=textos.text2;
+						txts.innerHTML=textos.text14;
 					
 						objetos.mujer.style.display="block";
 						pajaro1.style.display="none";
@@ -362,16 +380,11 @@ window.onload= function(){
 		s3.style.top=s3.style.top-100;
 		
 }
-
+//check this https://gsap.com/community/forums/topic/25254-increasing-timeline-value-on-mouse-move/
 
 			cover();
 
 		}
-
-
-
-
-
 
  myFunction();
 }
