@@ -145,14 +145,14 @@ border:none;
 #base3 {
 	position:fixed;
 	box-sizing:border-box;
-	width:50%;
+	width:10%;
 	background-image:url("https://1.bp.blogspot.com/-1Cs79eHMwMQ/X5D9em9ABDI/AAAAAAAAYF4/rXQ7rRNrlhQvRsKVzx7WfpfvUeu3jeD4QCLcBGAsYHQ/s320/cloud1.png");
 	background-size:90%;
 	background-repeat: no-repeat;
-	padding:20% 10% 30% 10%;
+	padding:20% 10% 20% 10%;
 	z-index:-2;
 	border:none;
-	margin-top:-90%;
+	margin-bottom:10%;
 	margin-left:10%;
 	}
 
@@ -161,13 +161,15 @@ border:none;
 	position:fixed;
 	display: block;
 	box-sizing:border-box;
-	width:20%;
-	background-image:url("https://1.bp.blogspot.com/-hIiBF3_neOQ/X5D9enTHGnI/AAAAAAAAYF0/B7xae6CsX68jFKQq64EhFUpyXDtNn70bQCLcBGAsYHQ/s320/cratera.png");
+	width:10%;
+	background-image:url("https://1.bp.blogspot.com/-IyK8LLoCZWo/XLIBQIXivXI/AAAAAAAAWts/TEvebt2zR3gliwp1SpTKAgQXAsyui0HkgCLcBGAs/s1600/floating_flower.png");
+	/* background-image:url("https://1.bp.blogspot.com/-hIiBF3_neOQ/X5D9enTHGnI/AAAAAAAAYF0/B7xae6CsX68jFKQq64EhFUpyXDtNn70bQCLcBGAsYHQ/s320/cratera.png"); */
 	background-size:80%;
 	background-repeat: no-repeat;
 	padding:5%;
 	margin-left: 30%;
-	margin-top:32%;
+	filter: invert(75%);
+	margin-top:12%;
 	z-index:143;
 	border:none;
 	}
@@ -209,9 +211,9 @@ background-color:#EF4043;
 background-size: cover;
 
 }
-video {
+/* video {
 	width:100%;
-}
+} */
 
 #head1 {
 	display:none;
@@ -223,7 +225,7 @@ video {
 	border-color: #433737;
 	border-width: 3em;
 	margin-left: 50%;
-	background-image:url('https://1.bp.blogspot.com/-PCvd5LrC684/XLIBQ7r0XhI/AAAAAAAAWt0/02HGNRhBltUvr_VkWlWn0kb5RG2_cGiAwCLcBGAs/s1600/headtop1.png');
+	background-image:url("https://1.bp.blogspot.com/-PCvd5LrC684/XLIBQ7r0XhI/AAAAAAAAWt0/02HGNRhBltUvr_VkWlWn0kb5RG2_cGiAwCLcBGAs/s1600/headtop1.png");
 	background-size:cover;
 	backgorund-repeat:no-repeat;
 
@@ -271,7 +273,7 @@ video {
 #a,#s,#d{
 	position:fixed;
 	float:left;
-	bottom:10%;
+	bottom:15%;
 	left:15%;
 	padding:1em;
 	color:black;
@@ -285,6 +287,7 @@ video {
 	border:0px;
 	width:80%;
 	margin:10% 0% 5% 0%;
+	z-index: -2;
 	}
 
 
