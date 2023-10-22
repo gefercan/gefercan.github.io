@@ -51,22 +51,26 @@ window.onload= function(){
 
 
 
-/*------------------template-------------------------------*/
-	function clickingHead (x,y){
+/*------------------templates-------------------------------*/
+		function clickingHead (x,y){
 		x.addEventListener ("click",y);
-	}
-	//this function add event listeners//
+		}
+		//this function add event listeners//
 
+		function mouseHead (x,y){
+			x.addEventListener("mouseover",y)
+		}
+			//this function add event listeners//
 
-	function removebuttton(x,y){
+		function removebuttton(x,y){
 		x.removeEventListener ("click",y);
-	}
+		}
 	//this function remove event listeners//
 
 
 	//resizing
 
-	function handleOrientationChange(evt,x1,y1) {
+	 function handleOrientationChange(evt,x1,y1) {
 		if (evt.matches) {
 			x1;
 		}
@@ -80,35 +84,34 @@ window.onload= function(){
 		evt.addListener(handleOrientationChange);
 		handleOrientationChange(evt,x1,y1);
 	}
-	//movingVideo
-	function movingVideo_0(x1,y1,x2,y2,x3,y3,x4,y4,z1){
-
-		x1=y1;
-		setTimeout(function(){ x2; }, y2);
-		setTimeout(function(){ x3; }, y3);
-		setTimeout(function(){ x4; }, y4);
-		z1;
-		console.log("movingvideo1");
-		}
+	
 
 /*-------------------------------------------------*/
 
 		//animations
 		function anima1(){
+			//declaration timeline
 			var tl = gsap.timeline();
+			//nube
+			tl.from("#base3", {x:-500, y:190,opacity: "1",duration: 0.1, delay:0})
+			tl.to("#base3", {x:2459, y:190,opacity: "1",duration: 2.5, delay:0.1})
+			
+			//cratera/flor
 			gsap.from("#base4", {x:window.InnerWidth/2,y:-window.InnerHeight/2,opacity: "1", duration: 1, delay: 0.1});
-			gsap.from("#base3", {x:window.InnerWidth/2,y:1990,scale:1,opacity: "0.9", duration: 2, delay: 1});
 			tl.to("#base4", {opacity: "0.3",duration: 1, delay: 2})
 			tl.to("#base4", {opacity: "1",duration: 1, delay: 0.1})
 			tl.to("#base4", {opacity: "0.3",duration: 1, delay: 0.1})
 			tl.to("#base4", {opacity: "1",duration: 1, delay:0.1});
-			tl.from("#base3", {x:759,y:790,opacity: "0.1",duration: 1, delay: 0.1})
-			tl.to("#base3", {x:659,y:490,opacity: "0.1",duration: 1, delay: 0.1})
+
+			//nube repeat
+			tl.from("#base3", {x:-500, y:190,opacity: "1",duration: 0.1, delay:0})
+			tl.to("#base3", {x:2459, y:190,opacity: "1",duration: 2.5, delay:0.1})
 		}
 
 
 		function anima2(){
 			var tl = gsap.timeline();
+
 			gsap.from("#base4", {y:-2250,opacity: "1", duration: 1, delay: 0.1});
 			gsap.from("#base3", {y:1390,scale:0,opacity: "0.5", duration: 3, delay: 1.2});
 			tl.to("#base4", {opacity: "0.3",duration: 1, delay: 2})
@@ -119,16 +122,25 @@ window.onload= function(){
 
 		function anima3(){
 			var tl = gsap.timeline();
+			//nube
+			tl.from("#base3", {x:-500, y:190,opacity: "1",duration: 0.1, delay:0})
+			tl.to("#base3", {x:2459, y:190,opacity: "1",duration: 2, delay:0.1})
+
+			//seresalados1
 			tl.from("#being1", {x:259,y:890,opacity: "0.1",duration: 1, delay: 0.1})
+			tl.to("#being1", {opacity: "0.3",duration: 1, delay: 0.1})
+
+			//seresalados2
 			tl.from("#being3", {x:-259, y:890,opacity: "0.1",duration: 1, delay:0.1})
+			tl.to("#being3", {opacity: "0.3",duration: 1, delay: 0.1})
+
+			//opacidades
 			tl.to("#base4", {opacity: "0.3",duration: 1, delay: 2})
 			tl.to("#base4", {opacity: "1",duration: 1, delay: 0.1})
 			tl.to("#base4", {opacity: "0.3",duration: 1, delay: 0.1})
 			tl.to("#base4", {opacity: "1",duration: 1, delay:0.1})
 			tl.to("#base4", {opacity: "0.3",duration: 1, delay: 0.1})
 			tl.to("#base4", {opacity: "1",duration: 1, delay:0.1});
-			tl.to("#being1", {opacity: "0.3",duration: 1, delay: 0.1})
-			tl.to("#being3", {opacity: "0.3",duration: 1, delay: 0.1})
 			tl.to("#being1", {opacity: "1",duration: 1, delay:0.1})
 			tl.to("#being3", {opacity: "1",duration: 1, delay:0.1});
 
@@ -175,7 +187,7 @@ window.onload= function(){
 
 						//callback functions
 						fallingFlowers();
-						
+						anima1();
 						removebuttton(anfora,hide1);
 						clickingHead (anfora,hide2);
 						clickingHead (nube,hide3);
@@ -196,13 +208,14 @@ window.onload= function(){
 						objetos.i.style.display="block";
 						anfora.style.display="block";
 						mujer.style.display="none";
-						letters3.innerHTML="nowhere is still available the signal or the sound";
+						letters3.innerHTML="nowhere is still available the signal or the sound" ;
 
 						//callback functions
 						fallingFlowers()
 						anima3();
 						removebuttton(anfora,hide2);
 						clickingHead (anfora,hide3);
+						clickingHead (letters3,hide3);
 						
 						console.log("hide2, anima3");
 		}
@@ -221,8 +234,6 @@ window.onload= function(){
 						var letrero = document.getElementById("texto_box");
 						var video = document.getElementById("base");
 						
-
-						
 						letrero.innerHTML=textos.text8;
 						setTimeout(function(){ letrero.innerHTML=textos.text2; }, 2000);
 						setTimeout(function(){ letrero.innerHTML=textos.text7; }, 2000);
@@ -232,6 +243,7 @@ window.onload= function(){
 						video.style.display="block";
 						poema.style.display="block";
 
+						anima4();
 						fallingFlowers()
 						clickingHead (mujer,hide4);
 						
@@ -287,6 +299,7 @@ window.onload= function(){
 			var ex1 = document.getElementById("enter");
 			//initial state after clicking enter
 			ex1.addEventListener("click", hide1 );
+			anima1();
 		}
 
 
