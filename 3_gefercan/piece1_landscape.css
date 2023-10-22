@@ -114,6 +114,7 @@ border:none;
 
 /*_________bases____________________*/
 
+/* -----nube */
 #base {
 	position:fixed;
 	box-sizing:border-box;
@@ -182,7 +183,10 @@ border:none;
 #next{
 	font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
 	font-weight: bolder;
-	font-size: 3em;
+	font-size: 3em;	border-style: solid;
+	border-color: red;
+	border-width: 5%;
+	width:50%;
 	
 }
 
@@ -203,22 +207,6 @@ border:none;
 }
 
 
-
-
-#film {
-position:fixed;
-min-width: 100%;
-min-height: 100%;
-width:auto;
-height:auto;
-background-color:#EF4043;
-background-size: cover;
-
-}
-/* video {
-	width:100%;
-} */
-
 #head1 {
 	display:none;
 	position:fixed;
@@ -232,8 +220,8 @@ background-size: cover;
 	background-image:url("https://1.bp.blogspot.com/-PCvd5LrC684/XLIBQ7r0XhI/AAAAAAAAWt0/02HGNRhBltUvr_VkWlWn0kb5RG2_cGiAwCLcBGAs/s1600/headtop1.png");
 	background-size:cover;
 	backgorund-repeat:no-repeat;
-
 }
+
 #head2 {
 	display:none;
 	position:fixed;
@@ -249,9 +237,7 @@ background-size: cover;
 	animation-iteration-count:1;
 	animation-duration:9s;
 	animation-delay:3s;
-	animation-fill-mode:forwards;
-
-	
+	animation-fill-mode:forwards;	
 }
 
 #flower1{
@@ -285,8 +271,8 @@ background-size: cover;
 	font-size:4em;
 }
 
-
 #package1{
+	position:fixed;
 	display:none;
 	border:0px;
 	width:80%;
@@ -294,10 +280,10 @@ background-size: cover;
 	z-index: -2;
 	}
 
-
 .flower{
 	-webkit-animation: rotation 126s infinite linear;
 }
+
 .column1{
 	box-sizing:border-box;
 	width:20%;
