@@ -70,11 +70,10 @@ border:none;
 
 #being1{
 	z-index:43;
-	display:none;
+	display:block;
 	position:fixed;
 	box-sizing:border-box;
-	margin-top:0.1em;
-	margin-left:0.1em;
+	margin-left:-500px;
 	padding:1%;
 	font-family:"Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
 	font-weight: bolder;
@@ -87,19 +86,15 @@ border:none;
 
 #being3 {
 	z-index:43;
-	display:none;
+	display:block;
 	position:fixed;
 	box-sizing:border-box;
-	margin-right:0%;
-	top:0.1em;
-	right:0.1em;
+	margin-left:-500px;
 	padding:1%;
 	background-image:url('https://1.bp.blogspot.com/-vfGXgVeuBuc/XLIBQMJm_mI/AAAAAAAAWto/yC50twUbHvEpZh9eu-2Pfe9jKpS2yTlhgCLcBGAs/s1600/floating_being.png');
 	background-size:contain;
 	background-repeat:no-repeat;
 
-	
-	
 	-moz-transform: scaleX(-1);
         -o-transform: scaleX(-1);
         -webkit-transform: scaleX(-1);
@@ -128,6 +123,7 @@ border:none;
 	border:none;
 	margin-bottom:10%;
 	margin-left:10%;
+	opacity:0.9;
 }
 
 #base2{
@@ -156,6 +152,7 @@ border:none;
 	border:none;
 	margin-bottom:10%;
 	margin-left:10%;
+	opacity:0.6;
 	}
 
 /* -----anfora */
@@ -179,14 +176,16 @@ border:none;
 /*____________________________________*/
 
 
-
+/* button menu */
 #next{
 	font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
 	font-weight: bolder;
-	font-size: 3em;	border-style: solid;
-	border-color: red;
-	border-width: 5%;
-	width:50%;
+	color:white;
+	font-size: 2em;	
+	padding:1%;
+	width:20%;
+	display:block;
+	z-index: 90;
 	
 }
 
@@ -270,14 +269,18 @@ border:none;
 	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
 	font-size:4em;
 }
-
+/* menu */
 #package1{
 	position:fixed;
-	display:none;
+	display:block;
 	border:0px;
 	width:80%;
-	margin:10% 0% 5% 0%;
-	z-index: -2;
+	margin:5% 0% 5% 9000%;
+	z-index: 242;
+	background-color:darkgray;
+	opacity:0.8;
+	padding:1%;
+	border-radius: 25px;
 	}
 
 .flower{
