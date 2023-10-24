@@ -4,6 +4,11 @@
 <meta charset="utf-8">
 <title>the fifth piece, and it says...</title>
 <meta>
+<script type="application/javascript" src="./scripts/gsap.min.js"></script>
+<script type="application/javascript" src="scripts/ScrollMagic.js"></script>
+<script type="application/javascript" src="scripts/TweenMax.min.js"></script>
+<script type="application/javascript" src="scripts/animation.gsap.js"></script>
+
 <style>
 #package1, #package2{
 	box-sizing:border-box;
@@ -43,7 +48,7 @@
 	border-radius:50%;
 	opacity:0.5;
 }
-#package1{
+#package0{
 	z-index:1;
 	padding:5%;
 }
@@ -60,53 +65,59 @@
 #row1 ,#row3 {
 	background-color:#333333;
 	}
-</style>
-<script>
-// JavaScript Document
-onload;
-
-function myFunction() {
-	"use strict";
-	var a = document.getElementById("box21");
-	var b = document.getElementById("box22");
-	var c = document.getElementById("box23");
-	var d = document.getElementById("box24");
-	var e = document.getElementById("box25");
-	var f = document.getElementById("box26");
-	var g = document.getElementById("box27");
-	var h = document.getElementById("box28");
-	var i = document.getElementById("box29");
-	var j = document.getElementById("box34");
-	var k = document.getElementById("box35");
-	var l = document.getElementById("box36");
-	var m = document.getElementById("box37");
-	var n = document.getElementById("box38");
-	
-	var o = [a,b,c,d,e,f,g,h,i,j,k,l,m,n];
-	var oo = ["#FFFFFF","#88FF00", "#77FF11", "#3C3C3D", "#FF0103", "#550033", "#00FFF3","#FF00FF"];
-	
-	function Add (x){
-		x.AddEventListener("click",cambio1);
+/* menu */
+#next{
+	font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	font-weight: bolder;
+	color:white;
+	font-size: 2em;	
+	padding:1%;
+	width:5%;
+	display:block;border-radius: 25px;
+	z-index: 90;
+	position:absolute;
+	margin-top:1%;background-color:darkgray;
 	}
-		Add(o);
 
-	
-	function cambio1(){
-		n.style.backgroundColor=oo[3];
+/* menu */
+#package1{
+	position:fixed;
+	display:block;
+	border:0px;
+	width:80%;
+	margin:5% 0% 5% 9000%;
+	z-index: 242;
+	background-color:darkgray;
+	opacity:0.9;
+	padding:1%;
+	border-radius: 25px;
 	}
-	
-	
+	.columna{
+	box-sizing:border-box;
+	width:20%;
+	border:8%;background-color:darkgray;
+	float:left;
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	text-align:center;
 }
+	.rowa{
+	box-sizing:border-box;
+	width:100%;background-color:darkgray;
+	padding:5% 0% 5% 0%;
+	border:none;
+	}
+</style>
 
-
-myFunction();
-</script>
 
 </head>
 
 <body>
 <div id="container">
-	<div id="package1">
+
+	<a href="#"><div id="next">see<br>pages</div></a>
+
+
+	<div id="package0">
 		<div id="row1" class="row">
 			<div id="box1" class="column1">the touch I feel is inmaterial</div>
 			<div id="box2" class="column1">all but inmaterial</div>
@@ -173,6 +184,91 @@ myFunction();
 		</div>
 	</div>
 </div>
+
+
+
+<!-- MENU -->
+
+<div id="package1">
+	<div id="rowa1" class="rowa">
+		<a title="the truth"href="the fifth piece, and it says.html"><div id="boxa1" class="column1">the touch I feel is inmaterial</div></a>
+		<a title="is out there" href="piece3_1.html"> <div id="box2" class="columna">all but inmaterial</div></a>
+		<a href="piece3.html"><div id="boxa3" class="columna">thinking of roses and dhalias</div></a>
+		<a href="#"><div id="boxa4" class="columna">just a Symbol of my data</div></a>
+		<a href="#"><div id="boxa5" class="columna">just a Symbol</div></a>
+	</div>
+	
+	<div id="rowa2" class="rowa">
+		<div id="boxa6" class="columna"><a href="#">but as inmaterial as it is</a></div>
+		<div id="boxa7" class="columna"><a href="#">my data is not farsical</a></div>
+		<div id="boxa8" class="columna"><a href="#">only a little bit of schemata</a></div>
+		<div id="boxa9" class="columna"><a href="#">if you think about that</a></div>
+		<div id="boxa10" class="columna"><a href="#">lara li lara la</a></div>
+	</div>
+	
+	<div id="rowa3" class="rowa">
+		<div id="boxa11" class="columna"><a href="#">as this morning I see the birds</a></div>
+		<div id="boxa12" class="columna"><a href="#">surrounded by the arboreal</a></div>
+		<div id="boxa13" class="columna"><a href="#">all, all but theatrical</a></div>
+		<div id="boxa14" class="columna"><a href="#">if you try no to be mythical</a></div>
+		<div id="boxa15" class="columna"><a href="#">just a Symbol of my data</a></div>
+	</div>
+	
+	<div id="rowa4" class="rowa">
+		<div id="boxa16" class="columna"><a href ="#">practical</a></div>
+		<div id="boxa17" class="columna"><a href ="#">something is real</a></div>
+		<div id="boxa18" class="columna"><a href ="#">ethereal</a></div>
+		<div id="boxa19" class="columna"><a href ="#">terse material</a></div>
+		<div id="boxa20" class="columna"><a href ="#">just a Symbol of my data</a></div>
+	</div>
+</div>
+
+<!-- MENU SCRIPT -->
+<script>
+	onload;
+	
+	function myFunction() {
+	
+		var objetos ={
+						 poema : document.getElementById ("package1"),
+						 next:document.getElementById("next")	
+		}
+		function clickingHead (x,y){
+			x.addEventListener ("click",y);
+			}
+			//this function add event listeners//
+		function removebuttton(x,y){
+			x.removeEventListener ("click",y);
+			}
+		//MENU
+		function menu(){
+				var tl = gsap.timeline();
+				tl.from("#package1", {x:-9000,opacity: "0",duration: 1, delay:0});
+				tl.to("#package1", {x:100, opacity: "0.9",duration:0.1, delay:0});
+				objetos.poema.style.marginLeft = ("0px");
+				clickingHead(objetos.next,hidemenu);
+				removebuttton(objetos.next,menu);
+				console.log("menu");
+			}
+	
+		function hidemenu(){
+				var tl = gsap.timeline();
+				tl.from("#package1", {x:100,opacity: "0.9",duration: 0.1, delay:0});
+				tl.to("#package1", {x:-9000,opacity: "0",duration: 1, delay:0});
+				//objetos.poema.style.marginLeft = ("-9000px");
+		
+				clickingHead(objetos.next,menu);
+				removebuttton(objetos.next,hidemenu);
+			}
+	
+		clickingHead (objetos.next,menu);
+		
+		
+	}
+	
+	
+	myFunction();
+	</script>
 
 
 </body></html>
