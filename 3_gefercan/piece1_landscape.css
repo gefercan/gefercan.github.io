@@ -123,7 +123,8 @@ border:none;
 	border:none;
 	margin-bottom:10%;
 	margin-left:10%;
-	opacity:0.9;
+	opacity:0.6;
+	filter: drop-shadow(5px 5px 5px #222);
 }
 
 #base2{
@@ -134,8 +135,9 @@ border:none;
 	width:100%;
 	padding:25% 0% 0% 0%;
 	z-index:2;
-	background-color:gray;
+	background-image:url("https://1.bp.blogspot.com/-hIiBF3_neOQ/X5D9enTHGnI/AAAAAAAAYF0/B7xae6CsX68jFKQq64EhFUpyXDtNn70bQCLcBGAsYHQ/s320/cratera.png"); 
 	opacity:0.8;
+	filter: drop-shadow(5px 5px 5px #222);
 }
 
 /* -----nube */
@@ -153,6 +155,7 @@ border:none;
 	margin-bottom:10%;
 	margin-left:10%;
 	opacity:0.6;
+	filter: drop-shadow(5px 5px 5px #222);
 	}
 
 /* -----anfora */
@@ -162,14 +165,14 @@ border:none;
 	box-sizing:border-box;
 	width:10%;
 	background-image:url("https://1.bp.blogspot.com/-IyK8LLoCZWo/XLIBQIXivXI/AAAAAAAAWts/TEvebt2zR3gliwp1SpTKAgQXAsyui0HkgCLcBGAs/s1600/floating_flower.png");
-	/* background-image:url("https://1.bp.blogspot.com/-hIiBF3_neOQ/X5D9enTHGnI/AAAAAAAAYF0/B7xae6CsX68jFKQq64EhFUpyXDtNn70bQCLcBGAsYHQ/s320/cratera.png"); */
+	
 	background-size:80%;
 	background-repeat: no-repeat;
 	padding:5%;
 	margin-left: 30%;
-	filter: invert(75%);
 	margin-top:12%;
 	z-index:143;
+	filter: drop-shadow(20px 15px 20px #222)invert(75%);
 	border:none;
 	}
 
@@ -183,9 +186,14 @@ border:none;
 	color:white;
 	font-size: 2em;	
 	padding:1%;
-	width:20%;
+	width:5%;
+	margin-left:1%;
+	margin-top:1%;
 	display:block;
 	z-index: 90;
+	background-color:black;
+	border-radius:30px 30px 0px 30px;
+	filter: drop-shadow(5px 5px 5px #1b0f0f);
 	
 }
 
