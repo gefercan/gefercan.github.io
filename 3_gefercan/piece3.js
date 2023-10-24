@@ -92,8 +92,35 @@ window.onload= function(){
 	
 
 /*----------------------------------------------------------------------------------------------------*/
+		//ROLLOVERS
+		function rollovers1(){
+						//rollovers
+						let h1 = document.getElementById("a"),
+						hover = gsap.to(h1, {scale: 0.9, opacity:0.6, color: "darkgray", duration: 1.5, paused: true, ease: "power1.inOut"});
+						h1.addEventListener("mouseenter", () => hover.play());
+						h1.addEventListener("mouseleave", () => hover.reverse());
+			
+						let h2 = document.getElementById("d"),
+						hover2 = gsap.to(h2, {scale: 0.9, opacity:0.4, color: "black", duration: 1.5, paused: true, ease: "power1.inOut"});
+						h2.addEventListener("mouseenter", () => hover2.play());
+						h2.addEventListener("mouseleave", () => hover2.reverse());
+			
+						let h3 = document.getElementById("next"),
+						hover3 = gsap.to(h3, {scale:1.1, opacity:0.6, duration: 1.5, paused: true, ease: "power1.inOut"});
+						h3.addEventListener("mouseenter", () => hover3.play());
+						h3.addEventListener("mouseleave", () => hover3.reverse());
+			
+						let h4 = document.getElementById("base4"),
+						hover4 = gsap.to(h4, {scale:1.7, opacity:0.6, duration: 1.5, paused: true, ease: "power1.inOut"});
+						h4.addEventListener("mouseenter", () => hover4.play());
+						h4.addEventListener("mouseleave", () => hover4.reverse());
 
+						console.log("rollvoers activated");
+			
+		}
+		
 		//ANIMATIONS
+
 		function anima0(){
 			//declaration timeline repetition
 			var tl = gsap.timeline({repeat: 4, repeatDelay: 2});
@@ -113,7 +140,7 @@ window.onload= function(){
 			//seresalados2
 			tl.from("#being3", {x:-1259, y:990,opacity: "0.3",duration: 1, delay:0.1})
 			tl.to("#being3", {x:3259, y:890, opacity: "0.3",duration: 9, delay: 0.1})
-		
+			
 			console.log("anima0");
 		}
 
@@ -231,6 +258,7 @@ window.onload= function(){
 						//callback functions
 						fallingFlowers();
 						anima1();
+						rollovers1();
 
 						removebuttton(objetos.anfora,hide1);
 						clickingHead (objetos.anfora,hide2);
@@ -408,10 +436,7 @@ window.onload= function(){
 }
 //check this https://gsap.com/community/forums/topic/25254-increasing-timeline-value-on-mouse-move/
 
-
-
 			cover();
-
 		}
 
  myFunction();
