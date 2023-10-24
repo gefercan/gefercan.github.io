@@ -114,7 +114,8 @@ window.onload= function(){
 						hover4 = gsap.to(h4, {scale:1.7, opacity:0.6, duration: 1.5, paused: true, ease: "power1.inOut"});
 						h4.addEventListener("mouseenter", () => hover4.play());
 						h4.addEventListener("mouseleave", () => hover4.reverse());
-
+			
+						//https://gsap.com/community/forums/topic/24704-hover-effect-at-css-with-gsap/
 						console.log("rollvoers activated");
 			
 		}
