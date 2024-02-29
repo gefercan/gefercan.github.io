@@ -1,32 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-	<url>
-		<loc> https://gefercan.github.io/ </loc>
-		<lastmod>2019-08-21T16:12:20+03:00</lastmod>
-	</url>
 
-	
-	<url>
-		<loc> https://gefercan.github.io/exercise_texts/onpainting.html  </loc>
-		<lastmod>2019-08-21T16:12:20+03:00</lastmod>
-	</url>
+<url>
+  <loc>https://gefercan.github.io/</loc>
+  <lastmod>2024-02-29T17:02:25+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://gefercan.github.io/index.html</loc>
+  <lastmod>2024-02-29T17:02:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gefercan.github.io/exercise_texts/onpainting.html</loc>
+  <lastmod>2024-02-29T17:02:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gefercan.github.io/exercise_texts/800_words_max.html</loc>
+  <lastmod>2024-02-29T17:02:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gefercan.github.io/exercise_texts/data_symbol.html</loc>
+  <lastmod>2024-02-29T17:02:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gefercan.github.io/exercise_texts/light_imprints.html</loc>
+  <lastmod>2024-02-29T17:02:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gefercan.github.io/exercise_texts/Que_sera.html</loc>
+  <lastmod>2024-02-29T17:02:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gefercan.github.io/exercise_texts/electric_storytelling.html</loc>
+  <lastmod>2024-02-29T17:02:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gefercan.github.io/exercise_texts/kinetic_image.html</loc>
+  <lastmod>2024-02-29T17:02:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gefercan.github.io/exercise_texts/brushes_cogs.html</loc>
+  <lastmod>2024-02-29T17:02:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gefercan.github.io/exercise_texts/head_gates.html</loc>
+  <lastmod>2024-02-29T17:02:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gefercan.github.io/exercise_texts/copycopycopy.html</loc>
+  <lastmod>2024-02-29T17:02:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gefercan.github.io/exercise_texts/commonplaces.html</loc>
+  <lastmod>2024-02-29T17:02:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gefercan.github.io/exercise_texts/worst_architect.html</loc>
+  <lastmod>2024-02-29T17:02:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
 
-	
-	<url>
-		<loc> https://gefercan.github.io/exercise_texts/800_words_max.html  </loc>
-		<lastmod>2019-08-21T16:12:20+03:00</lastmod>
-	</url>
 
-	<url>
-		<loc> https://gefercan.github.io/exercise_texts/data_symbol.html  </loc>
-		<lastmod>2019-08-21T16:12:20+03:00</lastmod>
-	</url>
-
-	<url>
-		<loc> https://gefercan.github.io/exercise_texts/electric_storytelling.html </loc>
-		<lastmod>2019-08-21T16:12:20+03:00</lastmod>
-	</url>
-
-	
 </urlset>
