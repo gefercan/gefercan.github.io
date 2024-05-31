@@ -35,6 +35,7 @@ body
     width: 177.78vh;
   }
 }
+/*__________
 iframe {
   position: fixed;
   top: -6%;
@@ -42,16 +43,16 @@ iframe {
   width: 125vw;
   height: 125vh;
   z-index: -3;opacity:0.3;
-  /*transform: translate(-50%, -50%);
-	*/
 }
+___________________*/
 #cover{
 
-	/*width: 100%;
+	width: 100%;
 	min-height: 100%;
 	padding:0% 0% 0% 0%;
 	margin:0% 0% 0% 0%;
-	border:none;*/
+	border:none;
+	backgorund-image:url("https://www.behance.net/gallery/130796677/EIPF-Poster-connecting-minds/modules/953105365");
 	
 
 }
