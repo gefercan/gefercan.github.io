@@ -1,1 +1,449 @@
+<!DOCTYPE html>
+<html>
 
+
+<head>
+
+<meta charset="utf-8">
+<title>__\(*-*)/__</title>
+
+<!--here setting responsive design-->
+<meta name="viewport"  content="width=device-width, initial-scale=1">
+
+<!--here comes the links for responsive css-------------------------------------------->
+
+<link rel="stylesheet" media="(min-width: 1700px)" href="css/practicas_landscape.css"  type="text/css">
+<link rel="stylesheet" media="(max-width: 1699px)" href="css/practicas_max_680.css"  type="text/css">
+<link rel="stylesheet" media="(max-width: 1200px)" href="css/practicas_min_680.css"  type="text/css">
+<link rel="stylesheet" media="(max-width: 680px)" href="css/practicas_portrait.css"  type="text/css">
+
+<!--here comes scripts------------------------------------------------------------------>
+<script type="application/javascript" src="scripts/practicas.js" async></script>
+<script type="application/javascript" src="scripts/practicas2.js" async></script>
+<script type="application/javascript" src="scripts/practicas3.js" async></script>
+<script type="application/javascript" src="scripts/textos.json" async></script>
+<!---here comes animation scripts libraries------------------------------------------------------------------>
+<script type="application/javascript" src="scripts/ScrollMagic.js"></script>
+<script type="application/javascript" src="scripts/TweenMax.min.js"></script>
+<script type="application/javascript" src="scripts/animation.gsap.js"></script>
+<script type="application/javascript" src="scripts/debug.addIndicators.js"></script>
+
+<!---here comes dataviz scripts------------------------------------------------------------------>
+<!--<script type="text/javascript" src="scripts/d3.v4.js" charset="utf-8" ></script>
+<script src="scripts/velocity.js"></script>-->
+
+
+
+
+
+</head>
+
+<!--finish head-->
+
+
+
+<body>
+
+	<!--
+	<script type="text/javascript" src="../scripts/shapes.js"></script>
+	<script type="text/javascript" src="../scripts/interpolate.js"></script>
+	<script type="application/javascript" src="../scripts/attempt1.js" async></script>-->
+	
+	<!---cover--------------------------------------------------------------->
+	<div id="cover">
+		<div id="title">  Poem 3 </div>
+		<div id="intro_text"> A sequence of images <br> and text </div>
+		<div id="tech_specs">  JS, HTML, CSS, <br>  video </div>
+		<a href="#" ><div id="enter">  Continue </div></a>
+	</div>
+
+
+	<!---navigation layer -------------------------------------------------------------------------------->
+
+	<div id="lista">
+	<!-------menu 1----------->
+
+	<a href="#"><div id="menu" class="menu"> //+options// </div></a>
+
+	<!-------sidemenu---
+	alt="vocales juntas"--------alt="solo letras"- alt="letras tumbadas"-alt="letras corridas"
+	alt="miradas recorridas" alt="formas al mediodia"-alt= "letras en la cama"---->
+
+	<div id="sidemenu_container" class="class">
+			<a href="#gmarquez1"> <div id="contact" class="sidemenu_button">país vertiginoso</div> </a>
+			<a href="#gmarquez2"> <div id="about2" class="sidemenu_button">lotería parte principal </div> </a>
+			<a href="#borges"> <div id="be"  class="sidemenu_button"> lejos de Babilonia </div> </a>
+			<a href="#cortazar1"> <div id="ins" class="sidemenu_button"> queridas costumbres(...)</div> </a>
+			<a href="#cortazar2"> <div id="twi" class="sidemenu_button">SER</div> </a>
+			<a href="#gmarquez1a"> <div id="fli" class="sidemenu_button">IR Y VER</div> </a>
+			<a href="#rulfo"> <div id="tmb" class="sidemenu_button">AMAR</div> </a>
+			<a href="#borges2"> <div id="lnk" class="sidemenu_button">VIVIR</div> </a>
+	</div>
+
+	<!-------menu 2------------>
+
+
+	<a href="#"><div id="menu_bottom"  class="menu"> ////options\\\\\ </div></a>
+
+
+	<div id="sidemenu_bottom" class="class">
+		<a href="#"><div class="sidemenu_button">1a sankey</div></a>
+		<a href="#"><div class="sidemenu_button">1b chord</div></a>
+		<a href="#"><div class="sidemenu_button">2c other</div></a>
+	</div>
+
+
+	</div>
+
+
+
+	<!-----------layout layer ------------------------------------------------------------------------------------------>
+
+	<div id="container_general">
+
+	<!-----------------layer1------------------------------------->
+	<!-----------elements in the main space-->
+				<a href="#">
+					<div id="name" class="letra">  meaning.<br>images</div>
+				</a>
+				<div  id="letra1" class="letra"> (*_*)_(*^*)_(*.*) </div>
+				<div  id="letra2" class="letra">@3E_CO@_\(*_*)/_///___\\\(*.*)////@3E_CO@_ </div>
+				<img  id="image" alt="people" src="images/washing.png" />
+				<img  id="image2" alt="people" src="images/1.png" />
+				<img  id="image4" alt="people" src="images/4.png" />
+
+
+	<!-----------background elements---------------->
+
+				<section id="container0" class="section_container">
+				<div id="logo0">
+					<svg id="logo1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 475.57 649.35"><defs><style>.cls-1{fill:#010101;}</style></defs><path class="cls-1" d="M167.72,207.89H125.85L108,161.44l-57.3,1.32,1.44,45.13H8.34L7.28,3.41H50.94l73.4,109.92ZM87.06,127,57.76,84.08,42.63,46.75l1,80.24Z" transform="translate(-2.28 -3.41)"/><path class="cls-1" d="M8.84,539.54l44.89-91.29,88.77,0-1,204.48H101.89l1.3-45.13-51.88-1.32L40.19,652.76H2.28Zm100.74,32.32.92-80.23L96.8,529,70.27,571.86Z" transform="translate(-2.28 -3.41)"/><path class="cls-1" d="M6.45,224.33H81.91c17,0,28.46,6.45,37.39,9,12,3.53,23.8,4.67,32.35,13.69a89.2,89.2,0,0,1,19.53,33.13q6.69,19.59,6.69,48.33,0,25.25-6.27,43.51-7.68,22.32-21.9,36.13-10.74,10.45-29,16.32-13.68,4.32-36.55,4.32H6.45Zm51.13,49.88L61.44,379.5l20-.33q13.4,0,19.35-1.51a29.56,29.56,0,0,0,12.91-6.6q5.13-4.65,8.38-15.29t3.24-29q0-18.37-3.24-28.21T113,283.18a30.42,30.42,0,0,0-14.81-7.45q-6.7-1.51-26.26-1.52Z" transform="translate(-2.28 -3.41)"/><path class="cls-1" d="M151.58,431.84l12-204.48h86.9q32.77,0,47.63,5.51a47,47,0,0,1,23.79,19.6q8.91,14.09,8.92,32.22,0,23-13.53,38t-40.45,18.9A96,96,0,0,1,299,358.75q8.71,9.35,23.5,33.2l25,39.89H298.05l-35.5-40.08c-10.6-15.9-12.2-30.33-16.1-34.47A31.67,31.67,0,0,0,234,348.78q-6.56-2.31-20.78-2.3h-8.37l5.21,38.21-5.21,47.15Zm69-127.76h19.05q18.54,0,23.15-1.57a13.87,13.87,0,0,0,7.22-5.39,16.6,16.6,0,0,0,2.61-9.57q0-6.44-3.44-10.4a15.72,15.72,0,0,0-9.7-5q-3.13-.43-18.79-.44h-20.1Z" transform="translate(-2.28 -3.41)"/><path class="cls-1" d="M322.33,431.84V227.36l60.26-3.06L474,227.36V262l-110.53,5.73.2,39.6,38.14,5.79,30.26-1,15.13,2-1,27.65-47.37,4.63-28.24-1-5.05,43.38,54.48,1,57.5,13.11.44,29Z" transform="translate(-2.28 -3.41)"/><path class="cls-1" d="M156.71,651.75V455.31l28.46-8H218.5l37.1,119.31L268,497.68l21.67-50.41h81.78V651.75H315.86l4.19-85.48-4.19-75.48-40.59,161H235.52L211.1,579.39,199,507.77l4,125.08-8,18.9Z" transform="translate(-2.28 -3.41)"/><path class="cls-1" d="M111.51,129a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z" transform="translate(-2.28 -3.41)"/><circle class="cls-1" cx="410.57" cy="622.38" r="22.19"/></svg>
+				</div>
+				</section>
+		
+				<section id="container1" class="section_container">
+
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;xx&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+
+				</section>
+
+
+
+				<section id="container2" class="section_container">
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque3" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+					<a href="#"><div class="bloque2" >&nbsp;12&nbsp;<br>&nbsp;</div></a>
+
+		</section>
+
+
+	<!-----------text elements---------------->
+
+				<section id="writer_container4"  class="text_container">
+						<div id="cortazar2" class="writer">
+						</div>
+				</section>
+
+				<section id="writer_container1" class="text_container">
+						<div id="gmarquez1" class="writer">
+
+					</div>
+				</section>
+
+				<section id="writer_container1a" class="text_container">
+						<div id="gmarquez2" class="writer">
+
+						</div>
+
+				</section>
+
+		        <section id="writer_container2" class="text_container">
+					<div id="rulfo" class="writer">
+
+					</div>
+				</section>
+
+				<section id="writer_container3"  class="text_container">
+						<div id="cortazar1" class="writer">
+						</div>
+				</section>
+
+			    <section id="writer_container6"  class="text_container">
+						<div id="gmarquez3" class="writer">
+
+						</div>
+				</section>
+
+				<section id="writer_container7"  class="text_container">
+					<div id="borges" class="writer">
+
+					</div>
+					<div id="borges2" class="writer">
+
+					</div>
+				</section>
+
+
+
+
+	<!-----------image elements layer---------------->
+
+				<section id="container2" class="section_container">
+
+						EL TURNO <br>
+						<img  id="image21" alt="people" src="images/1.png"  />
+
+				</section>
+
+                <section id="container3" class="section_container">
+						EL TURNO<br>
+						<img  id="image31" alt="people" src="images/2.png"  />
+
+				</section>
+
+				<section id="container4" class="section_container">
+						EL TURNO<br>
+						<img  id="image41" alt="people" src="images/3.png"  />
+				</section>
+
+	            <section id="container54" class="section_container">
+						LA IMAGEN<br>
+						<img  id="image51" alt="people" src="images/5.png" />
+				</section>
+
+				<section id="container55" class="section_container">
+						FIN<br>
+						<img  id="image52" alt="people" src="images/4.png" />
+				</section>
+		</div>
+
+
+</body>
+</html>
+
+
+
+<!--coda for humans------------------------------------------------------------------------------>
+<!--Y llevas escrito en tus labios/el deseo y en tu carne/la esperanza de salvarme/como escapar
+a este deseo/como acabar/con este tormento/como encontrar/la salida/como olvidar/lo que te quiero/
+un dia me abrazaras/con tu cuerpo entero/con la mirada clara/con tu pecho abierto/
+con un aroma divino/un aroma incierto -->
