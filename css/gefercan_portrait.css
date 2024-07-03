@@ -28,7 +28,7 @@ body
     width: 50vh;
   }
 }
-
+ /*
 iframe {
   position: fixed;
   top: -15%;
@@ -37,15 +37,16 @@ iframe {
   height: 135vh;
   z-index: -3;
   opacity:0.3;
-  /*transform: translate(-50%, -50%);
-	*/
-}
+ transform: translate(-50%, -50%);
+	
+}*/
 #cover{
 	position:absolute;
 	width: 100%;
 	padding:0% 0% 5% 0%;
 	margin:0% 0% 0% 0%;
 	border:1px;
+	border-color: red;
 	/*
  	background-size:200%;
 	background-position:0% 18%;
@@ -67,6 +68,7 @@ iframe {
 	box-size:border-box;
 	color:white;
 	opacity:0.9;
+	border-color: green;
 	
 }
 
