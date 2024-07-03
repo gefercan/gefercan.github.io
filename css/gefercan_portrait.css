@@ -65,7 +65,7 @@ iframe {
 	margin:0% 2% 0% 2%;
 	background-color: #AA1B14;
 	border:1px;
-	box-size:border-box;
+	/*____box-sizing:border-box;_____*/
 	color:white;
 	opacity:0.9;
 	border-color: green;
