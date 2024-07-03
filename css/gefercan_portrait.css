@@ -128,7 +128,7 @@ p{
 /*___________________sections___________________________________*/
 
 .section{
-	
+	border-radius:25px;
 	width:90%;
 	padding:5% 0% 5% 10%;
 	margin: 0% 0% 0% 0%;
