@@ -10,7 +10,7 @@ body
 	border: 0%;
 	padding: 0%;
 	margin: 0%;
-	background-color:AA1B140;
+	background-color:#AA1B14;
 }
 
 /*___________________image containers___________________________________*/
@@ -62,7 +62,7 @@ iframe {
 	width: 100%;
 	padding:5% 2% 5% 2%;
 	margin:0% 2% 0% 2%;
-	background-color: AA1B14;
+	background-color: #AA1B14;
 	border:none;
 	box-size:border-box;
 	color:white;
