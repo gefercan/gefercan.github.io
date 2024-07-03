@@ -128,7 +128,7 @@ p{
 /*___________________sections___________________________________*/
 
 .section{
-	position:relative;
+	position:absolute;
 	width:80%;
 	padding:5% 0% 5% 10%;
 	margin: 0% 0% 0% 0%;
