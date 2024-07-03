@@ -43,9 +43,9 @@ iframe {
 #cover{
 	position:absolute;
 	width:90%;
-	padding:0% 0% 5% 0%;
+	padding:5% 0% 5% 0%;
 	margin:5% 5% 5% 5%;
-	border:1px;
+	border-size:1px;
 	border-color: black;
 	/*
  	background-size:200%;
@@ -65,7 +65,7 @@ iframe {
 	padding:5% 5% 5% 5%;
 	margin:0% 2% 0% 2%;
 	background-color: #AA1B14;
-	border:1px;
+	border-size:1px;
 	/*____box-sizing:border-box;_____*/
 	color:white;
 	opacity:0.9;
