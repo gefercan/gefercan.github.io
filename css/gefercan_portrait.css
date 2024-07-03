@@ -128,8 +128,8 @@ p{
 /*___________________sections___________________________________*/
 
 .section{
-	position:absolute;
-	width:80%;
+	
+	width:90%;
 	padding:5% 0% 5% 10%;
 	margin: 0% 0% 0% 0%;
 	background-color: #1f2F1F;
@@ -198,8 +198,8 @@ p{
 }*/
 
 #section0{
-	position:relative;
-	width: 80%;
+	
+	width: 90%;
 	top:2%;
 	left:auto;
 	padding:5% 0% 5% 10%;
