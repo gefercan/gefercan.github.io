@@ -43,7 +43,12 @@ iframe {
 /*__________________general container __________________________________*/
 
 @media only screen and (max-width: 1799px) {
-  	#container{
+  	body
+	{
+	background-color:#FFB30F;
+
+	}
+	#container{
 	width: 70%;
 	padding:1% 1% 45% 0%;
 	margin:7% 0% 0% 5%;
@@ -57,12 +62,18 @@ iframe {
 	padding:0% 1% 0% 1%;
 	margin: 1% 1% 2% 1%;
 	float:left;
-}
+	}
 
 }
 
 @media only screen and (max-width: 1440px) {
-  	#container{
+  	body
+	{
+	
+	background-color:#F98710;
+
+	}
+	#container{
 	width: 65%;
 	padding:1% 1% 50% 8%;
 	margin:7% 10% 0% 25%;
@@ -80,8 +91,17 @@ iframe {
 
 }
 
+
+
 @media only screen and (max-width: 1366px) {
-  	#container{
+  	body
+	{
+	
+	background-color:#B98F10;
+
+	}
+	
+	#container{
 	
 	width: 65%;
 	padding:1% 1% 50% 5%;
