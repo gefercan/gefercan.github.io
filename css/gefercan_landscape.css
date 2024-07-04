@@ -7,7 +7,7 @@
 body
 {
 	width: 100%;
-	box-sizing:border-box;
+	/*______box-sizing:border-box;__________________*/
 	border: 0% 0% 0% 0%;
 	padding: 0% 0% 0% 0%;
 	margin: 0% 0% 0% 0%;
@@ -67,7 +67,7 @@ ___________________*/
 	margin:10% 0% 0% 20%; /*22% 0% 0% 10%;*/
 	background-color:#333441 ;
 	border:none;
-	box-size:border-box;
+	/*______box-sizing:border-box;__________________*/
 	opacity:0.9;
 	border-radius:30px;
 
