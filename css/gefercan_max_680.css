@@ -23,13 +23,13 @@ body
 
 
 @media only screen and (max-width: 1799px) {
-  	body{
 	
+  	body{
 	background-color:#A84343;
-
 	}
+	
 	#container{
-	width: 65%;
+	width: 60%;
 	padding:1% 1% 50% 8%;
 	margin:7% 10% 0% 25%;
 	background-color: #1f2F1F;
@@ -37,6 +37,7 @@ body
 	border-radius:20px;
 	opacity:0.9;
 	}
+	
 	.section{
 	width: 18%;
 	padding:0% 1% 0% 1%;
