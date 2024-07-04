@@ -167,6 +167,7 @@ p{
 	
 #logo {
 	width:30%;
+	height:auto;
 	padding:0% 5% 5% 5%;
 	margin:5% 5% 0% 0%;
 }
@@ -201,10 +202,10 @@ p{
 	
 	
 	width: 90%;
-	top:2%;
+	top:5%;
 	left:auto;
-	padding:5% 0% 45% 10%;
-	margin: 0% 0% 70% 0%;
+	padding:5% 0% 50% 10%;
+	margin: 0% 0% 50% 0%;
 	background-color: transparent;
 	float:none;
 	border-bottom:0px;
