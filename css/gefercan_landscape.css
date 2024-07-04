@@ -62,7 +62,7 @@ ___________________*/
 
 #container{
 	
-	width: 80%;/*60%;*/
+	width: 70%;/*60%;*/
 	padding:1% 0% 35% 0%;
 	margin:10% 0% 0% 20%; /*22% 0% 0% 10%;*/
 	background-color:#333441 ;
@@ -136,7 +136,7 @@ p{
 /*___________________sections___________________________________*/
 
 	.section{
-	width: 10%;
+	width: 15%;
 	padding:1% 2% 0% 2%;
 	margin: 1% 1% 0% 1%;
 	float:left;color:white;
