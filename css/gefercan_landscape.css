@@ -70,10 +70,60 @@ ___________________*/
 	/*______box-sizing:border-box;__________________*/
 	opacity:0.9;
 	border-radius:30px;
-
-
-	
 }
+
+@media only screen and (max-width: 1799px) {
+  	#container{
+	width: 70%;
+	padding:1% 1% 45% 0%;
+	margin:7% 0% 0% 5%;
+	background-color: #333441;
+	border:none;
+	border-radius:20px;
+	box-size:border-box;
+	opacity:0.9;	
+	}
+}
+
+@media only screen and (max-width: 1440px) {
+  	#container{
+	width: 70%;
+	padding:1% 1% 50% 0%;
+	margin:7% 0% 0% 5%;
+	background-color: #333441;
+	border:none;
+	box-size:border-box;
+	opacity:0.9;
+	}
+}
+
+@media only screen and (max-width: 1366px) {
+  	#container{
+	
+	width: 70%;
+	padding:1% 1% 50% 0%;
+	margin:5% 0% 0% 5%;
+	background-color: #333441;
+	border:none;
+	box-size:border-box;
+	opacity:0.9;
+	}
+}
+
+
+@media only screen and (max-width: 1280px) {
+  	#container{
+	
+	width: 100%;
+	padding:1% 1% 50% 0%;
+	margin:15% 0% 0% 0%;
+	background-color: #333441;
+	border:none;
+	box-size:border-box;
+	opacity:0.9;
+	}
+}
+
 
 /*__________________text___________________________________*/
 
