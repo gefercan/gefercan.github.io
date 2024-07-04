@@ -177,8 +177,8 @@ p{
 }
 
 #name{
-	box-sizing:border-box;
-	color:white;/*___________________sections___________________________________*/
+	/*________box-sizing:border-box;________________________*/
+	color:white;
 	/*background-color: darkgray;*/
 	border-width:1px 0px 0px 0px;
 	border-style: solid;
@@ -213,7 +213,7 @@ p{
 
 /*___________________psection patches ___________________________________*/
 #section0{
-	width:20%;
+	width:15%;
 
 }
 /*___________________end patches ___________________________________*/
