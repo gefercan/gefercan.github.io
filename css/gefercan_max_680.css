@@ -10,11 +10,12 @@ body
 	border: 0% 0% 0% 0%;
 	padding: 0% 0% 0% 0%;
 	margin: 0% 0% 0% 0%;
- 	background-size:90%;
+ 	/*___background-size:90%;
 	background-position:center;
 	background-repeat:no-repeat;
-	background-attachment: fixed;
-	opacity:1;color:white;
+	background-attachment: fixed;_________*/
+	opacity:1;
+	color:white;
 }
 
 
