@@ -63,8 +63,8 @@ iframe {
 	
 	width: 85%;
 	padding:5% 5% 5% 5%;
-	margin:0% 1% 0% 3%;
-	background-color: #AA1B14;
+	margin:5% 1% 0% 3%;
+	background-color:#1f2F1F;
 	border-size:1px;
 	/*____box-sizing:border-box;_____*/
 	color:white;
@@ -203,7 +203,7 @@ p{
 	width: 90%;
 	top:2%;
 	left:auto;
-	padding:5% 0% 25% 10%;
+	padding:5% 0% 45% 10%;
 	margin: 0% 0% 50% 0%;
 	background-color: transparent;
 	float:none;
