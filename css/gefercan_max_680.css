@@ -51,14 +51,14 @@ body
 @media only screen and (max-width: 1440px) {
   	body{
 	
-	background-color:#F98710;
+	background-color:#864F75;
 
 	}
 	#container{
 	width: 65%;
 	padding:1% 1% 50% 8%;
 	margin:7% 10% 0% 25%;
-	background-color: #864175;
+	background-color: #1f2F1F;
 	border:none;
 	border-radius:20px;
 	opacity:0.9;
