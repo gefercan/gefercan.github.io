@@ -68,7 +68,7 @@ iframe {
 	margin:7% 0% 0% 25%;
 	background-color: #333441;
 	border:none;
-	border-radius:10px;
+	border-radius:20px;
 	opacity:0.9;
 	}
 	.section{
@@ -88,7 +88,7 @@ iframe {
 	margin:5% 0% 0% 25%;
 	background-color: #333441;
 	border:none;
-	box-size:border-box;
+	border-radius:20px;
 	opacity:0.9;
 	}
 	.section{
@@ -104,12 +104,12 @@ iframe {
 @media only screen and (max-width: 1280px) {
   	#container{
 	
-	width: 100%;
-	padding:1% 1% 50% 0%;
-	margin:15% 0% 0% 0%;
+	width: 65%;
+	padding:1% 1% 50% 5%;
+	margin:15% 0% 0% 25%;
 	background-color: #333441;
 	border:none;
-	box-size:border-box;
+	border-radius:20px;
 	opacity:0.9;
 	}
 }
