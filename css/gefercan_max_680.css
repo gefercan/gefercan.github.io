@@ -53,6 +53,13 @@ iframe {
 	box-size:border-box;
 	opacity:0.9;	
 	}
+	.section{
+	width: 18%;
+	padding:0% 1% 0% 1%;
+	margin: 1% 1% 2% 1%;
+	float:left;
+}
+
 }
 
 @media only screen and (max-width: 1440px) {
@@ -65,6 +72,13 @@ iframe {
 	box-size:border-box;
 	opacity:0.9;
 	}
+	.section{
+	width: 18%;
+	padding:0% 1% 0% 1%;
+	margin: 1% 1% 2% 1%;
+	float:left;
+	}
+
 }
 
 @media only screen and (max-width: 1366px) {
@@ -78,6 +92,13 @@ iframe {
 	box-size:border-box;
 	opacity:0.9;
 	}
+	.section{
+	width: 18%;
+	padding:0% 1% 0% 1%;
+	margin: 1% 1% 2% 1%;
+	float:left;
+	}
+
 }
 
 
@@ -152,12 +173,6 @@ line-height: 1.5;
 
 /*___________________sections___________________________________*/
 
-.section{
-	width: 18%;
-	padding:0% 1% 0% 1%;
-	margin: 1% 1% 2% 1%;
-	float:left;
-}
 
 
 
