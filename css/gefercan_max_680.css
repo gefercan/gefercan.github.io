@@ -38,9 +38,7 @@ iframe {
 	border:none;
 	
 
-}*/
-
-/*__________________general container __________________________________*/
+}
 
 @media only screen and (max-width: 1780px) {
   	body{
@@ -63,6 +61,10 @@ iframe {
 	}
 
 }
+
+/*__________________general container __________________________________*/
+
+
 
 @media only screen and (max-width: 1440px) {
   	body{
