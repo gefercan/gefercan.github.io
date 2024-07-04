@@ -173,7 +173,7 @@ p{
 }
 
 #name{
-	box-sizing:border-box;
+	/*____box-sizing:border-box;_____*/
 	color:white;
 	background-color: transparent;
 	border-width:1px 0px 0px 0px;
