@@ -58,8 +58,7 @@ body
 	#container{
 	width: 65%;
 	padding:1% 1% 50% 8%;
-	margin:7% 10% 0% 25%;
-	background-color: #1f2F1F;
+	/*___________background-color: #1f2F1F;_________________________*/
 	border:none;
 	border-radius:20px;
 	opacity:0.9;
