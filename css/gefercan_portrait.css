@@ -187,7 +187,8 @@ p{
 	color:white;
 	border-width:0px 0px 10px 0px;
 	border-style: solid;
-	margin:5% 0% 15% 5%;
+	margin:5% 0% 2% 5%;
+	padding:0% 0% 8% 0%;
 }
 
 #section1{
@@ -207,7 +208,7 @@ p{
 	top:5%;
 	left:auto;
 	padding:5% 0% 50% 10%;
-	margin: 0% 0% 80% 0%;
+	margin: 0% 0% 70% 0%;
 	background-color: transparent;
 	float:none;
 	border-bottom:0px;
