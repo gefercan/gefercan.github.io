@@ -202,14 +202,14 @@ line-height: 1.5;
 
 #logo {
 	width:30%;
-	padding:20% 25% 5% 0%;
-	margin:10% 5% 5% 0%;
+	padding:2% 25% 2% 0%;
+	margin:2% 5% 2% 0%;
 }
 
 
 #name{
 	box-sizing:border-box;
-	border-width:10px 0px 0px 0px;
+	border-width:20px 0px 20px 0px;
 	border-style: solid;
 	padding: 8% 0% 15% 0%;
 }
