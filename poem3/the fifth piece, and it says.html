@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>the fifth piece, and it says...</title>
+<meta>
+<script type="application/javascript" src="./scripts/gsap.min.js"></script>
+<script type="application/javascript" src="scripts/ScrollMagic.js"></script>
+<script type="application/javascript" src="scripts/TweenMax.min.js"></script>
+<script type="application/javascript" src="scripts/animation.gsap.js"></script>
+
+<style>
+#package1, #package2{
+	box-sizing:border-box;
+	width:100%;
+	border:none;
+	top:0px;
+	position:absolute;
+}
+
+
+.row{
+	box-sizing:border-box;
+	width:100%;
+	padding:5% 0% 5% 0%;
+	border:none;
+	
+}
+
+
+.column1{
+	box-sizing:border-box;
+	width:20%;
+	border:8%;
+	float:left;
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	text-align:center;
+}
+
+.column2 {
+	box-sizing:border-box;
+	width:10%;
+	border:12%;
+	margin:0% 5% 0% 5%;
+	float:left;
+	background-color:orangered;
+	padding:1% 5% 8% 5%;
+	border-radius:50%;
+	opacity:0.5;
+}
+#package0{
+	z-index:1;
+	padding:5%;
+}
+#package2{
+	z-index:3;
+	padding:0% 5% 5% 5%;
+}
+
+#box1,#box3,#box5,#box7,#box9,#box11,
+#box13,#box15,#box17,#box19 {
+	background-color: #575454;
+}
+
+#row1 ,#row3 {
+	background-color:#333333;
+	}
+/* menu */
+#next{
+	font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	font-weight: bolder;
+	color:white;
+	font-size: 2em;	
+	padding:1%;
+	width:5%;
+	display:block;border-radius: 25px;
+	z-index: 90;
+	position:absolute;
+	margin-top:1%;background-color:darkgray;
+	}
+
+/* menu */
+#package1{
+	position:fixed;
+	display:block;
+	border:0px;
+	width:80%;
+	margin:5% 0% 5% 9000%;
+	z-index: 242;
+	background-color:darkgray;
+	opacity:0.9;
+	padding:1%;
+	border-radius: 25px;
+	}
+	.columna{
+	box-sizing:border-box;
+	width:20%;
+	border:8%;background-color:darkgray;
+	float:left;
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	text-align:center;
+}
+	.rowa{
+	box-sizing:border-box;
+	width:100%;background-color:darkgray;
+	padding:5% 0% 5% 0%;
+	border:none;
+	}
+</style>
+
+
+</head>
+
+<body>
+<div id="container">
+
+	<a href="#"><div id="next">see<br>pages</div></a>
+
+
+	<div id="package0">
+		<div id="row1" class="row">
+			<div id="box1" class="column1">the touch I feel is inmaterial</div>
+			<div id="box2" class="column1">all but inmaterial</div>
+			<div id="box3" class="column1">thinking of roses and dhalias</div>
+			<div id="box4" class="column1">just a Symbol of my data</div>
+			<div id="box5" class="column1">just a Symbol of my data</div>
+		</div>
+    	
+		<div id="row2" class="row">
+			<div id="box6" class="column1">but as inmaterial as it is</div>
+			<div id="box7" class="column1">my data is not farsical</div>
+			<div id="box8" class="column1">only a little bit of schemata</div>
+			<div id="box9" class="column1">if you think about that</div>
+			<div id="box10" class="column1">lara li lara la</div>
+		</div>
+    	
+		<div id="row3" class="row">
+			<div id="box11" class="column1">as this morning I see the birds</div>
+			<div id="box12" class="column1">surrounded by the arboreal</div>
+			<div id="box13" class="column1">all, all but theatrical</div>
+			<div id="box14" class="column1">if you try no to be mythical</div>
+			<div id="box15" class="column1">just a Symbol of my data</div>
+		</div>
+		
+    	<div id="row4" class="row">
+			<div id="box16" class="column1">practical</div>
+			<div id="box17" class="column1">something is real</div>
+			<div id="box18" class="column1"> ethereal</div>
+			<div id="box19" class="column1">terse material</div>
+			<div id="box20" class="column1">just a Symbol of my data</div>
+		</div>
+	</div>
+		<div id="package2">
+		<div id="row5" class="row">
+			<div id="box21" class="column2">.</div>
+			<div id="box22" class="column2">.</div>
+			<div id="box23" class="column2">.</div>
+			<div id="box24" class="column2">.</div>
+			<div id="box25" class="column2"> x </div>
+		</div>
+    	
+		<div id="row6" class="row">
+			<div id="box26" class="column2"> &nbsp; </div>
+			<div id="box27" class="column2"> &nbsp; </div>
+			<div id="box28" class="column2"> &nbsp; </div>
+			<div id="box29" class="column2"> &nbsp; </div>
+			<div id="box30" class="column2"> &nbsp; </div>
+		</div>
+    	
+		<div id="row7" class="row">
+			<div id="box31" class="column2"> &nbsp; </div>
+			<div id="box32" class="column2"> &nbsp; </div>
+			<div id="box33" class="column2"> &nbsp; </div>
+			<div id="box34" class="column2"> &nbsp; </div>
+			<div id="box35" class="column2"> &nbsp; </div>
+		</div>
+		
+    	<div id="row8" class="row">
+			<div id="box36" class="column2"> &nbsp; </div>
+			<div id="box37" class="column2"> &nbsp; </div>
+			<div id="box38" class="column2"> &nbsp; </div>
+			<div id="box39" class="column2"> &nbsp; </div>
+			<div id="box40" class="column2"> &nbsp; </div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- MENU -->
+
+<div id="package1">
+	<div id="rowa1" class="rowa">
+		<a title="the truth"href="the fifth piece, and it says.html"><div id="box1" class="columna">the touch I feel is inmaterial</div></a>
+		<a title="is out there" href="piece3_1.html"> <div id="box2" class="columna">all but inmaterial</div></a>
+		<a title="the truth" href="piece3_2.html"><div id="box3" class="columna">thinking of roses and dhalias</div></a>
+	</div>
+	
+	<div id="rowa2" class="rowa">
+		<a title="the truth" href="piece3_3.html"><div id="box4" class="columna">but as inmaterial as it is</div></a>
+		<a title="the truth" href="piece3_4.html"><div id="box5" class="columna">>my data is not farsical</div></a>
+		<a title="the truth" href="piece3_5.html"><div id="box6" class="columna">only a little bit of schemata</div></a>
+	</div>
+	
+	<div id="rowa3" class="rowa">
+		<a title="the truth" href="piece3_6.html"><div id="box7" class="columna">as this morning I see the birds</div></a>
+		<a title="the truth" href="piece3_7.html"><div id="box8" class="columna">surrounded by the arboreal</div></a>
+		<a title="the truth" href="piece3_8.html"><div id="box9" class="columna">all, all but theatrical</div></a>
+	</div>
+</div>
+
+<!-- MENU SCRIPT -->
+<script>
+	onload;
+	
+	function myFunction() {
+	
+		var objetos ={
+						 poema : document.getElementById ("package1"),
+						 next:document.getElementById("next")	
+		}
+		function clickingHead (x,y){
+			x.addEventListener ("click",y);
+			}
+			//this function add event listeners//
+		function removebuttton(x,y){
+			x.removeEventListener ("click",y);
+			}
+		//MENU
+		function menu(){
+				var tl = gsap.timeline();
+				tl.from("#package1", {x:-9000,opacity: "0",duration: 1, delay:0});
+				tl.to("#package1", {x:100, opacity: "0.9",duration:0.1, delay:0});
+				objetos.poema.style.marginLeft = ("0px");
+				clickingHead(objetos.next,hidemenu);
+				removebuttton(objetos.next,menu);
+				console.log("menu");
+			}
+	
+		function hidemenu(){
+				var tl = gsap.timeline();
+				tl.from("#package1", {x:100,opacity: "0.9",duration: 0.1, delay:0});
+				tl.to("#package1", {x:-9000,opacity: "0",duration: 1, delay:0});
+				//objetos.poema.style.marginLeft = ("-9000px");
+		
+				clickingHead(objetos.next,menu);
+				removebuttton(objetos.next,hidemenu);
+			}
+	
+		clickingHead (objetos.next,menu);
+		
+		
+	}
+	
+	
+	myFunction();
+	</script>
+
+
+</body></html>

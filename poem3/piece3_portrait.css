@@ -1,0 +1,305 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	max-width: 100%;
+	margin:0% 0% 0% 0%;
+	background-color:black;
+	border:0px;
+	background-size:100%;
+	background-repeat:no-repeat;
+	background-image:none;
+	/*background-image:url('https://2.bp.blogspot.com/-cN9MC34hsPs/U7_RMjq1_II/AAAAAAAABUs/3hN-amdf670/s1600/2erta.jpg');*/
+}
+/*_________cover____________________*/
+
+
+#cover{
+	display:block;
+	position:fixed;
+	width:80%;
+	background-color:white;
+	padding:80% 5% 80% 15%;
+	margin:0%;
+	z-index: 325;
+
+}
+#title{
+	display:block;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-size: 3em;
+	font-weight: 700;
+}
+
+#intro_text, #tech_specs{
+	display:block;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-size: 2em;
+	font-weight: 300;
+}
+
+#enter{
+	display:block;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-size: 2em;
+	font-weight: 300;
+	width:70%;
+	padding: 5%;
+	z-index: 425;
+}
+
+/*--------------------------layer order----------------------------------------*/
+#front {
+	box-sizing:border-box;
+	position:absolute;
+	top:0px;
+	left:0px;
+	width: 80%;
+	padding:0% 0% 0% 0%;
+}
+
+#middle {
+	box-sizing:border-box;
+	border:none;
+	padding:0% 3% 0% 3%;
+	margin:0% 0% 0% 0%;
+}
+
+
+#texto_box{
+	width:80%;
+	padding:5%;
+	margin: 5% 5% 5% 5%;
+	position:fixed;
+
+	z-index:143;
+	color:red;
+	background-color:black;
+	border-style: solid;
+	border-color: red;
+	border-width: 5px;
+	font-size:4em;
+	word-break: normal;
+	top:70%;
+	bottom: 2%;
+	}
+
+
+
+#a,#s,#d {
+	float:none;
+	z-index:5;
+	left: 0%;
+	font-family:"Gill Sans", "Gill Sans MT", "Myriad Pro", Helvetica, Arial, "sans-serif";
+	padding:2%;
+	font-size:3em;
+	word-break: normal;
+	line-height: 2;
+	}
+
+
+
+source, #video{
+	width:50%;
+
+}
+
+/*_________beings___________________*/
+
+#being1{
+	position:fixed;
+	padding: 8% 8% 8% 8%;
+	z-index: 44;
+	font-size: 1em;
+	margin-top:2%;
+	left:-10px;
+}
+
+#being3{
+	position:fixed;
+	padding: 8% 8% 8% 8%;
+	margin-top:2%;
+	z-index: 44;
+	font-size:1em;
+}
+
+/*_________bases____________________*/
+
+#base {
+	display:none;
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index: -2;
+	background-image:url("images/video_small2.gif");
+	background-size: cover;
+	width: 100%;
+	padding: 0%;
+	margin:0px;
+	}
+
+
+base2 {
+	top:0px;
+	box-sizing:border-box;
+	width:100%;
+	border:none;
+	background-color:orangered;
+	z-index:-2;
+	}
+
+#base3 {
+	box-sizing:border-box;
+	width:100%;
+	background-image:url("https://1.bp.blogspot.com/-1Cs79eHMwMQ/X5D9em9ABDI/AAAAAAAAYF4/rXQ7rRNrlhQvRsKVzx7WfpfvUeu3jeD4QCLcBGAsYHQ/s320/cloud1.png");
+	background-size:cover;
+	padding:30% 0% 30% 0%;
+	z-index:-2;
+	border:none;
+	margin-top:-90%;
+	margin-left:10%;
+	}
+
+#base4{
+	display: block;
+	box-sizing:border-box;
+	width:60%;
+	background-image:url("https://1.bp.blogspot.com/-hIiBF3_neOQ/X5D9enTHGnI/AAAAAAAAYF0/B7xae6CsX68jFKQq64EhFUpyXDtNn70bQCLcBGAsYHQ/s320/cratera.png");
+	background-size:cover;
+	padding:25% 11% 11% 11%;
+	margin-left: 20%;
+	margin-top:90%;
+	z-index:143;
+	border:none;
+	}
+
+
+#film {
+	display:block;
+	position:fixed;
+	max-width: 100%;
+	max-height: 100%;
+	width:60%;
+	height:60%;
+	background-color:#EF4043;
+	z-index:-29;
+	}
+
+
+
+
+
+
+#head1 {
+	top:45%;
+	margin-left:1%;
+	box-sizing:border-box;
+	width:100%;
+	position:fixed;
+	padding:30% 10% 30% 10%;
+	z-index:9;
+	background-image:url("https://1.bp.blogspot.com/-IyK8LLoCZWo/XLIBQIXivXI/AAAAAAAAWts/TEvebt2zR3gliwp1SpTKAgQXAsyui0HkgCLcBGAs/s1600/floating_flower.png");
+	background-size:cover;
+	display:none;
+	}
+
+
+#head2 {
+	box-sizing:border-box;
+	width:90%;
+	position:fixed;
+	padding:5% 2% 5% 2%;
+	top:45%;
+	bottom:0%;
+	margin-left:3%;
+	z-index:19;
+	background-image:url("https://1.bp.blogspot.com/-JLMzxXBFCBY/X28OnheqDkI/AAAAAAAAYBQ/-eMnlPfQk4QPVP3PBSWco4Xi6PasdcfYACLcBGAsYHQ/s655/ae71c47.png");
+	background-size:100%;
+	display:none;
+	opacity: 0;
+
+	animation-name:hola2;
+	animation-iteration-count:1;
+	animation-duration:9s;
+	animation-delay:3s;
+	animation-fill-mode:forwards;
+
+	}
+
+#flower1{
+	position: fixed;
+	left:25%;
+	}
+
+#bird1{
+	display:none;
+	}
+
+#package1{
+	display:none;
+	border:0px;
+	width:100%;
+	margin:35% 0% 5% 0%;
+	}
+
+#next{
+	position:fixed;
+	font-size:2em;
+	}
+
+.column1{
+	box-sizing:border-box;
+	border-color:orange;
+	border-style:solid;
+	border-width:4px;
+	width:90%;
+	padding:25% 5% 25% 5% ;
+	margin:5% 5% 5% 5%;
+	float:none;
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	text-align:center;
+	background-color: red;
+	font-size: 4em;
+	word-break: break-all;
+	display:block;
+	z-index: 12;
+	animation-name:hola;
+	animation-iteration-count:32;
+	animation-duration:11s;
+	animation-delay:1s;
+	}
+
+
+.row{
+	box-sizing:border-box;
+	width:100%;
+	padding:5% 5% 5% 5%;
+	border:none;
+}
+
+
+#box1{
+	display:block;
+	margin-top:50%;
+}
+
+
+
+@keyframes hola {
+	0% {opacity:0.3;}
+	10% {opacity:0.9;}
+	25% {opacity:1;}
+	50% {opacity:0.3;}
+	75% {opacity:0.9;}
+	100% {opacity:0.3;}
+
+	}
+
+@keyframes hola2 {
+	0% {opacity:0.1;}
+	25% {opacity:0.3;}
+	50% {opacity:0.5;}
+	75% {opacity:0.9;}
+	100% {opacity:1;}
+
+	}
