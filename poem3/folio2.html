@@ -1,60 +1,155 @@
 <!DOCTYPE html>
-<html><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta http-equiv="last-modified" content="Thu, 18 March 2019 19:11:42 GMT">
-<meta name="description" content="Illustration, videoarte, Infographics and other works from this peruvian designer/ Ilustraciones, infografias y otros trabajos de este disenador peruano.">
-<meta name="keywords" content="Illustration, Videoart, Dataviz, Contemporary art, Latinamerican art, Video, Infographics, Information graphics, videoarte, poem, visual poetry, Information design, design, art, Painting, drawing, Infografia, Arte, Fine arts, noise, digital art, videomoment, videoimage ">
-<meta name="author" content="German Fernandez, gefercan">
-<meta name="copyright" content="© 2000-2019 german fernandez"> 
-<meta charset="utf-8">
-	
-<title>Assembled</title>
-	
-<link rel="stylesheet" media="(min-width: 1701px)" href="piece1_landscape.css"  type="text/css">
-<link rel="stylesheet" media="(max-width: 1700px)" href="piece1_landscape.css"  type="text/css">
-<link rel="stylesheet" media="(max-width: 1200px)" href="piece1_portrait.css"  type="text/css">
-<link rel="stylesheet" media="(max-width: 680px)" href="piece1_portrait.css"  type="text/css">
+<html lang="en">
+<title>Sketch Title</title>
 
-<script type="application/javascript" src="/GSAP/gsap.min.js"></script>
-<script type="application/javascript" src="/GSAP/ScrollMagic.js"></script>
-<script type="application/javascript" src="/GSAP/TweenMax.min.js"></script>
-<script type="application/javascript" src="/GSAP/animation.gsap.js"></script>
-<!--
-<script type="application/javascript" src="scripts/debug.addIndicators.js"></script>-->
+<head>
+	<meta charset="utf-8" />
+	<!-- Line below allows OpenProcessing compatibility, you can remove before uploading to FXHASH -->
+	<script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=yRbDVdpAUo1HttDfAHjNhnYbcfy9AoMVeNAZVslnV5fc7RlvWFKpU2hW_qopag_mjRawEHDk_8w0EJIlXie4bA" charset="UTF-8"></script><script src="https://openprocessing.org/openprocessing_sketch.js"></script>
+	<script src="scripts/p5.min.js"></script>
+	<script src="scripts/sketch_3_1.js"></script>
+	<script type="application/javascript" src="/GSAP/gsap.min.js"></script>
+	<script type="application/javascript" src="/GSAP/ScrollMagic.js"></script>
+	<script type="application/javascript" src="/GSAP/TweenMax.min.js"></script>
+	<script type="application/javascript" src="/GSAP/animation.gsap.js"></script>
+	<script type="application/javascript" src="piece3.js"></script>
 	
-<script src="scripts/piece3.js" defer="defer"></script>
+
+	<style>
+		html,body {
+		margin: 0;
+		padding: 0;
+		}
+
+		main {
+			text-align: center;
+			width: 100%;
+		}
+
+
+		canvas {
+		display: block;
+		}
+
+		#container{
+			padding:0%;
+			margin:0%;
+			border:0%;
+			width:100%;
+		}
+
+		#arte1{
+		}
+
+		#arte2{
+		}
+		#text_box{
+			color:gray;
+			font-family: Helvetica,Arial,sans-serif;
+			font-size: 3em;
+			position:fixed;
+			bottom:0px;
+			z-index:8;
+		}
+
+		/* menu */
+		#next{
+			font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+			font-weight: bolder;
+			color:white;
+			font-size: 2em;	
+			padding:1%;
+			width:5%;
+			display:block;
+			z-index: 190;
+			background-color: black;;
+			position:fixed;border-radius: 25px;
+			margin-top:1.5%;
+			margin-left:0.5%;
+			}
+
+		/* menu */
+		#package1{
+			position:fixed;
+			display:block;
+			border:0px;
+			width:80%;
+			margin:5% 0% 5% -9000%;
+			z-index: 242;
+			background-color:darkgray;
+			opacity:0.9;
+			padding:1%;
+			border-radius: 25px;
+			}
+			.column1{
+	box-sizing:border-box;
+	width:20%;
+	border:8%;background-color:darkgray;
+	float:left;
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	text-align:center;
+}
+	.row{
+	box-sizing:border-box;
+	width:100%;background-color:darkgray;
+	padding:5% 0% 5% 0%;
+	border:none;
+	}
+
+	
+	</style>
+	
+	<script id="fxhash-snippet">
+		//---- do not edit the following code (you can indent as you wish)
+		let alphabet = "123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ"
+		var fxhash = "oo" + Array(49).fill(0).map(_ => alphabet[(Math.random() * alphabet.length) | 0]).join('')
+		let b58dec = str => [...str].reduce((p, c) => p * alphabet.length + alphabet.indexOf(c) | 0, 0)
+		let fxhashTrunc = fxhash.slice(2)
+		let regex = new RegExp(".{" + ((fxhashTrunc.length / 4) | 0) + "}", 'g')
+		let hashes = fxhashTrunc.match(regex).map(h => b58dec(h))
+		let sfc32 = (a, b, c, d) => {
+			return () => {
+				a |= 0;
+				b |= 0;
+				c |= 0;
+				d |= 0
+				var t = (a + b | 0) + d | 0
+				d = d + 1 | 0
+				a = b ^ b >>> 9
+				b = c + (c << 3) | 0
+				c = c << 21 | c >>> 11
+				c = c + t | 0
+				return (t >>> 0) / 4294967296
+			}
+		}
+		var fxrand = sfc32(...hashes)
+		// true if preview mode active, false otherwise
+		// you can append preview=1 to the URL to simulate preview active
+		var isFxpreview = new URLSearchParams(window.location.search).get('preview') === "1"
+		// call this method to trigger the preview
+		function fxpreview() {
+			console.log("fxhash: TRIGGER PREVIEW")
+		}
+		//---- /do not edit the following code
+	</script>
+
+
+
 
 </head>
 
-	
-	
-	
 <body>
-	
 
 
-	
-	<!--------------------------------------------------------------------------------->
-	
-	<div id="menu">  
-			<div id="button1"> x </div>
-			<div id="button2"> x </div>
-	</div>
-	<!--------------------------------------------------------------------------------->
-	
-	
+
+
+
+	<div id="container">
+		
+		<a href="#"><div id="next">see<br>pages</div></a>
 
 	
-	<div id="middle" alt="and suddenly">
-			<a href="#"><div id="a">a</div></a>
-			<a href="#"><div id="s">0</div></a>
-			<a href="#"><div id="d">6</div></a>
-			<a href="#"><div id="next">pages<br>menu</div></a>
-			<div id="head1" alt="this is a head"> A HEAD/// <br> /*HA//O <br> ///*O/HEAD </div> 
-	  		<div id="head2" alt="this is another head"> THE EYES , THE EYES <br> THE NOSE <br> THE LIPS <br> THE FACE <br> "*" </div>
-	</div>
-	
-	
+
 
 		<div id="package1">
 		   <div id="row1" class="row">
@@ -90,7 +185,63 @@
 		   </div>
               </div>
 
+		<div id="arte1" class="div" >Exercis o2</div>
+		<div id="arte2" class="div"></div>
+		<div id="text_box">
+		AxAXAas mlo nature of the looping GIF, made of pure movement but trapped in the repetition,
+		like a captured piece of time in the hands of the image, a cage of light, shape and colour, and a fleeting meaning.
+		</div>
+
+	</div>
 
 
+	<script>
+		
+		
+		function myFunction(){
+		
+			var objetos ={
+							 poema : document.getElementById ("package1"),
+							 next:document.getElementById("next")	
+			}
+	
+				//this function add event listeners//
+				var next=document.getElementById("next");
+	
+			//MENU
+			function menu(){
+					var poema =document.getElementById ("package1");
+					var next=document.getElementById("next")
+					var tl = gsap.timeline();
+					tl.from("#package1", {x:-9000,opacity: "0",duration: 1, delay:0});
+					tl.to("#package1", {x:100, opacity: "0.9",duration:0.1, delay:0});
+					objetos.poema.style.marginLeft = ("0px");
+					next.addEventListener ("click",hidemenu);
+					next.removeEventListener ("click",menu);
+					console.log("menu");
+				}
+		
+			function hidemenu(){
+					var poema =document.getElementById ("package1");
+					var next=document.getElementById("next")
+					var tl = gsap.timeline();
+					tl.from("#package1", {x:100,opacity: "0.9",duration: 0.1, delay:0});
+					tl.to("#package1", {x:-9000,opacity: "0",duration: 1, delay:0});
+					//objetos.poema.style.marginLeft = ("-9000px");
+					next.addEventListener ("click",menu);
+					next.removeEventListener ("click",hidemenu);
+					console.log("hidemenu");
+				
+				}
+		
+			next.addEventListener ("click",menu);
+		}
+			
+			
+				myFunction();
+		</script>
 
-</body></html>
+
+</body>
+
+</html>
