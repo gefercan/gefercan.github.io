@@ -107,22 +107,6 @@
 				border:none;
 				}
 			/* -----nube */
-			#base1 {
-				position:fixed;
-				box-sizing:border-box;
-				width:10%;
-				background-image:url("https://1.bp.blogspot.com/-1Cs79eHMwMQ/X5D9em9ABDI/AAAAAAAAYF4/rXQ7rRNrlhQvRsKVzx7WfpfvUeu3jeD4QCLcBGAsYHQ/s320/cloud1.png");
-				background-size:90%;
-				background-repeat: no-repeat;
-				padding:20% 10% 20% 10%;
-				z-index:-2;
-				left:-600px;
-				border:none;
-				margin-bottom:10%;
-				margin-left:10%;
-				opacity:0.6;
-				filter: drop-shadow(5px 5px 5px #222);
-			}
 
 			#base2{
 				display:none;
@@ -138,7 +122,7 @@
 			}
 
 			/* -----nube */
-			#base3 {
+			#base1,#base3 {
 				position:fixed;
 				box-sizing:border-box;
 				width:10%;
@@ -385,16 +369,26 @@
 
 					function anima0(){
 						//declaration timeline repetition
-						var tl = gsap.timeline({repeat: 4, repeatDelay: 0.5});
+						var tl = gsap.timeline({repeat:5, repeatDelay: 0.5});
 						//nube1
-						tl.from("#base3", {x:-500, y:190,opacity: "0.3",duration: 0.5, delay:0})
+						
 						//letters to the top right
 						tl.to("#a", {x:-20,y:-40,opacity: "0.3",duration: 3, delay:0});
+						tl.from("#base3", {x:-500, y:190,opacity: "0.3",duration: 0.5, delay:0})
+						
 						tl.to("#s", {x:-50,y:-30,opacity: "0.1",duration: 3, delay:0});
 						tl.to("#d", {x:-30,y:10,opacity: "0.2",duration: 3, delay:0});
+
+						//nube2
+						tl.from("#base1", {x:-500, y:100,opacity: "0.5",duration: 1, delay:0})
+
 						tl.to("#a", {x:-30,y:20,opacity: "0.3",duration: 5, delay:0});
 						tl.to("#s", {x:-20,y:30,opacity: "0.2",duration: 3, delay:0});
 						tl.to("#d", {x:20,y:30,opacity: "0.2",duration: 3, delay:0});
+
+						//nube1
+						tl.to("#base3", {x:2459, y:190,opacity: "0.3",duration: 9, delay:0.1})
+
 						tl.to("#a", {x:-25,y:20,opacity: "0.1",duration: 3, delay:0});
 						tl.to("#s", {x:30,y:10,opacity: "0.1",duration: 3, delay:0});
 						tl.to("#d", {x:10,y:-10,opacity: "0.1",duration: 3, delay:0});
@@ -404,14 +398,7 @@
 						
 					
 						//nube2
-						tl.from("#base1", {x:-500, y:100,opacity: "0.5",duration: 1, delay:0})
-						//nube1
-						tl.to("#base3", {x:2459, y:190,opacity: "0.3",duration: 9, delay:0.1})
-						//nube2
 						tl.to("#base1", {x:2459, y:390,opacity: "0.5",duration: 9, delay:0.1})
-						//seresalados2
-						tl.from("#being3", {x:-1259, y:990,opacity: "0.3",duration: 1, delay:0.1})
-						tl.to("#being3", {x:3259, y:890, opacity: "0.3",duration: 9, delay: 0.1})
 						
 						console.log("anima0");
 				}
