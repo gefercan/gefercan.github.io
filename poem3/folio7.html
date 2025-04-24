@@ -1,136 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Sketch Title</title>
+<title>Codex Ambiguous</title>
 
 <head>
 	<meta charset="utf-8" />
 	<!-- Line below allows OpenProcessing compatibility, you can remove before uploading to FXHASH -->
-	<script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=yRbDVdpAUo1HttDfAHjNhnYbcfy9AoMVeNAZVslnV5fc7RlvWFKpU2hW_qopag_mjRawEHDk_8w0EJIlXie4bA" charset="UTF-8"></script><script src="https://openprocessing.org/openprocessing_sketch.js"></script>
+	<script src="https://openprocessing.org/openprocessing_sketch.js"></script>
 	<script src="scripts/p5.min.js"></script>
 	<script src="scripts/sketch_3_1.js"></script>
-	<script type="application/javascript" src="/GSAP/gsap.min.js"></script>
-	<script type="application/javascript" src="/GSAP/ScrollMagic.js"></script>
-	<script type="application/javascript" src="/GSAP/TweenMax.min.js"></script>
-	<script type="application/javascript" src="/GSAP/animation.gsap.js"></script>
+	<script type="application/javascript" src="../GSAP/gsap.min.js"></script>
+	<script type="application/javascript" src="../GSAP/ScrollMagic.js"></script>
+	<script type="application/javascript" src="..GSAP/TweenMax.min.js"></script>
+	<script type="application/javascript" src="../GSAP/animation.gsap.js"></script>
 	<script type="application/javascript" src="piece3.js"></script>
 	
 
 	<style>
-		html,body {
-		margin: 0;
-		padding: 0;
-		}
+			html,body {
+			margin: 0;
+			padding: 0;
+			background-color: #990088;
+			}
 
-		main {
-			text-align: center;
-			width: 100%;
-		}
+			main {
+				text-align: center;
+				width: 100%;
+			}
 
 
-		canvas {
-		display: block;
-		}
+			canvas {
+			display: block;
+			}
 
-		#container{
-			padding:0%;
-			margin:0%;
-			border:0%;
-			width:100%;
-		}
+			#container{
+				padding:0%;
+				margin:0%;
+				border:0%;
+				width:100%;
+			}
 
-		#arte1{
-		}
-
-		#arte2{
-		}
-		#text_box{
-			color:gray;
-			font-family: Helvetica,Arial,sans-serif;
-			font-size: 3em;
-			position:fixed;
-			bottom:0px;
-			z-index:8;
-		}
-
-		/* menu */
-		#next{
-			font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
-			font-weight: bolder;
-			color:white;
-			font-size: 2em;	
-			padding:1%;
-			width:5%;
-			display:block;
-			z-index: 190;
-			background-color: black;;
-			position:fixed;border-radius: 25px;
-			margin-top:1.5%;
-			margin-left:0.5%;
+			#a,#s,#d{
+				position:fixed;
+				float:left;
+				bottom:15%;
+				left:15%;
+				padding:1em;
+				color:black;
+				font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+				font-size:4em;
+				opacity:0;
 			}
 
 		/* menu */
-		#package1{
-			position:fixed;
-			display:block;
-			border:0px;
-			width:80%;
-			margin:5% 0% 5% -9000%;
-			z-index: 242;
-			background-color:darkgray;
-			opacity:0.9;
-			padding:1%;
-			border-radius: 25px;
+			#next{
+				font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+				font-weight: bolder;
+				color:white;
+				font-size: 2em;	
+				padding:1%;
+				width:5%;
+				display:block;
+				z-index: 190;
+				background-color: black;;
+				position:fixed;border-radius: 25px;
+				margin-top:1.5%;
+				margin-left:0.5%;
+			}
+
+			/* menu */
+			#package1{
+				position:fixed;
+				display:block;
+				border:0px;
+				width:80%;
+				margin:5% 0% 5% -9000%;
+				z-index: 242;
+				background-color:darkgray;
+				opacity:0.9;
+				padding:1%;
+				border-radius: 25px;
 			}
 			.column1{
-	box-sizing:border-box;
-	width:20%;
-	border:8%;background-color:darkgray;
-	float:left;
-	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
-	text-align:center;
-}
-	.row{
-	box-sizing:border-box;
-	width:100%;background-color:darkgray;
-	padding:5% 0% 5% 0%;
-	border:none;
-	}
+				box-sizing:border-box;
+				width:20%;
+				border:8%;background-color:darkgray;
+				float:left;
+				font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+				text-align:center;
+			}
 
-	
+			#personaje1{
+				padding-left:40%; padding-top:5%;
+				z-index:-3;
+
+			}
+			.row{
+				box-sizing:border-box;
+				width:100%;background-color:darkgray;
+				padding:5% 0% 5% 0%;
+				border:none;
+			}
+
+			#middle {
+				box-sizing:border-box;
+				position:fixed;
+				top:0px;
+				left:0px;
+				display:block;
+				z-index:6;
+				width: 100%;
+				padding: 0%;
+				border:none;
+				}
+			/* -----nube */
+
+			#base2{
+				display:none;
+				box-sizing:border-box;
+				position:fixed;
+				borde:none;
+				width:100%;
+				padding:25% 0% 0% 0%;
+				z-index:2;
+				background-image:url("https://1.bp.blogspot.com/-hIiBF3_neOQ/X5D9enTHGnI/AAAAAAAAYF0/B7xae6CsX68jFKQq64EhFUpyXDtNn70bQCLcBGAsYHQ/s320/cratera.png"); 
+				opacity:0.8;
+				filter: drop-shadow(5px 5px 5px #222);
+			}
+
+			/* -----nube */
+			#base1,#base3 {
+				position:fixed;
+				box-sizing:border-box;
+				width:10%;
+				background-image:url("https://1.bp.blogspot.com/-1Cs79eHMwMQ/X5D9em9ABDI/AAAAAAAAYF4/rXQ7rRNrlhQvRsKVzx7WfpfvUeu3jeD4QCLcBGAsYHQ/s320/cloud1.png");
+				background-size:90%;
+				background-repeat: no-repeat;
+				padding:20% 10% 20% 10%;
+				z-index:4;
+				left:-600px;
+				border:none;
+				margin-bottom:10%;
+				margin-left:10%;
+				opacity:0.6;
+				filter: drop-shadow(5px 5px 5px #222);
+				}
+				
 	</style>
 	
 	<script id="fxhash-snippet">
-		//---- do not edit the following code (you can indent as you wish)
-		let alphabet = "123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ"
-		var fxhash = "oo" + Array(49).fill(0).map(_ => alphabet[(Math.random() * alphabet.length) | 0]).join('')
-		let b58dec = str => [...str].reduce((p, c) => p * alphabet.length + alphabet.indexOf(c) | 0, 0)
-		let fxhashTrunc = fxhash.slice(2)
-		let regex = new RegExp(".{" + ((fxhashTrunc.length / 4) | 0) + "}", 'g')
-		let hashes = fxhashTrunc.match(regex).map(h => b58dec(h))
-		let sfc32 = (a, b, c, d) => {
-			return () => {
-				a |= 0;
-				b |= 0;
-				c |= 0;
-				d |= 0
-				var t = (a + b | 0) + d | 0
-				d = d + 1 | 0
-				a = b ^ b >>> 9
-				b = c + (c << 3) | 0
-				c = c << 21 | c >>> 11
-				c = c + t | 0
-				return (t >>> 0) / 4294967296
-			}
-		}
-		var fxrand = sfc32(...hashes)
-		// true if preview mode active, false otherwise
-		// you can append preview=1 to the URL to simulate preview active
-		var isFxpreview = new URLSearchParams(window.location.search).get('preview') === "1"
-		// call this method to trigger the preview
-		function fxpreview() {
-			console.log("fxhash: TRIGGER PREVIEW")
-		}
-		//---- /do not edit the following code
+				//---- do not edit the following code (you can indent as you wish)
+				let alphabet = "123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ"
+				var fxhash = "oo" + Array(49).fill(0).map(_ => alphabet[(Math.random() * alphabet.length) | 0]).join('')
+				let b58dec = str => [...str].reduce((p, c) => p * alphabet.length + alphabet.indexOf(c) | 0, 0)
+				let fxhashTrunc = fxhash.slice(2)
+				let regex = new RegExp(".{" + ((fxhashTrunc.length / 4) | 0) + "}", 'g')
+				let hashes = fxhashTrunc.match(regex).map(h => b58dec(h))
+				let sfc32 = (a, b, c, d) => {
+					return () => {
+						a |= 0;
+						b |= 0;
+						c |= 0;
+						d |= 0
+						var t = (a + b | 0) + d | 0
+						d = d + 1 | 0
+						a = b ^ b >>> 9
+						b = c + (c << 3) | 0
+						c = c << 21 | c >>> 11
+						c = c + t | 0
+						return (t >>> 0) / 4294967296
+					}
+				}
+				var fxrand = sfc32(...hashes)
+				// true if preview mode active, false otherwise
+				// you can append preview=1 to the URL to simulate preview active
+				var isFxpreview = new URLSearchParams(window.location.search).get('preview') === "1"
+				// call this method to trigger the preview
+				function fxpreview() {
+					console.log("fxhash: TRIGGER PREVIEW")
+				}
+				//---- /do not edit the following code
 	</script>
 
 
@@ -138,17 +186,15 @@
 
 </head>
 
+
+
 <body>
-
-
-
-
 
 	<div id="container">
 		
-		<a href="#"><div id="next">see<br>pages</div></a>
+		<a href="#"><div id="next" style="font-size:2em">+</div></a>
 
-	
+
 
 
 		<div id="package1">
@@ -185,27 +231,200 @@
 		   </div>
               </div>
 
-		<div id="arte1" class="div" >Exercis o2</div>
-		<div id="arte2" class="div"></div>
+			  <div id="front" alt="here they come">  
+				<a href="#"><div id="bird1" alt="a bird">  A bird <br> "(.,.)" </div></a>
+				<a href="#"><div id="flower1" alt=" this is a flower"> Flower,<br>///"*"\\\<br> flower </div></a>
 	
+			  </div>
+
+		<div id="base1">
+				&nbsp;	&nbsp;
+		</div>
+
+		<div id="base2">
+			&nbsp;	&nbsp;
+		</div>
+	
+		<div id="base3">
+			&nbsp;	&nbsp;
+		</div>
+
+		<div id="personaje1">
+
+
+	<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" viewBox="0 0 496 458">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #010101;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        isolation: isolate;
+      }
+
+      .cls-4 {
+        fill: #f99e4a;
+        mix-blend-mode: multiply;
+      }
+
+      .cls-5 {
+        fill: #010101;
+      }
+
+      .cls-6 {
+        fill: #ffca4f;
+      }
+    </style>
+  </defs>
+  <!-- Generator: Adobe Illustrator 28.7.4, SVG Export Plug-In . SVG Version: 1.2.0 Build 166)  -->
+  <g class="cls-3">
+    <g id="base_1">
+      <path class="cls-2" d="M256.8,457.5c-122.4,0-210-99.7-221.6-221.6C23.3,109.6,122.6,14.8,256.8,14.3c130.2-.5,226.6,96.7,221.6,221.6"/>
+      <path class="cls-2" d="M478.4,235.9c-4.9,122.3-99.2,221.6-221.6,221.6"/>
+      <path class="cls-2" d="M216.7,457.5c-68.3-13-115.6-54.3-115.6-54.3,0,0-53.9-49.7-61.1-91.7-7.2-41.9-22.2-126.4-9.6-153.4,12.6-27,60.5-104.8,112.6-125.2,52.1-20.4,128.2-29.5,196.5-9.9,0,0,62.9,26.1,68.3,32.1,5.4,6,53.3,70.7,56.9,80.3,3.6,9.6,21.6,80.3,18.6,114.4"/>
+      <path class="cls-2" d="M483.3,249.8c-3,34.2-57.5,137.8-81.2,159.4-23.7,21.6-117.1,61.3-185.5,48.3"/>
+      <path class="cls-2" d="M481.5,213.3c8.4,66.5-66.5,198.9-108.4,218.1-41.9,19.2-135.5,33-216,10.2-80.6-22.8-120.4-160.7-123.9-170.8-3.4-10.1-1-4.1-3.4-12.5s-4.8-105.1,32.4-162.8C99.3,37.7,175.4,15.4,210.7,12.2c35.3-3.2,126.5-5.6,191.4,43.5,0,0,70.9,91.1,79.3,157.6"/>
+      <path class="cls-2" d="M177.5,112l5.8-29.2s2.7-8.6,3.9-11.6,5.2-10,5.2-10l5.9,3.3,3.3,10.1s12.6,1.3,16.2-.7,8-3.5,14.6-2.4,21.6,2.2,22.2,3.1,17.5,8,17.5,8l7.1-4.9-5.1-20.8s8.1-7,11.4-4.8,9.2,14.8,12.1,19.1,22.4,40.8,21.8,40.8,4,4.5,6.5,9.6,5.4,17.5,6.1,19.7.7,7.1,2.9,10.2,2.9-1,5.1,4c2.2,5,5.9,7,5.9,7v5.9l-4.4,11h-4.4s-5-.8-11.3-4.7-10-4.2-18-6.3-19.5-6.9-23-5.9-14.5,0-14.5,0l-8.7,5.9-5.3,11s-2,.6,5.3,6.2c7.3,5.6,20.5,8.6,25.6,9.3,5.1.7,24.2-1.1,26,1.6,1.8,2.8,7.1,2,12.5,3.5,5.4,1.5,13.5,0,13.5,0,0,0,2.2,1.4,2.2,6.2s5.9,6.3,0,8.5c-5.9,2.2-11.6,3.5-15.7,3.9-4.1.5-8.4,3.5-8.5,6.7s12.8,10.5,2,13.8c-10.8,3.3-83.2-4.4-101.6-7.1-18.4-2.7-19.1-2.3-28.6-9.8-9.5-7.6-15-6.2-18.8-16-3.9-9.9-5-7.9-5.6-20.6-.5-12.7-1-24.8,1.8-35.2s7.2-39.9,10.9-38.4Z"/>
+      <path class="cls-2" d="M268.3,184.6s7.8-12.6,9.4-16.2,7.2-5.9,7.2-5.9c0,0-2.4,6.6,0,16.9l2.4,10.3,2.9-3.9,6.7-23.4,16.5,7.3v26.8l9.5-23.6,2.6,22.7,5.9-20.9,2.9,20.3,2.9-15.5s2.9-13.9,2.9-4.7.7,15.2,0,20.3l-.7,5.1s-76.2-9-77.6-14.4-6.1-4.6-3-10.9,11.7-12.2,11.7-12.2"/>
+      <path class="cls-2" d="M224.3,128.8s5.2-4.2,8.1-4.2h12l10.1,4.2,3.1,4s1.2,2.7-2.5,4.2-9.7,1-10.7,1.6-8.3-1.3-9.4,0-7.1.9-10.4.1c-15.6-3.9-.3-10-.3-10Z"/>
+      <path class="cls-2" d="M242.5,128.2l-2.9-1.4h-5.7v1.4l-1.7,2v1.8s-.6.5,0,1.3,2,1.1,2,1.1h1.4l2.1,1.4h2.2l2.6-.9v-1.7l1.1-1.3-1.1-3.8Z"/>
+      <path class="cls-2" d="M241,129.2l-2-1h-3.9v1l-1.2,1.4v1.3s-.4.3,0,.9,1.4.8,1.4.8h1l1.4,1h1.5l1.8-.6v-1.2l.8-.9-.8-2.6Z"/>
+      <path class="cls-2" d="M329.3,117.7l-2-1h-3.9v1l-1.2,1.4v1.3s-.4.3,0,.9,1.4.8,1.4.8h1l1.4,1h1.5l1.8-.6v-1.2l.8-.9-.8-2.6Z"/>
+      <polygon class="cls-2" points="239.1 129.3 237.7 129.3 235.9 129.3 235.9 132 237.5 132 239.1 129.3"/>
+      <path class="cls-2" d="M318.3,158l-7.4-2.8-3.2-4.8s6.5-1.7,7.9-.8,2.3,2,4.6,4,1.8,1.1,4.6,4.3,3.2-.3,5.1,4.5,2.3,2,3.7,5.9,4.6,7,4.6,7c0,0-.9,1.9,2.3,1.9s5.5-.9,5.5-2.8,0-.3,0-6.2-1.8-10.4-3.2-13.2-4.2-9.3-6-13.9-3.2-12.8-6-16.8-6-9.1-6.5-12.5-2.3-6.2-4.6-9.9-9.7-16.1-15.5-19.4-7.2-8.1-7.2-8.1c0,0,.9-1.6-5.1-7.2s-6-11.6-10.2-11.8-7.7,1.3-7.7,1.3c0,0,13.7,1.8,6.3,7.8s-5.4,4-8.1,5.6c-5.2,3.1-10,5-11.8,4.3-2.8-1.1-13-1.4-16.9-3.1s-9-2-16.4,0-11.1-.4-16.6,2.4-10.2,6.5-10.2,6.5c0,0,1,3.2,1.2-5.8s3.4-14.1,2-15-5.5-2.3-9.7,6.5-19.9,41.6-21.7,46-2.8,7.1-4.2,14.7-7.9-.8-3.7,16.1-1.4,36.8,9.7,52.5c11.1,15.7-1.4,12,18.9,21.3,20.3,9.2,44.8,21.4,87.8,19.3,43-2.2,47.1-8.6,51.3-10.9,4.2-2.3,7.2-4.5,8.3-7.4s-.6-1.9,2.2-7.9c2.9-6,1.9-2.7,3.3-11.5,1.4-8.8,1.9-45.8-3.2-56.8-5.1-11.1-4.6-2.2-8.8-16.8-1.4-5.1-2-8.2-2.2-10.6-.5-4.4.2-6-1.9-12.4-3.2-9.7-1.8-7.4-6.5-13.4s8.3,2.3-7.4-8.3c-15.7-10.6-12.1-12.5-16.9-12.5s-8.5,1.4-11.7,1.8"/>
+      <path class="cls-2" d="M321.3,114.6c-2.4,2.6-4.4,1.4-6.2,2.8s-4.6,1.8-5.1,3.2,2.3,3.8,3.7,4,7.6,0,7.6,0l6.6,2.2,6.1-2.2s6.9-2.9,6.5-3.9,4.1-2,0-2.9-4.2-2.6-6.5-3.2-9.7-3.2-12.7,0Z"/>
+      <path class="cls-2" d="M473.5,269.3l-2.8.5s-1.8-3.2-5.1-7.4-47.1-36.5-66.5-37.9c-19.4-1.4-24.5,8-39.7,2.4-15.2-5.6-11.8-10.3-17.2-7.9"/>
+      <path class="cls-2" d="M170.4,206.2l-4.6.3s-2.3,0-5.1,2.3c-2.8,2.3-2.8,1.8-6,4.2s5.1-6.5-11.5,7.9c-16.6,14.3-21.7,20.1-23.6,22.5s-6.5,7-8.8,10.3-6,8.8-7.4,11.5-4.6,7.4-7.4,14.3-5.1,14.3-7.4,20.3-1.8,12.1-6.9,18.5-6.9,12-7.9,8.7.9-2.7,1.8-8.7,2.3-6.5,3.2-11.8,1.8-7.2,3.7-12.7,1.4-5.1,5.1-12.9c3.7-7.9,6-10.4,8.3-16.3s3.7-10.7,6.5-13.6c2.8-2.9,2.3-2.7,6.9-7.6s.5-1.1,8.3-7.4-12.9,8.6,11.5-9c24.5-17.6,32.3-22.7,33.7-23.2s-3.7-3.7,3.2,0c6.9,3.7-3.9-5.8,14.5,5.9,18.3,11.7,43.5,8.4,55.2,15.4,11.7,6.9,12.1,9.2,25.1,10.6,12.9,1.4,28.6-9.2,42-7.8,13.4,1.4-.8,1.4,19-3.3,19.8-4.6,14.7-8.8,24.9-7.9s-12.5-5.1,25.4-.9c32.1,3.5,44.6,15.1,53.6,20.9s3.1,1.9,4.6,2.5c5.8,2.3,8.9,2.6,11.7,3.3s3.6,1.2,5.9,2.9c5.5,4.1,16.2,10.6,20.3,15.2s5.1,8.8,5.1,8.8"/>
+      <path class="cls-2" d="M169.6,119.9s-.8-16-6.5-18-6.3-9.3-6.3-9.3c0,0,17.7,9.9,19.2,14.6l1.6,4.8s-2.4-16.6,2.3-11.7-13-24.7-15.4-26.5,21.7,20.1,21.7,20.1c0,0-4.9-7.2-8.9-13.1s-3.9-5.8-4.8-7.1c-2.5-3.7,13.7,14.9,13.7,14.9,0,0-12.6-23-14.7-27.5s.2-8.2,6.1,6.7,15.7,35.4,13.1,34.1-46.8-39.2-40.3-37.2,40.8,23.8,40.8,23.8c0,0-6-10.5-4.9-14s2.7-10.5,4.9-5.9,12.2,14.9,3.5,2.5c-8.6-12.5-21.2-18.7-15.3-19.6s20.6,19.4,22.6,19.6,12,1.5,12,1.5c0,0,9.3,8,0-4.7s-20.6-23.6-13.3-22.1,11.6,2.3,19.2,13.9,2.7,4,4,5.7c5.7,7.9,10.1,11.9,10.1,11.9,0,0-25.7-40.4-16.2-31.6s15.8,21.7,18.3,25.2,5.9,9.6,5.9,9.6c0,0-3.6-13.2,1.8-9.4s21.9,18.7,11,9.4-17.1-16.6-22.6-19.7-11.5-15.3,1.8-5.6c13.3,9.8,17.7,14.2,20.8,19s6.3,9.5,3.1,4.7-14.6-13.7-13.3-18.2,11.9-1.8,15.3,4.2c3.3,6,18.6,23.3,3.3,6-15.3-17.3-26.9-23.3-19.4-22.6s6.9,1,10.4,2.9,7.3,4.8,12.1,9.6c9.6,9.5,12.2,12.7,12.2,12.7,0,0-38.5-39.7-19.2-26.4"/>
+    </g>
+    <g id="cola1">
+      <path class="cls-4" d="M177.5,67.9s-13.2,25.7-13.1,29.6-2.5,14.5-2.5,14.5c0,0-.2,4.7-1.2,11s-4.9,12.3-4.9,20.9,1,18.8.9,24.5,2.5,3.2,2,12.8,1.3,10.6-1.6,13.7-20,10.7-37.4,27.3c-17.4,16.6-25.4,26.2-31.8,33.4s-19.9,12.8-20.3,20.8-6.3,15.9-7.4,20.7-5.8,3.4-9-1.5-1.6-12.6-5.6-25.1c-4-12.5-7.2-94.5,0-111.8s5.4-28.5,17.5-45.7,50.6-62.2,90.1-74.5c39.4-12.2,91.6-28.2,124.6-23.4,33,4.8,73.7,14.5,92.1,28.4,18.4,13.9,56,58.3,63.2,68.5s16.8,35.3,18.4,41.9c1.6,6.6,6.4,17.6,8.8,27.3s7.2,14.1,8,28.7,0,35.4,0,35.4c0,0-6.4-7.8-15.2-9.2-8.8-1.3-12.1-14.6-25.2-14-13.1.6-16.3-1-19.5-2.6-3.2-1.6-11-5.9-9.1-5.8s-13.2-1.9-13.2-1.9l-10.2-3.5s-3.2.8-8.9,0c-5.8-.8-12.9,2.7-12.9-2.3s1.6-5.2,1.6-13.9.8-20.8.8-23.9,7.7-2.8,3.1-9.7c-4.7-6.9-17.7-42.9-17.2-45.7s1.1-.1,0-5.9,2.4-6.5-1.7-11.3-4.1-8.9-6.5-12-6.2-7.3-7.9-9.2-2.8-1.1-8.2-6.7-26.6-22.2-27.6-21.9-2.9-2-7.1-2.4-6.5-2.8-9,0-2.7,6.2-7.8,8.1-6.4,3.4-10.9,5-29.5,1.8-32.6,2.5.9,0-3.1.7-1.7-.7-3.6-4-6-3-6-3c0,0-3.9-.6-7.9-.8s-2.5,1-6.5.8-18.2,15-18.2,15Z"/>
+    </g>
+    <g id="cuerpo1">
+      <path class="cls-5" d="M473.5,274.3s-40.3,122.4-108.6,150.7c-68.3,28.2-138.1,28.6-200.5,7.1-62.4-21.4-98-79.1-99.8-83.8s-6-30-6-30c0,0,10.6-25.7,12-26.8s8.3-10.7,12.9-15.3,14.8-17.6,18-19.9c3.2-2.3,14.7-9.1,16.3-11.1s8.6-9,15.1-13.3,1.4-2,9.7-6.1,20.3-12,20.3-12h5.6s12,7.9,23.6,13.7,61.9,16.4,68.8,17.8c6.9,1.4,8.5,1.4,12.6,1.4s8.2,1.4,8.2,1.4c0,0,4.6,1.8,5.1,7.4.5,5.5,3.7,8.4,4.2,10.7s2.8,4.6,2.8,6-1.8,8.2,0,3.4,1.8-9,0-15-4.6-7.6-2.3-9.6-3.2,1.7,4.2-2.4,12.9-7.2,17.6-9.4c4.6-2.2,26.8-13.7,33.7-17.4,6.9-3.7,6.9-4.6,12.9-1.8s52.2,11,64.7,20.1c12.5,9,27.8,9.9,29.4,12.9s16.8,10.4,16.8,13.6,2.8,7.8,2.8,7.8"/>
+    </g>
+    <g id="nube1">
+      <path class="cls-6" d="M445.7,86.7c-1.3-.5-10.3-5.1-10.3-5.1,0,0-3-5.5-7.9-3.7s-9.8,3.5-14.7,5.6-9.8,4.6-12,7.2-6,5.9-9.3,7-4.3-1.1-9.8,0-6.6-2.1-12.6,2.8-4.9,2.1-9.8,8.7c-4.9,6.5-6.5,2.5-6,11.6s-2.7,3.2,2.7,13.3,7.6,11.1,13.6,11.9,13.6.8,15.8,0,6-2.3,9.8-4,5.5-6.3,11.5-3.7,7.6,2.6,13.1,2.6,10.9-7,15.6-6.8,5.1,5.7,10.3-2c5.2-7.6,6.8-5.4,8.5-11.4s3.3-8.7,3.8-11.5,0-8.7,0-8.7l-2.2-5.9s-8.8-7.2-10.1-7.7Z"/>
+    </g>
+    <g id="nube2">
+      <path class="cls-6" d="M137.7,154.7c-1.3-.5-10.3-5.1-10.3-5.1,0,0-3-5.5-7.9-3.7s-9.8,3.5-14.7,5.6-9.8,4.6-12,7.2-6,5.9-9.3,7-4.3-1.1-9.8,0-6.6-2.1-12.6,2.8-4.9,2.1-9.8,8.7-6.5,2.5-6,11.6-2.7,3.2,2.7,13.3c5.5,10,7.6,11.1,13.6,11.9s13.6.8,15.8,0,6-2.3,9.8-4,5.5-6.3,11.5-3.7,7.6,2.6,13.1,2.6,10.9-7,15.6-6.8,5.1,5.7,10.3-2c5.2-7.6,6.8-5.4,8.5-11.4s3.3-8.7,3.8-11.5,0-8.7,0-8.7l-2.2-5.9s-8.8-7.2-10.1-7.7Z"/>
+    </g>
+    <g id="hand1">
+      <path class="cls-1" d="M414.4,340c1.8-1.8,6-6.9,6-6.9l5.1-5.5s3.2-4.3,4.6-4.7,0-2.3,0-2.3l-5.1-7.6s-2.8-5.2-4.6-7.1-4.6-5.6-6-9.3-3.4-4-5.6-9.4-4-9.5-4-9.5c0,0-6.1-3.7-5.9,0s2.5,7.1,2.7,9.5,2.8,7.6,3.1,10.3,2.1,10.5,2.1,10.5c0,0-1.9,1.2-3.7-2.1-1.8-3.3-4.7-11.2-7-12.3s-4.1-1.4-6.8-6.4-4-7.3-6.6-11.2-5.9-9.8-8.2-12.6-5.1-9.3-5.1-4.2,5.5,8.3,5.1,11.5,1.4,7,3.2,12c1.8,5.1,5.1,9.7,6,12.9s3.1,7,2.2,7.4-5-6.6-7.3-9.5-4.2-8.9-6.5-10.8c-2.3-1.9-2.1-3.7-5.2-7s-2.7-6.9-3.1-3.2,2.6,11.2,3.1,12.7,3.8,8,5.6,11.3,8.1,16.5,6.9,15.1c-3.7-4.4-6.5-7.4-9.2-11.2s-1.9-6.6-6.5-10.8-7.3-9.2-6.9-6.9,3.2,10.6,4.6,13.4,10.2,16.9,10.2,16.9l2.8,7.1s-3-6.9-7.5-10.6c-4.5-3.7-17-25.9-11.9-10.9,5.1,15,6.9,21.5,9.7,24.3s9.2,11.1,12,14.3,3.8,6.9,6.1,10.6c2.2,3.7,7.2,6,9.3,11.1s6.5,4.6,6.5,4.6l4,2.3,3.6-13.4,2.2-4.2,5.6-8.3Z"/>
+    </g>
+    <g id="hand2">
+      <path class="cls-1" d="M226.3,385.3c-1.8-1.8-6-6.9-6-6.9l-5.1-5.5s-3.2-4.3-4.6-4.7,0-2.3,0-2.3l5.1-7.6s2.8-5.2,4.6-7.1,4.6-5.6,6-9.3,3.4-4,5.6-9.4,4-9.5,4-9.5c0,0,6.1-3.7,5.9,0s-2.5,7.1-2.7,9.5-2.8,7.6-3.1,10.3-2.1,10.5-2.1,10.5c0,0,1.9,1.2,3.7-2.1s4.7-11.2,7-12.3,4.1-1.4,6.8-6.4c2.8-4.9,4-7.3,6.6-11.2s5.9-9.8,8.2-12.6,5.1-9.3,5.1-4.2-5.5,8.3-5.1,11.5-1.4,7-3.2,12c-1.8,5.1-5.1,9.7-6,12.9s-3.1,7-2.2,7.4,5-6.6,7.3-9.5,4.2-8.9,6.5-10.8c2.3-1.9,2.1-3.7,5.2-7s2.7-6.9,3.1-3.2-2.6,11.2-3.1,12.7-3.8,8-5.6,11.3-8.1,16.5-6.9,15.1c3.7-4.4,6.5-7.4,9.2-11.2s1.9-6.6,6.5-10.8,7.3-9.2,6.9-6.9-3.2,10.6-4.6,13.4-10.2,16.9-10.2,16.9l-2.8,7.1s3-6.9,7.5-10.6,17-25.9,11.9-10.9-6.9,21.5-9.7,24.3-9.2,11.1-12,14.3c-2.8,3.2-3.8,6.9-6.1,10.6s-7.2,6-9.3,11.1-6.5,4.6-6.5,4.6l-4,2.3-3.6-13.4-2.2-4.2-5.6-8.3Z"/>
+    </g>
+  </g>
+</svg>
+
+		</div>
+
+		<div id="middle" alt="and suddenly">
+			<a href="#"><div id="a">everywhere, the smell of some letters, illuminating the confusion of their overlapped shapes</div></a>
+			<a href="#"><div id="s">truly a buffet of declarations, thoughtfully linear, but fractally permutated</div></a>
+			<a href="#"><div id="d">beautifully laid, the income of such activities on the book of deeds</div></a>
+			<div id="head1" alt="this is a head"> A HEAD/// <br> /*HA//O <br> ///*O/HEAD </div> 
+	  		<div id="head2" alt="this is another head"> THE EYES , THE EYES <br> THE NOSE <br> THE LIPS <br> THE FACE <br> "*" </div>
+		</div>
+		
 	</div>
 
 
+
+
+
+	
 	<script>
 		
 		
 		function myFunction(){
 		
-			var objetos ={
+				var objetos ={
 							 poema : document.getElementById ("package1"),
-							 next:document.getElementById("next")	
-			}
+							 next:document.getElementById("next"),
+							 fondo : document.body,
+	         				 mujer : document.getElementById ("head2"),
+							 anfora : document.getElementById ("base4"),
+							 nube: document.getElementById ("base1"),
+							 nube2: document.getElementById ("base2"),
+							 nube3: document.getElementById ("base3"),
+							 letters1 : document.getElementById ("a"),//text//
+	         				 letters2 : document.getElementById ("s"),//text//
+	         				 letters3 : document.getElementById ("d"),//text//
+	         				 being1 : document.getElementById ("being1"),
+	         				 being3 : document.getElementById ("being3"),
+		 					 ll:document.getElementById("box2")	
+					}
+
+
+				var textos= {
+					text1:"after the great first click, the buttons are reassigned events but the cache was still there >>>",
+			      	text2:"this might be a little surrealist but mainly there are two figures passing around arguments, dialectically >>> ",
+			      	text3:"event listeners are removed and changed by new ones.the same with the second and third click. who will witness? >>>",
+			      	text4:"The piano sounded slowly in the neighbours house but it was only one string >>>",
+			      	text5:"The flowers, always the flowers, surround the statement >>>",
+					text6:"Nevertheless, the dust in the video card does not allow you to see clearly >>>",
+					text7:"and the fragile petals are numbered and indexed >>>",
+					text8:"and the grains of sand area a variable that it is not here, not there, oblique >>>",
+					text9: "but believing the night was here, they went back and throw a stone into the sea >>>",
+					text10:"the birds look at you, thinking: WTF?, but mainly you ignore them, as well >>>",
+					text11:"but you cannot help but scare them, and count them on the sky and forget about it later >>>",
+					text12:"look around the flowering tree that is there, just there >>>",
+					text13:"is this waiting the time,<br>waiting the time, monologous, monotonous >>>",
+					text14:"waiting the time,<br>waiting the time<br> but somehow<br> living (*)",
+					text15:"as soon as the machine breaths and huff and puff, there it is",
+					text16:"waiting for the sound, the crunch, the elliptical response",
+					text17:"waiting<br>|||||,<br>:::::<br> *X*X*X*X<br> living (*)",
+					text18:"the absurdity of it all, completely, otherwise, completely logical",
+					text19:"but if you found one innocent, might you forgive them all?",
+					text20:"there is not such a thing as the reason you were looking for"
+					}
+
+				var txts = document.getElementById ("texto_box");
+
 	
 				//this function add event listeners//
 				var next=document.getElementById("next");
 	
-			//MENU
-			function menu(){
+				//ROLLOVERS
+				function rollovers1(){
+						//rollovers
+						let h1 = document.getElementById("a"),
+						hover = gsap.to(h1, {scale: 0.9, opacity:0.6, color: "darkgray", duration: 1.5, paused: true, ease: "power1.inOut"});
+						h1.addEventListener("mouseenter", () => hover.play());
+						h1.addEventListener("mouseleave", () => hover.reverse());
+			
+						let h2 = document.getElementById("d"),
+						hover2 = gsap.to(h2, {scale: 0.9, opacity:0.4, color: "black", duration: 1.5, paused: true, ease: "power1.inOut"});
+						h2.addEventListener("mouseenter", () => hover2.play());
+						h2.addEventListener("mouseleave", () => hover2.reverse());
+			
+						let h3 = document.getElementById("next"),
+						hover3 = gsap.to(h3, {scale:1.1, opacity:0.6, duration: 1.5, paused: true, ease: "power1.inOut"});
+						h3.addEventListener("mouseenter", () => hover3.play());
+						h3.addEventListener("mouseleave", () => hover3.reverse());
+			
+						let h4 = document.getElementById("base4"),
+						hover4 = gsap.to(h4, {scale:1.7, opacity:0.6, duration: 1.5, paused: true, ease: "power1.inOut"});
+						h4.addEventListener("mouseenter", () => hover4.play());
+						h4.addEventListener("mouseleave", () => hover4.reverse());
+			
+						//https://gsap.com/community/forums/topic/24704-hover-effect-at-css-with-gsap/
+						console.log("rollvoers activated");
+			
+				}
+		
+				//MENU
+					function menu(){
 					var poema =document.getElementById ("package1");
 					var next=document.getElementById("next")
 					var tl = gsap.timeline();
@@ -217,7 +436,7 @@
 					console.log("menu");
 				}
 		
-			function hidemenu(){
+					function hidemenu(){
 					var poema =document.getElementById ("package1");
 					var next=document.getElementById("next")
 					var tl = gsap.timeline();
@@ -230,7 +449,46 @@
 				
 				}
 		
-			next.addEventListener ("click",menu);
+					next.addEventListener ("click",menu);
+
+
+					function anima0(){
+						//declaration timeline repetition
+						var tl = gsap.timeline({repeat:5, repeatDelay: 0.5});
+						//nube1
+						
+						//letters to the top right
+						tl.to("#a", {x:-20,y:-40,opacity: "0.3",duration: 3, delay:0});
+						tl.from("#base3", {x:-500, y:190,opacity: "0.3",duration: 0.5, delay:0})
+						
+						tl.to("#s", {x:-50,y:-30,opacity: "0.1",duration: 3, delay:0});
+						tl.to("#d", {x:-30,y:10,opacity: "0.2",duration: 3, delay:0});
+
+						//nube2
+						tl.from("#base1", {x:-500, y:100,opacity: "0.5",duration: 1, delay:0})
+
+						tl.to("#a", {x:-30,y:20,opacity: "0.3",duration: 5, delay:0});
+						tl.to("#s", {x:-20,y:30,opacity: "0.2",duration: 3, delay:0});
+						tl.to("#d", {x:20,y:30,opacity: "0.2",duration: 3, delay:0});
+
+						//nube1
+						tl.to("#base3", {x:2459, y:190,opacity: "0.3",duration: 9, delay:0.1})
+
+						tl.to("#a", {x:-25,y:20,opacity: "0.1",duration: 3, delay:0});
+						tl.to("#s", {x:30,y:10,opacity: "0.1",duration: 3, delay:0});
+						tl.to("#d", {x:10,y:-10,opacity: "0.1",duration: 3, delay:0});
+						tl.to("#a", {x:-5,y:2,opacity: "0",duration: 3, delay:0});
+						tl.to("#s", {x:3,y:5,opacity: "0",duration: 3, delay:0});
+						tl.to("#d", {x:10,y:4,opacity: "0",duration: 3, delay:0});
+						
+					
+						//nube2
+						tl.to("#base1", {x:2459, y:390,opacity: "0.5",duration: 9, delay:0.1})
+						
+						console.log("anima0");
+				}
+				anima0();
+				
 		}
 			
 			
