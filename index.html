@@ -1,1 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
 
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gefercan</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #000;
+        }
+
+        /*--------------------------- Header---------------------*/
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            z-index: 1000;
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: normal;
+            color: #000;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 0;
+        }
+
+        nav ul li {
+            background: white;
+            border: 1px solid #000;
+            margin-left: -1px;
+        }
+
+        nav ul li:first-child {
+            margin-left: 0;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 12px 20px;
+            color: #000;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: #f0f0f0;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: #000;
+            transition: 0.3s;
+        }
+
+        /*------------------------Main Content-----------------------*/
+        main {
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
+        }
+
+        .page {
+            display: none;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Home Page */
+        .home-image {
+            width: 100%;
+            height: calc(100vh - 80px);
+            object-fit: cover;
+        }
+
+        /*---------------------------Projects Page------------------*/
+        .projects-container {
+            background: white;
+            padding: 40px 20px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .project-item {
+            padding: 20px;
+            border: 1px solid #eee;
+        }
+
+        .project-item h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .project-item p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .projects-section {
+            margin-bottom: 50px;
+        }
+
+        .projects-section h2 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        /*----------------------------- Works Page ----------------*/
+        .works-container {
+            background: white;
+            padding: 40px 20px;
+        }
+
+        .works-submenu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0;
+            margin-bottom: 40px;
+            border: 1px solid #000;
+        }
+
+        .works-submenu button {
+            background: white;
+            border: none;
+            border-right: 1px solid #000;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .works-submenu button:last-child {
+            border-right: none;
+        }
+
+        .works-submenu button:hover,
+        .works-submenu button.active {
+            background-color: #f0f0f0;
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .work-item {
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .work-item:hover {
+            opacity: 0.8;
+        }
+
+        .work-placeholder {
+            width: 100%;
+            aspect-ratio: 9/8;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .work-title {
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* -------------------Work Detail Modal-------------------- */
+        .work-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .work-modal-content {
+            background: white;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 40px;
+            position: relative;
+        }
+
+        .work-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .work-modal img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .work-modal h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .work-modal p {
+            line-height: 1.6;
+        }
+
+        /*------------------------------- CV and Contact Pages--------------- */
+        .cv-container,
+        .contact-container {
+            background: white;
+            padding: 40px 20px;
+        }
+
+        .cv-container h1,
+        .contact-container h1 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        .cv-container p,
+        .contact-container p {
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 800px;
+        }
+
+	#fondo{
+	    width:95%;
+ 	    padding:5% 5% 65% 5%;
+	    margin:1% 1% 1% 1%;
+	    background-image:url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.dribbble.com%2Fusers%2F667820%2Fscreenshots%2F5036730%2Fmedia%2F62acccdcc083cbf30ac5fe3b9a1a81de.jpg%3Fcompress%3D1%26resize%3D400x300%26vertical%3Dtop&f=1&nofb=1&ipt=ca7d3c2df3ffb4567e097df90d25dac5d1f90c04255e66359b1eaf7adad2e971")
+	}
+
+
+
+        /*-------------------------- Mobile Styles ----------------*/
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                transition: left 0.3s;
+                border-top: 1px solid #eee;
+            }
+
+            nav ul.show {
+                left: 0;
+            }
+
+            nav ul li {
+                border: none;
+                border-bottom: 1px solid #eee;
+                margin: 0;
+            }
+
+            nav ul li a {
+                padding: 20px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .works-submenu {
+                flex-direction: column;
+            }
+
+            .works-submenu button {
+                border-right: none;
+                border-bottom: 1px solid #000;
+            }
+
+            .works-submenu button:last-child {
+                border-bottom: none;
+            }
+
+            .work-modal-content {
+                padding: 20px;
+                margin: 20px;
+            }
+
+	    #fondo{
+	    width:95%;
+ 	    padding:5% 5% 185% 5%;
+	    margin:1% 1% 1% 1%;
+	    background-image:url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.dribbble.com%2Fusers%2F667820%2Fscreenshots%2F5036730%2Fmedia%2F62acccdcc083cbf30ac5fe3b9a1a81de.jpg%3Fcompress%3D1%26resize%3D400x300%26vertical%3Dtop&f=1&nofb=1&ipt=ca7d3c2df3ffb4567e097df90d25dac5d1f90c04255e66359b1eaf7adad2e971")
+	}
+       
+    </style>
+
+</head>
+
+
+
+/*--------------------------------------------body--------------------------------- */
+
+<body>
+
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo" onclick="showPage('home')">ge.fer.can art</a>
+            <nav>
+                <ul id="nav-menu">
+                   
+                    <li><a href="#" onclick="showPage('dossiers')"> dossiers </a></li>
+		    <li><a href="#" onclick="showPage('webWorks')"> web works</a></li>
+		    
+		    <li><a href="#" onclick="showPage('writings')">writings</a></li>
+		    <li><a href="#" onclick="showPage('cv')">cv/bio</a></li>
+                    <li><a href="#" onclick="showPage('contact')">contact</a></li>
+                    
+                </ul>
+            </nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+ <!----------------------------------------- Home Page ----------------------------->
+    <main>
+ 
+       
+        <div id="home" class="page active">
+            <div class="container">
+                <div id="fondo">
+			
+		</div>
+            </div>
+        </div>
+
+  <!-------------------------------------------- Dossier Projects Page -------------------->
+ <div id="dossiers" class="page">
+            <div class="projects-container">
+                <div class="projects-section">
+
+	<h2 id="subtitle_section2" class="subtitle_section"> <b>001. Dossiers</b> </h2>
+			<p id="intro_text3" class="intro_section" alt="A brief intro about me, german fernandez cantos" >
+    			Downloadable booklets, brief explanations (pdf).
+				<br>
+			</p>
+			<a href="https://drive.google.com/file/d/1f2KXIK3hF61bQBisFBWJaWKI1d55qOav/view?usp=drive_link" target="_self">
+				<div id="general" class="link_btn"> &gt; general_dossier </div></a>
+				<a href="https://drive.google.com/file/d/1rtayY-63rvKqib2EIHUUA4lkzc1rX7HX/view?usp=drive_link" target="_self">
+				<div id="comission" class="link_btn"> &gt; a-b=c comission </div></a>
+			<a href="https://drive.google.com/file/d/1VpUaSNQVyaYaHba_3zygoQXu-jcrcXDH/view?usp=drive_link" target="_self">
+				<div id="pm1" class="link_btn"> &gt; wild_things </div></a>
+			<a href="http://www.german-fernandez.com/dossier_pdfs/gefercan_zoomorphic_dossier.pdf" target="_self">
+				<div id="pm5" class="link_btn">  &gt; zoomorphic_  </div></a>
+			<a href="https://drive.google.com/file/d/1BgCcNjKkJm9z9CH18fzYoP_EGACioFR3/view?usp=drive_link" target="_blank">
+				<div id="pm3" class="link_btn">  &gt; selectd_paintings </div></a>
+		<a href="https://drive.google.com/file/d/1OTk90Rbr9fRGrhNZH9WxxknBmGUdpW44/view?usp=drive_link" target="_blank">
+				<div id="po" class="link_btn"> &gt; journeyman_2013 </div></a>
+			<a href="http://www.german-fernandez.com/dossier_pdfs/headsandgates_dossier_german_fernandez.pdf" target="_blank">
+				<div id="p" class="link_btn"> &gt; heads and gates </div></a>
+			<a href="https://lasvideosesiones.com" target="_blank">
+				<div id="p" class="link_btn"> &gt; las videosesiones </div></a>
+				<br>
+		</div>
+
+            </div>
+        </div>
+
+
+
+  <!-------------------------------------------- WebWorks Projects Page -------------------->
+ 	<div id="webWorks" class="page">
+            <div class="projects-container">
+                <div class="projects-section">
+
+	
+		<h2 id="subtitle_section1" class="subtitle_section"> <b>003. Digital </b> </h2>
+				<p id="intro_text2" class="intro_section" alt="A brief intro about me, german fernandez cantos"  >
+    		Works developed with some basic, basic coding.(Use wifi)
+				<br>
+				</p>
+				<a href="https://gefercan.github.io/1_gefercan/poema1.html" target="_blank">
+					<div id="poem1" class="link_btn"> &gt; piece 01</div></a>
+				<a href="https://gefercan.github.io/2_gefercan/piece1_for_later.html" target="_blank">
+					<div id="poem2" class="link_btn"> &gt; piece 02</div></a>
+				<a href="https://gefercan.github.io/3_gefercan/poema3.html" target="_blank">
+					<div id="poem3" class="link_btn"> &gt; piece 03</div></a>
+				<a href="https://gefercan.github.io/4_gefercan/piece4_index.html" target="_blank">
+					<div id="poem4" class="link_btn"> &gt; piece 04</div></a>
+				<a href="https://gefercan.github.io/5_gefercan/index.html" target="_blank">
+					<div id="poem5" class="link_btn">  &gt; piece 05</div></a>
+				<a href="http://gefercan.github.io/6_gefercan/index.html" target="_blank">
+					<div id="poem6" class="link_btn">  &gt; poem 06</div></a>
+				<a href="http://www.german-fernandez.com/other_works/game1/index.html" target="_blank">
+					<div id="poem7" class="link_btn"> &gt; game 07 </div></a>
+				<a href="http://www.german-fernandez.com/other_works/poem6/blogas.html" target="_blank">
+					<div id="poem8" class="link_btn"> &gt; piece 08 </div></a>
+				<a href="https://gefercan.github.io/exercises_d3/d3_01.html" target="_blank">
+					<div id="lenk" alt="github 1" class="link_btn"> &gt; others </div></a>
+				<br>
+		</div>
+
+            </div>
+        </div>
+
+
+
+  <!-------------------------------------------- Writings Page -------------------->
+
+
+ 	<div id="writings" class="page">
+            <div class="projects-container">
+                <div class="projects-section">
+
+			<h2 id="subtitle_section2" class="subtitle_section"> <b>001. Dossiers</b> </h2>
+			<p id="intro_text3" class="intro_section" alt="A brief intro about me, german fernandez cantos" >
+    			Occassional writings on art and design.
+				
+			</p><br>
+			<a href="https://gefercan.github.io/exercise_texts/onpainting.html" target="_blank">
+					<div id="git" alt="github 1" class="link_btn"> &gt; on painting</div></a>
+				<a href="https://gefercan.github.io/exercise_texts/800_words_max.html" target="_blank">
+					<div id="lenk2" alt="github 1" class="link_btn"> &gt; 800 words</div></a>
+				<a href="https://gefercan.github.io/exercise_texts/data_symbol.html" target="_blank">
+					<div id="lenk3" alt="github 1" class="link_btn"> &gt; data symbol</div></a>
+				<a href="https://gefercan.github.io/exercise_texts/light_imprints.html" target="_blank">
+					<div id="lenk4" alt="github 1" class="link_btn"> &gt; light imprints</div></a>
+				<a href="https://gefercan.github.io/exercise_texts/Que_sera.html" target="_blank">
+					<div id="lenk5" alt="github 1" class="link_btn"> &gt; Que sera?</div></a>
+				<a href="https://gefercan.github.io/exercise_texts/electric_storytelling.html" target="_blank">
+					<div id="lenk6" alt="github 1" class="link_btn"> &gt; e-storytelling</div></a>
+				<a href="https://gefercan.github.io/exercise_texts/kinetic_image.html" target="_blank">
+					<div id="lenk7" alt="github 1" class="link_btn"> &gt; kinetic image</div></a>
+				<a href="https://gefercan.github.io/exercise_texts/brushes_cogs.html" target="_blank">
+					<div id="lenk8" alt="github 1" class="link_btn"> &gt; brushes and cogs</div></a>
+				<a href="https://gefercan.github.io/exercise_texts/head_gates.html" target="_blank">
+					<div id="lenk9" alt="github 1" class="link_btn"> &gt; heads and gates</div></a>
+				<a href="https://gefercan.github.io/exercise_texts/copycopycopy.html" target="_blank">
+					<div id="lenk99" alt="github 1" class="link_btn"> &gt; copy, copy, copy</div></a>
+				<a href="https://gefercan.github.io/exercise_texts/commonplaces.html" target="_blank">
+					<div id="lenk12" alt="github 1" class="link_btn"> &gt; common places</div></a>
+				<a href="https://gefercan.github.io/exercise_texts/worst_architect.html" target="_blank">
+					<div id="lenk15" alt="github 1" class="link_btn"> &gt; worst architect </div></a>
+
+				<br>
+			</div>
+		    </div>
+        	</div>
+
+
+
+
+<!-------------------------------------- CV Page -------------------->
+        <div id="cv" class="page">
+            <div class="cv-container">
+                <h1>CV / Biography</h1>
+                <p>German Fernandez Cantos was born in Lima, Peru, graduated from the Faculty of Art of the Pontificia Universidad Catolica del Peru as graphic designer and artist. As a designer, he has been part of award-winning projects with the Al Bayan and DMI infographic teams. As an artist, he has participated in exhibitions in UAE, Peru and India, as well as having two solo shows at FN Designs gallery in 2013 and 2016 at the cultural district of Alserkal Avenue as well as being artist-in-residence at the Abu Dhabi Cultural Foundation in 2024. In his work he seeks to explore in his works the themes of identity and communication through characters who appear masked, disguised or entangled in structures drawn in surreal and unknown environments, trying to capture vignettes of contemporary life in each scene. He participated in Sikka previously, in the 2014 edition, co-curated by Sheikha Wafa Hasher Al Maktoum and the Japanese architect Kayoko Iemura. This year at Sikka -curated by Maktoum Al Maktoum- he is part of the project WindSails in collaboration with the Lebanese artist Ghada Mehdi. Currently lives and works in Dubai, as consultant in the field of information graphics and data visualization.<br><br>
+Recent Studies<br>
+-2023 RCA Contemporary Art Summer School<br>
+-2022 RCA Executive: Archives and collections and Curation and writing<br>
+-2021 Oxford Digital Humanities Summer School<br>
+-PUCP, Faculty of Art.<br><br>
+Recent Events<br>
+-2025 Sikka Art Fair<br>
+-2024 ADH Cultural Foundation Art Residency<br>
+-2022 AlSerkal Art Week<br>
+-2016 Solo show (FNDesign,AlSerkal) <br>
+
+</p>
+            </div>
+        </div>
+
+<!-------------------- Contact Page -------------------->
+        <div id="contact" class="page">
+            <div class="contact-container">
+                <h1>Contact</h1>
+                <p>For inquiries about exhibitions, collaborations, or artwork purchases, please reach out via email at gefercant@hotmail.com or through Instagram @gefercan. Studio visits are available by appointment. I am always interested in connecting with fellow artists, curators, and collectors who share a passion for contemporary art and innovative creative practices. Please allow 2-3 business days for a response to all inquiries.<br><br>For design practices go to: <a href="https://gefercandesign.github.io" target="_self"><div id="design" class="designLink">  design page </div></a>
+			</p>
+
+            </div>
+        </div>
+    </main>
+
+<!-------------------- Work Detail Modal -------------------->
+    <div id="work-modal" class="work-modal">
+        <div class="work-modal-content">
+            <button class="work-modal-close" onclick="closeWorkModal()">&times;</button>
+            <img id="modal-image" src="" alt="">
+            <h3 id="modal-title"></h3>
+            <p id="modal-details"></p>
+        </div>
+    </div>
+
+
+<!--------------------jscript ----------------------->
+    <script>
+        // Sample works data
+        const works = [
+            { id: 1, title: "Untitled #1", category: "paintings", size: "120 x 90 cm", year: "2023", image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fimage%2Fv2%2FC5112AQH_SJ8DFOSeyw%2Farticle-cover_image-shrink_720_1280%2Farticle-cover_image-shrink_720_1280%2F0%2F1552030033578%3Fe%3D2147483647%26v%3Dbeta%26t%3DXeEuII-DNkwgzLHEWCHkPAjqEr4yCPP2shUGozAlFMQ&f=1&nofb=1&ipt=66712314c356c5ae4a5533a685021cd7025660554bff42d7ff40ec5231e2be79" },
+            { id: 2, title: "Digital Landscape", category: "webart", size: "Variable dimensions", year: "2023", image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&h=356&fit=crop" },
+            { id: 3, title: "Study in Charcoal", category: "drawings", size: "50 x 70 cm", year: "2022", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=356&fit=crop" },
+            { id: 4, title: "Moving Images", category: "videoart", size: "4K Video, 5:30 min", year: "2023", image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=400&h=356&fit=crop" },
+            { id: 5, title: "Color Study #3", category: "paintings", size: "100 x 100 cm", year: "2022", image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F4.bp.blogspot.com%2F-Y3PpDZZbbmA%2FUvtGn-Sr3GI%2FAAAAAAAACQo%2F5O4bc_YqGLE%2Fs1600%2FPeruvian%2Bartist%2Bliving%2Bin%2BDubai%2B.%2BGerman%2BFernandez%2BRECEPTION.jpg&f=1&nofb=1&ipt=421234ed663a225fbc395d487e1571dfe3f4e1770621faa58b62d0eb9d0fcc71" },
+            { id: 6, title: "Interactive Piece", category: "webart", size: "Web-based", year: "2023", image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&h=356&fit=crop" },
+            { id: 7, title: "Portrait Series #2", category: "drawings", size: "40 x 60 cm", year: "2023", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=356&fit=crop" },
+            { id: 8, title: "Time Lapse", category: "videoart", size: "HD Video, 3:15 min", year: "2022", image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=400&h=356&fit=crop" },
+            { id: 9, title: "Abstract #5", category: "paintings", size: "150 x 200 cm", year: "2023", image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&h=356&fit=crop" },
+            { id: 10, title: "Generative Art", category: "webart", size: "Variable dimensions", year: "2023", image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&h=356&fit=crop" }
+        ];
+
+        // Navigation functions
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update navigation
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => link.classList.remove('active'));
+            
+            // Close mobile menu
+            document.getElementById('nav-menu').classList.remove('show');
+        }
+
+        function toggleMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('show');
+        }
+
+        // Works functions
+        function renderWorks(filteredWorks = works) {
+            const worksGrid = document.getElementById('works-grid');
+            worksGrid.innerHTML = '';
+            
+            filteredWorks.forEach(work => {
+                const workItem = document.createElement('div');
+                workItem.className = 'work-item';
+                workItem.onclick = () => openWorkModal(work);
+                
+                workItem.innerHTML = `
+                    <div class="work-placeholder" style="background-image: url('${work.image}'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="work-title">${work.title}</div>
+                `;
+                
+                worksGrid.appendChild(workItem);
+            });
+        }
+
+        function filterWorks(category) {
+            // Update active button
+            const buttons = document.querySelectorAll('.works-submenu button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter works
+            const filteredWorks = category === 'all' ? works : works.filter(work => work.category === category);
+            renderWorks(filteredWorks);
+        }
+
+        function openWorkModal(work) {
+            const modal = document.getElementById('work-modal');
+            const modalImage = document.getElementById('modal-image');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDetails = document.getElementById('modal-details');
+            
+            modalImage.src = work.image;
+            modalTitle.textContent = work.title;
+            modalDetails.innerHTML = `Size: ${work.size}<br>Year: ${work.year}`;
+            
+            modal.style.display = 'flex';
+        }
+
+        function closeWorkModal() {
+            document.getElementById('work-modal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('work-modal').onclick = function(e) {
+            if (e.target === this) {
+                closeWorkModal();
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            renderWorks();
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const nav = document.querySelector('nav');
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.getElementById('nav-menu');
+            
+            if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+                navMenu.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
