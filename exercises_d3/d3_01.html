@@ -1,35 +1,126 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-<title>german.fernandez.images</title>
-<!--here comes search meta tags-->
-<meta http-equiv="last-modified" content="Thu, 11 May 2020 19:11:42 GMT" />
-<meta name="description" content="Illustration, Infographics and other works from this peruvian designer/ Ilustraciones, infografias y otros trabajos de este disenador peruano."/>
-<meta name="keywords" content="Illustration, Infographics, design, art, artist, draughtsman, concept art, Painting, drawing, Infografia, Arte"  />
-<meta name="google-site-verification" content="F8ZTKypgy-ve7R95tlZAPDmxZfq387WAxpbbTDucTlY" />
-<meta name="copyright" content="© 2000-2020 german fernandez" />
-<meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renaissance Artists and Cities Network</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f5f5f5;
+        }
+        
+        .text-content {
+            max-width: 20%;
+            margin-left: 30px;
+            line-height: 1.3;
+            text-align: left;
+	    z-index:3; 
+	    position:fixed;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        
+        .title {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .description {
+            font-size: 1em;
+        }
+        
+        .container {
+            background-color: #e0e0e0;
+            width: 100%;
+            height: 100vh;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+	    z-index:2;
+        }
+        
+        .tooltip {
+            position: absolute;
+            background-color: white;
+            padding: 10px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.2s;
+            max-width: 200px;
+            pointer-events: auto; /* Make the tooltip clickable */
+        }
+        
+        .tooltip a {
+            color: #0066cc;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        
+        .tooltip a:hover {
+            text-decoration: underline;
+        }
 
-
-
-<!--here setting responsive design-->
-<meta name="viewport"  content="width=device-width, initial-scale=1">
-
-<!--here comes the links for responsive css
-<link rel="stylesheet" media="(min-width: 1700px)" href="css/gefercan_landscape.css"  type="text/css">
-  -->
-<script type="module">
-
-import * as d3 from "https://cdn.skypack.dev/d3@7";
-
-const div = d3.selectAll("div");
-
-</script>
-
+	#network {
+            z-index:5;
+        }
+        
+        .legend {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: none;
+            padding: 2%;
+            border-radius: 4px;
+            font-size: 12px;
+	    z-index:3;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: right;
+            margin-bottom: 1vh;
+        }
+        
+        .legend-color {
+            width: 15px;
+            height: 15px;
+            margin-right: 8px;
+        }
+        
+        .node, .link, .node-label {
+            transition: all 0.3s ease;
+        }
+        
+        /* Add circular boundary indicator */
+        .boundary-circle {
+            fill: none;
+            stroke: #ccc;
+            stroke-dasharray: 5,5;
+            stroke-width: 1;
+        }
+    </style>
 </head>
-<!--finish head-->
+
+
+
+
+
+
 
 
 
@@ -38,24 +129,887 @@ const div = d3.selectAll("div");
 
 <body>
 
+    
+    <div class="container">      
 	
+   <div class="text-content">
+        <h2>Renaissance Venetian Art Network</h2>
+        <p>As we may think (see). Favouring a non-linear narrative, sometimes the diagram appears as an interface of sorts and as hypertextual device. The perception of the evident shape already transmits 	knowledge. Every node is the beginning and an entry point, as well as a continuation of paths already started. </p>
+        
+        <p>Here, on a network diagram, formed by nodes and links, stay the connections to pages of more information (in this case, the Wikipedia pages about Renaissance artists). An individual, the artist, 	might migrate and move across these centers where more opportunities arise, looking for patrons and comissions, moving away from agitated areas.</p>
+        
+        <p>Exploring here some graphic types, to map the basic info I have about artists and their centers of attraction ( Florence, Rome, Venice) in Renaissance Italy.
+	First using apps as that helped me to shape the data, and then with the help of LLMs such as ClaudeAI and ChatGPT. The attempts with the former were better than the latter in term of outputs. In some 	regard, it is still like before, reading and tweaking here and there until arriving to some convincing result and knowing how to read between the lines, as always is when dealing with code.</p>
+    </div>
+    
+    <div class="legend">
+
+	<div class="legend-item">
+                <svg class="legend-color" height="15" width="15">
+                    <polygon points="7.5,0 15,7.5 7.5,15 0,7.5" fill="red"/>
+                </svg>
+                <span>Artist</span>
+     	</div>
+     	<div class="legend-item">
+                <svg class="legend-color" height="15" width="15">
+                    <polygon points="6,0 12,2.5 15,7.5 12,12.5 6,15 0,12.5 -3,7.5 0,2.5" fill="blue"/>
+                </svg>
+                <span>City</span>
+   	 </div>
+    <canvas id="network"></canvas>
+        <div class="tooltip" id="tooltip"></div>
+      
+        </div>
+    </div>
 
 
 
-	<div id="container" alt="welcome">
-    		graphics
-			<!-- Add a svg shape -->
-		<svg>
-  		<circle style="fill: #69b3a2" stroke="black" cx=50 cy=50 r=40></circle>
-		</svg>
+    <script>
+        // Define the node data
+        const nodes = [
+            { id: "Veronese", type: "artist", birth: "b. 1528", death: "d. 1588", discipline: "painter", value: 0.5, link: "https://en.wikipedia.org/wiki/Paolo_Veronese" },
+            { id: "Tintoretto", type: "artist", birth: "b. 1518", death: "d. 1594", discipline: "painter", value: 0.5, link: "https://en.wikipedia.org/wiki/Tintoretto" },
+            { id: "VENICE", type: "city", birth: "city state", death: "(Veneto)", discipline: "Republic of Venice (La Serenissima)", value: 5, link: "https://en.wikipedia.org/wiki/Republic_of_Venice" },
+            { id: "Jacopo Bassano", type: "artist", 
+                birth: "b. 1510", 
+                death: "d. 1592", 
+                discipline: "painter", 
+                value: 0.5 },
+                 {id: "Andrea Palladio", 
+                type: "artist", birth: "b. 1508", death: "d. 1580", discipline: "architect",
+		link:"https://en.wikipedia.org/wiki/Andrea_Palladio", 
+                value: 0.5 },
 
-			</div>
+                { id: "Ghirlandaio", type: "artist", birth: "b. 1508", death: "d. 1580", 
+                discipline: "architect",link:"https://en.wikipedia.org/wiki/Domenico_Ghirlandaio", 
+                value: 0.5 },
+                {id: "NAPLES", type: "city", birth: "Kingdom (Spanish Crown)", death: " Campania",  discipline: " Sicilia, Kingdom of Naples", link:"https://en.wikipedia.org/wiki/Kingdom_of_Naples",
+                value: "5"},
+
+  	    	    {id: "FLORENCE", type: "city state", birth: "Medici dinasty", death: "(Tuscany)",discipline: "Republic of Florence",link:"https://en.wikipedia.org/wiki/Republic_of_Florence",
+      		      value: "4"},
+
+                {id: "MANTUA", type: "city", birth: "House of Gonzaga", death: "", discipline: "Duchy of Mantua",link:"https://en.wikipedia.org/wiki/Duchy_of_Mantua",
+              value: "3"},
+
+                {id: "MILAN",
+                  type: "city",
+                  birth: "city state",
+                  death: "(Lombardia)",
+                  discipline: "Duchy oF Milan",
+                  value: "3"},
+                {id: "PADUA",
+                  type: "city",
+                  birth: "city state",
+                  death: "",
+                  discipline: "",
+                  value: "2"
+                },
+                {id: "ROME",
+                  type: "city state",
+                  birth: "Seat of the Pope",
+                  death: "(Lazio)",
+                  discipline: "Papal Estates",link:"https://en.wikipedia.org/wiki/Papal_States",
+                  value: "6"},
+                {id: "SIENA",
+                  type: "city state",
+                    birth: "citizen-based",
+                    death: "(Tuscany)",
+                    discipline: "Republic of Siena",link:"https://en.wikipedia.org/wiki/Republic_of_Siena",
+                    value: "2"},
+                  {id: "URBINO",
+                    type: "city",
+                    birth: "city state",
+                    death: "House of Montefeltro",link:"https://en.wikipedia.org/wiki/Duchy_of_Urbino",
+                    discipline: "Duchy of Urbino",
+                value: "2"},
+                {
+                id: "Pontormo",
+                type: "artist",
+                birth: " b. 1494",
+                death: " d. 1557 ",
+                discipline: "painter ",
+                link: " https://en.wikipedia.org/wiki/Pontormo",
+                value: "0.5"
+              },
+              {
+                id: "Andrea del Sarto",
+                type: "artist",
+                birth: "b. 1486",
+                death: "d. 1531",
+                discipline: "painter",link:"https://en.wikipedia.org/wiki/Andrea_del_Sarto",
+                value: "0.5"
+              },
+              {
+                id: "Titian",
+                type: "artist",
+                birth: "b. 1485",
+                death: "d. 1576",
+                discipline: "painter",link:"https://en.wikipedia.org/wiki/Titian",
+                value: "0.5"
+              },
+              {
+                id: "Raphael",
+                type: "artist",
+                birth: " b. 1483",
+                death: "d. 1520 Rome",
+                discipline: "painter",
+                value: "0.5",
+                link: "https://en.wikipedia.org/wiki/Raphael"
+              },
+              {
+                id: "Michelangelo",
+                type: "artist",
+                birth: "b. 1475",
+                death: "d. 1564",
+                discipline: "sculptor",
+                value: "0.5",link: "https://en.wikipedia.org/wiki/Michelangelo",
+              },
+              {
+                id: "Lorenzo Ghiberti",
+                type: "artist",
+                birth: "b. 1378",
+                death: "d. 1455",
+                discipline: "sculptor",
+                link: "https://en.wikipedia.org/wiki/Lorenzo_Ghiberti",
+                value: "0.5"
+              },
+{
+                id: "Giorgione",
+                type: "artist",
+                birth: "b. 1473-78",
+                death: "d. 1510",
+                discipline: "painter",
+                link: "https://en.wikipedia.org/wiki/Giorgione",
+                value: "0.5"
+              },
+              {
+                id: "Leonardo",
+                type: "artist",
+                birth: " b. 1452 Vinci",
+                death: " d. 1519 Loire ",
+                discipline: "painter",
+                link: "https://en.wikipedia.org/wiki/Leonardo_da_Vinci",
+                value: "0.5"
+              },
+              {
+                id: "Perugino",
+                type: "artist",
+                birth: "b. 1446",
+                death: "d. 1523",
+                discipline: "painter",
+		link:"https://en.wikipedia.org/wiki/Pietro_Perugino",
+                value: "0.5"
+              },
+              {
+                id: "Bramante",
+                type: "artist",
+                birth: "b. 1444",
+                death: "d. 1514",
+                discipline: "architect",link:"https://en.wikipedia.org/wiki/Donato_Bramante",
+                value: "0.5"
+              },
+              {
+                id: "Verrocchio",
+                type: "artist",
+                birth: "b. 1435",
+                death: "d. 1488",
+                discipline: "sculptor",link:"https://en.wikipedia.org/wiki/Andrea_del_Verrocchio",
+                value: "0.5"
+              },
+              {
+                id: "Mantegna",
+                type: "artist",
+                birth: "b. 1431",
+                death: "d. 1506",
+                discipline: "painter",link:"https://en.wikipedia.org/wiki/Andrea_Mantegna",
+                value: "0.5"
+              },
+              {
+                id: "Giovanni Bellini",
+                type: "artist",
+                birth: "b. 1430",
+                death: "d. 1516",
+                discipline: "painter",link:"https://en.wikipedia.org/wiki/Giovanni_Bellini",
+                value: "0.5"
+              },
+              {
+                id: "Gentile Bellini",
+                type: "artist",
+                birth: "b. 1429",
+                death: "d. 1507",
+                discipline: "painter",link:"https://en.wikipedia.org/wiki/Gentile_Bellini",
+                value: "0.5"
+              },
+              {
+                id: "Antonello de Messina",
+                type: "artist",
+                birth: "b. 1425,1430",
+                death: "d. 1479",
+                discipline: "painter",link:"https://en.wikipedia.org/wiki/Antonello_da_Messina",
+                value: "0.5"
+              },
+              {
+                id: "Piero della Francesca",
+                type: "artist",
+                birth: "b. 1415",
+                death: "d. 1492",
+                discipline: "painter", link:"https://en.wikipedia.org/wiki/Piero_della_Francesca",
+                value: "0.5"
+              },
+		{
+                id: "Luca Della Robia",
+                type: "artist",
+                birth: "b. 1399",
+                death: "d. 1482",
+                discipline: "sculptor",link:"https://en.wikipedia.org/wiki/Luca_della_Robbia",
+                value: "0.5"
+              },
+		{
+                id: "Andrea Della Robia",
+                type: "artist",
+                birth: "b. 1435",
+                death: "d. 1525",
+                discipline: "sculptor",link:"https://en.wikipedia.org/wiki/Andrea_della_Robbia",
+                value: "0.5"
+              },
+              {
+                id: "Filippo Lippi",
+                type: "artist",
+                birth: "b. 1406",
+                death: "d. 1469",
+                discipline: "painter",link:"https://en.wikipedia.org/wiki/Filippo_Lippi",
+                value: "0.5"
+              },
+              { id: "Alberti",
+                type: "artist",
+                birth: "b. 1404",
+                death: "d. 1472",
+                discipline: "architect",link:"https://en.wikipedia.org/wiki/Leon_Battista_Alberti",
+                value: "0.5"
+              },
+              {id: "Massaccio",
+                type: "artist",
+                birth: "b. 1401",
+                death: "d. 1428",
+                discipline: "painter",link:"https://en.wikipedia.org/wiki/Masaccio",
+                value: "0.5"
+              },
+              {
+                id: "Paolo Ucello",
+                type: "artist",
+                birth: "b. 1397",
+                death: "d. 1475",
+                discipline: "painter",link:"https://en.wikipedia.org/wiki/Paolo_Uccello",
+                value: "0.5"
+              },
+              {
+                id: "Fra Angelico",
+                type: "artist",
+                birth: "b. 1395",
+                death: "d. 1455",
+                discipline: "painter",link:"https://en.wikipedia.org/wiki/Fra_Angelico",
+                value: "0.5"
+              },
+              {
+                id: "Donatello",
+                type: "artist",
+                birth: "b. 1386",
+                death: "d. 1466",
+                discipline: "sculptor",
+		link:"https://en.wikipedia.org/wiki/Donatello",
+                value: "0.5"
+              },
+              {
+                id: "Brunelleschi",
+                type: "artist",
+                birth: "b. 1377",
+                death: "d. 1446",
+                discipline: "sculptor",link:"https://en.wikipedia.org/wiki/Filippo_Brunelleschi",
+                value: "0.5"
+              },
+              {
+                id: "Taddeo Gaddi",
+                type: "artist",
+                birth: "b. 1300",
+                death: " d",
+                discipline: " painter ", link:"https://en.wikipedia.org/wiki/Taddeo_Gaddi",
+                value: "0.5"
+              },
+		{
+                id: "Antonio Bazzi",
+                type: "artist",
+                birth: "b. 1477",
+                death: " d. 1549",
+                discipline: " painter ", link:"https://en.wikipedia.org/wiki/Il_Sodoma",
+                value: "0.5"
+              },
+              {
+                id: "Duccio Buonisegna",
+                type: "artist",
+                birth: "b. 1255",
+                death: "d. 1318–1319",
+                discipline: "painter",link:"https://en.wikipedia.org/wiki/Duccio",
+                value: "0.5"
+              },
+              {
+                id: "Giovanni Pisano",
+                type: "artist",
+                birth: "b. 1250",
+                death: "d. 1315",
+                discipline: "sculptor",link:"https://en.wikipedia.org/wiki/Giovanni_Pisano",
+                value: "0.5"
+              },
+              {
+                id: "Giulio Romano",
+                type: "artist",
+                birth: " b. 1499",
+                death: " Roma ",
+                discipline: " d. 1546",link:"https://en.wikipedia.org/wiki/Giulio_Romano",
+                value: "0.5"
+              },
+              {
+                id: "Sandro Botticelli",
+                type: "artist",
+                birth: "b. 1445",
+                death: "d. 1510",
+                discipline: "painter", link:"https://en.wikipedia.org/wiki/Sandro_Botticelli",
+                value: "0.5"
+              },
+              {
+                id: "Jacopo Bellini",
+                type: "artist",
+                birth: "b. 1396",
+                death: " d. 1470",
+                discipline: " Venice ",link:"https://en.wikipedia.org/wiki/Jacopo_Bellini",
+                value: "0.5"
+              },
+              {
+                id: "Giotto di Bondone",
+                type: "artist",
+                birth: "b. 1267",
+                death: "d. 1337",
+                discipline: "painter",link:"https://en.wikipedia.org/wiki/Giotto",
+                value: "0.5"
+              },
+	      {
+                id: "Lorenzo Lotto",
+                type: "artist",
+                birth: "b. 1480",
+                death: "d. 1556",
+                discipline: "painter",link:"https://en.wikipedia.org/wiki/Lorenzo_Lotto",
+                value: "0.5"
+              },
+		{
+                id: "Sebastiano del Piombo",
+                type: "artist",
+                birth: "b. 1485",
+                death: "d. 1547",
+                discipline: "painter",link:"https://en.wikipedia.org/wiki/Sebastiano_del_Piombo",
+                value: "0.5"
+              },
+ 		{
+                id: "Signorelli",
+                type: "artist",
+                birth: "b. 1441",
+                death: "d. 1523",
+                discipline: "painter",link:"https://en.wikipedia.org/wiki/Luca_Signorelli",
+                value: "0.5"
+              },
+	      {
+                id: "Pinturicchio",
+                type: "artist",
+                birth: "b. 1454",
+                death: "d. 1513",
+                discipline: "painter",link:"https://en.wikipedia.org/wiki/Pinturicchio",
+                value: "0.5"
+              },
+	      {
+                id: "Antonio Pollaiuolo",
+                type: "artist",
+                birth: "b. 1429",
+                death: "d. 1498",
+                discipline: "painter, sculptor",link:"https://en.wikipedia.org/wiki/Antonio_del_Pollaiuolo",
+                value: "0.5"
+              },
+		{
+                id: "Andrea Schiavone",
+                type: "artist",
+                birth: "b. 1510",
+                death: "d. 1563",
+                discipline: "painter",link:"https://en.wikipedia.org/wiki/Andrea_Schiavone",
+                value: "0.5"
+              },
+{
+                id: "Parmigianino",
+                type: "artist",
+                birth: "b. 1503",
+                death: "d. 1540",
+                discipline: "painter",link:"https://en.wikipedia.org/wiki/Parmigianino",
+                value: "0.5"
+              },
+		{
+                id: "Carlo Crivelli",
+                type: "artist",
+                birth: "b. 1430",
+                death: "d. 1495",
+                discipline: "painter",link:"https://en.wikipedia.org/wiki/Carlo_Crivelli",
+                value: "0.5"
+              },
+ 		{
+                id: "Vittore Carpaccio",
+                type: "artist",
+                birth: "b. 1460",
+                death: "d. 1525",
+                discipline: "painter",link:"https://en.wikipedia.org/wiki/Vittore_Carpaccio",
+                value: "0.5"
+              },
+              {
+                id: "Cimabue",
+                type: "artist",
+                birth: "b. 1240",
+                death: "d. 1302",
+                discipline: "painter",link:"https://en.wikipedia.org/wiki/Cimabue",
+                value: "0.5"
+              },
+              {
+                id: "PERUGIA",
+                type: "city",
+                birth: "",
+                death: "(Umbria)",
+                discipline: "",link:"https://en.wikipedia.org/wiki/Perugia",
+                value: "2"}
+        ];
+
+        // Define the links based on the provided data
+        const links = [
+              {source: "VENICE", target: "Veronese" },
+              {source: "VENICE", target: "Tintoretto" },
+              {source: "VENICE", target: "Jacopo Bassano" },
+              {source: "VENICE", target: "Andrea Palladio" },
+	      {source:"FLORENCE", target:"ROME" },
+  	      {source:"FLORENCE", target:"Pontormo"},
+ 	      {source:"FLORENCE",target:"Andrea del Sarto"},
+  	      {source:"FLORENCE",target:"Alberti"},
+ 	      {source:"FLORENCE",target:"Sandro Botticelli"},
+              {source:"FLORENCE",target:"Brunelleschi"},
+	      {source:"FLORENCE",target:"Lorenzo Ghiberti"},
+              {source:"FLORENCE",target:"Cimabue"},
+              {source:"FLORENCE", target:"Duccio Buonisegna"},
+              {source:"FLORENCE", target:"Donatello"},
+  	      {source:"FLORENCE",target:"Filippo Lippi"},
+ 	      {source:"FLORENCE",target:"Fra Angelico"},
+              {source:"FLORENCE",target:"Ghirlandaio" },
+              {source:"FLORENCE",target:"Giotto di Bondone"},
+              {source:"FLORENCE",target:"Leonardo"},
+              {source:"FLORENCE",target:"Mantegna"},
+              {source:"FLORENCE",target:"Massaccio"},
+	      {source:"FLORENCE",target:"Parmigianino"},
+              {source:"FLORENCE",target:"Michelangelo"},
+              {source:"FLORENCE",target:"Perugino"},
+              {source:"FLORENCE",target:"Piero della Francesca"},
+              {source:"FLORENCE",target:"Luca Della Robia"},
+              {source:"FLORENCE", target:"Signorelli"},
+              {source:"FLORENCE",target:"Andrea Della Robia"},
+ 	      {source:"FLORENCE",target:"Raphael"},
+              {source:"FLORENCE",target:"Antonio Pollaiuolo"},
+              {source:"FLORENCE",target:"Taddeo Gaddi"},
+              {source:"FLORENCE",target:"Verrocchio"},
+              {source:"FLORENCE",target:"Paolo Ucello"},
+              {source:"FLORENCE",target:"ROME"},
+              {source:"Gentile Bellini",target:"Giovanni Bellini"},
+              {source:"MANTUA",target:"Giulio Romano"},
+              {source:"MANTUA",target:"Alberti"},
+              {source:"MANTUA",target:"Andrea Palladio"},
+              {source:"MANTUA",target:"Mantegna"},
+              {source:"MILAN",target:"Bramante"},
+              {source:"MILAN",target:"Leonardo"},
+              {source:"NAPLES",target:"ROME"},
+              {source:"NAPLES",target:"Antonello de Messina"},
+              {source:"PADUA",target:"Donatello"},
+              {source:"PADUA",target:"Filippo Lippi"},
+              {source:"PADUA",target:"Giotto di Bondone"},
+              {source:"PADUA",target:"Jacopo Bellini"},
+              {source:"PADUA",target:"Mantegna"},
+              {source:"PERUGIA",target:"Perugino"},
+              {source:"PERUGIA", target:"Pinturicchio"},
+              {source:"ROME",target:"Sandro Botticelli"},
+              {source:"ROME",target:"Fra Angelico"},
+              {source:"ROME",target:"Giulio Romano"},
+              {source:"ROME",target:"Sandro Botticelli"},
+              {source:"ROME",target:"Bramante"},
+              {source:"ROME",target:"Cimabue"},
+              {source:"ROME",target:"Donatello"},
+              {source:"ROME",target:"Leonardo"},
+              {source:"ROME",target:"Michelangelo"},
+              {source:"ROME",target:"Perugino"},
+              {source:"ROME",target:"Raphael"},
+	      {source:"ROME",target:"Parmigianino"},
+	      {source:"ROME", target:"Signorelli"},
+	      {source:"ROME", target:"Antonio Bazzi"},
+	      {source:"ROME", target:"Pinturicchio"},
+	      {source:"ROME", target:"Sebastiano del Piombo"},
+              {source:"SIENA", target:"Duccio Buonisegna"},
+	      {source:"SIENA", target:"Antonio Bazzi"},
+	      {source:"SIENA", target:"Signorelli"},
+              {source:"SIENA", target:"FLORENCE"},
+              {source:"SIENA",target:"Giovanni Pisano"},
+              {source:"URBINO",target:"Bramante"},
+              {source:"URBINO",target:"Piero della Francesca"},
+ 	      {source:"URBINO",target:"Raphael"},
+              {source:"VENICE",target:"Andrea Palladio"},
+              {source:"VENICE",target:"Antonello de Messina"},
+              {source:"VENICE",target:"Gentile Bellini"},
+              {source:"VENICE",target:"Giorgione"},
+              {source:"VENICE",target:"Giovanni Bellini"},
+              {source:"VENICE",target:"Jacopo Bellini"},
+              {source:"VENICE",target:"Mantegna"},
+              {source:"VENICE",target:"ROME"},
+	      {source:"VENICE",target:"PADUA"},
+              {source:"VENICE",target:"Titian"},
+              {source:"VENICE", target:"Verrocchio"},
+	      {source:"VENICE", target:"Sebastiano del Piombo"},
+	      {source:"VENICE", target:"Lorenzo Lotto"},
+	      {source:"VENICE", target:"Carlo Crivelli"},
+              {source:"VENICE", target:"Vittore Carpaccio"},
+	      {source:"VENICE", target:"Andrea Schiavone"},
+	      {source:"SIENA", target:"Pinturicchio"}
+             
+        ];
+
+
+        // Make the visualization responsive
+        const container = document.querySelector('.container');
+        const width = container.clientWidth;
+        const height = container.clientHeight;
+        
+        // Calculate radius based on the smaller dimension
+        const radius = Math.min(width, height) * 0.5;
+        
+        // Calculate center points
+        const centerX = width / 2;
+        const centerY = height / 2;
+
+        const svg = d3.select(".container")
+            .append("svg")
+            .attr("width", "100%")
+            .attr("height", "100%")
+            .attr("viewBox", "0 0 ${width} ${height}")
+            .attr("preserveAspectRatio", "xMidYMid meet")
+            .attr("class", "network-svg");
+            
+        // Add a dashed circle to show the boundary
+        svg.append("circle")
+            .attr("class", "boundary-circle")
+            .attr("cx", centerX)
+            .attr("cy", centerY)
+            .attr("r", radius);
+
+        // Create tooltip
+        const tooltip = d3.select("#tooltip");
+
+        // Position nodes in a circular layout
+        // Rome at center, artists around the perimeter
+        nodes.forEach((node, i) => {
+            if (node.id === "ROME") {
+                // Place Rome at the center
+                node.x = centerX;
+                node.y = centerY+ radius * 0.3;
+                node.fx = centerX; // Fix position
+                node.fy = centerY+ radius * 0.3; // Fix position
+            } 
+		else if (node.id === "NAPLES") {
+                // Naples below Rome
+                node.x = centerX+ radius * 0.6;
+                node.y = centerY + radius * 0.35;
+                node.fx = centerX+ radius * 0.6; // Fix position
+                node.fy = centerY + radius * 0.35; // Fix position
+            }  
+		else if (node.id === "VENICE") {
+                // Venice to the right of Rome
+                node.x = centerX + radius * 0.4;
+                node.y = centerY- radius * 0.35;
+                node.fx = centerX + radius * 0.4; // Fix position
+                node.fy = centerY- radius * 0.35; // Fix position
+            }  
+		else if (node.id === "MILAN") {
+                // Milan to the left and above Rome
+                node.x = centerX - radius * 0.33;
+                node.y = centerY - radius * 0.4;
+                node.fx = centerX - radius * 0.33; // Fix position
+                node.fy = centerY - radius * 0.4; // Fix position
+            } 
+		else if (node.id === "FLORENCE") {
+                // Florence above Rome
+                node.x = centerX - radius * 0.2;
+                node.y = centerY - radius * 0.15;
+                node.fx = centerX - radius * 0.2; // Fix position
+                node.fy = centerY - radius * 0.15; // Fix position
+            }	
+		else if (node.id === "MANTUA") {
+                // Mantua above Rome
+                node.x = centerX - radius * 0.1;
+                node.y = centerY - radius * 0.3;
+                node.fx = centerX - radius * 0.1; // Fix position
+                node.fy = centerY - radius * 0.3; // Fix position
+            } else if (node.id === "PADUA") {
+                // Padua above Rome
+                node.x = centerX + radius * 0.2;
+                node.y = centerY - radius * 0.35;
+                node.fx = centerX + radius * 0.2; // Fix position
+                node.fy = centerY - radius * 0.35; // Fix position
+            } else if (node.id === "SIENA") {
+                // Siena above Rome
+                node.x = centerX - radius * 0.4;
+                node.y = centerY + radius * 0.09;
+                node.fx = centerX - radius * 0.4; // Fix position
+                node.fy = centerY + radius * 0.09; // Fix position
+            } else if (node.id === "URBINO") {
+                // Siena above Rome
+                node.x = centerX + radius * 0.4;
+                node.y = centerY - radius * 0.1;
+                node.fx = centerX + radius * 0.4; // Fix position
+                node.fy = centerY - radius * 0.1; // Fix position
+            }else if (node.id === "PERUGIA") {
+                // Siena above Rome
+                node.x = centerX - radius * 0.09;
+                node.y = centerY - radius * 0.09;
+                node.fx = centerX - radius * 0.09; // Fix position
+                node.fy = centerY - radius * 0.09; // Fix position
+            }else {
+                // Position artists around the circle
+                // Number of artists
+                const artistCount = nodes.length - 1;
+                // Calculate angle based on index (excluding Rome)
+                const angle = ((i - (node.id === "ROME" ? 1 : 0)) * 2 * Math.PI) / artistCount;
+                // Set initial positions
+                node.x = centerX - radius * Math.cos(angle);
+                node.y = centerY - radius * Math.sin(angle);
+            }
+        });
 
 
 
+        // Create a force simulation with modified forces for circular layout
+        const simulation = d3.forceSimulation(nodes)
+            .force("link", d3.forceLink(links).id(d => d.id).distance(radius * 0.2))
+            .force("charge", d3.forceManyBody().strength(-100))
+            .force("center", d3.forceCenter(centerX, centerY))
+            // Add a radial force to keep artists in a circle
+            .force("radial", d3.forceRadial(d => d.id === "ROME" ? 0 : radius, centerX, centerY).strength(0.9))
+            // Limit the forces to prevent nodes from moving too far
+            .force("x", d3.forceX(centerX).strength(0.1))
+            .force("y", d3.forceY(centerY).strength(0.1))
+            .alphaDecay(0.01); // Slow down the simulation to give time for the layout to form
 
 
 
+        // Create curved links
+        const link = svg.append("g")
+            .selectAll("path")
+            .data(links)
+            .enter()
+            .append("path")
+            .attr("class", "link")
+            .attr("fill", "none")
+            .attr("stroke", "#888888")
+            .attr("stroke-width", 0.5);
 
+
+        // Define shape generators
+        const artistShape = d3.symbol().type(d3.symbolDiamond).size(80);
+        const cityShape = d3.symbol().type(d3.symbolDiamond2).size(200); // Using star as octagon approximation
+
+
+        // Create the nodes with different shapes based on type
+        // Default colors: gray for artists, black for cities
+        const node = svg.append("g")
+            .selectAll("path")
+            .data(nodes)
+            .enter()
+            .append("path")
+            .attr("class", "node")
+            .attr("d", d => d.type === "artist" ? artistShape() : cityShape())
+            .attr("fill", d => d.type === "artist" ? "#FF9999" : "#8888FF")
+            .call(d3.drag()
+                .on("start", dragstarted)
+                .on("drag", dragged)
+                .on("end", dragended));
+
+        // Add labels to the nodes
+        const labels = svg.append("g")
+            .selectAll("text")
+            .data(nodes)
+            .enter()
+            .append("text")
+            .attr("class", "node-label")
+            .text(d => d.id)
+            .attr("font-size", "0.7em")
+            .attr("dx", d => d.id === "ROME" ? 0 : 6)
+            .attr("dy", d => d.id === "ROME" ? -15 : 4)
+            .attr("text-anchor", d => d.id === "ROME" ? "middle" : "start");
+
+        // Create dictionaries to track node connections
+        const nodeConnections = {};
+        links.forEach(link => {
+            if (!nodeConnections[link.source.id || link.source]) nodeConnections[link.source.id || link.source] = [];
+            if (!nodeConnections[link.target.id || link.target]) nodeConnections[link.target.id || link.target] = [];
+            
+            const sourceId = link.source.id || link.source;
+            const targetId = link.target.id || link.target;
+            
+            nodeConnections[sourceId].push(targetId);
+            nodeConnections[targetId].push(sourceId);
+        });
+
+        // Add mouseover and mouseout events for color changes
+        node.on("mouseover", function(event, d) {
+            // Highlight the current node with its highlight color
+            d3.select(this)
+                .attr("fill", d.type === "artist" ? "red" : "blue");
+            
+            // Highlight connected nodes with their respective colors
+            if (nodeConnections[d.id]) {
+                nodeConnections[d.id].forEach(connectedId => {
+                    const connectedNode = nodes.find(n => n.id === connectedId);
+                    node.filter(n => n.id === connectedId)
+                        .attr("fill", connectedNode.type === "artist" ? "red" : "blue");
+                    
+                    // Also highlight the connected node's label
+                    labels.filter(n => n.id === connectedId)
+			.attr("font-size", "0.9em")
+                        .attr("font-weight", "bold");
+                });
+            }
+            
+            // Highlight connected links
+            link.filter(l => (l.source.id === d.id || l.target.id === d.id))
+                .attr("stroke", "#000000")
+                .attr("stroke-width", 2);
+            
+            // Highlight this node's label
+            labels.filter(n => n.id === d.id)
+		.attr("font-size", "1em")
+                .attr("font-weight", "bold");
+        })
+        .on("mouseout", function(event, d) {
+            // Reset all nodes to default colors
+            node.attr("fill", d => d.type === "artist" ? "#FF9999" : "#8888FF");
+            
+            // Reset all links
+            link.attr("stroke", "#888888")
+                .attr("stroke-width", 0.5);
+            
+            // Reset all labels
+            labels.attr("font-weight", "normal").attr("font-size", "0.7em");
+        });
+
+        // Handle click events for tooltip
+        let activeNode = null;
+        
+        node.on("click", function(event, d) {
+            event.stopPropagation();
+            
+            if (activeNode === d) {
+                // Hide tooltip if the same node is clicked again
+                tooltip.style("opacity", 0);
+                activeNode = null;
+            } else {
+                // Show tooltip for new node
+                activeNode = d;
+                let content = `<strong>${d.id}</strong><br>${d.type}`;
+                
+                if (d.type === "artist") {
+                    content += `<br>${d.birth}, ${d.death}<br>${d.discipline}`;
+                } else {
+                    content += `<br>${d.birth}, ${d.death}<br>${d.discipline}`;
+                }
+                
+                content += `<br><a href="${d.link}" target="_blank">Wikipedia</a>`;
+                
+                tooltip
+                    .html(content)
+                    .style("left", (event.pageX - container.offsetLeft + 10) + "px")
+                    .style("top", (event.pageY - container.offsetTop - 20) + "px")
+                    .style("opacity", 1);
+            }
+        });
+
+        // Prevent tooltip clicks from closing the tooltip
+        tooltip.on("click", function(event) {
+            event.stopPropagation();
+        });
+
+        // Hide tooltip when clicking elsewhere
+        svg.on("click", function() {
+            if (activeNode) {
+                tooltip.style("opacity", 0);
+                activeNode = null;
+            }
+        });
+
+        // Make the visualization responsive to window resizing
+        window.addEventListener('resize', function() {
+            const newWidth = container.clientWidth;
+            const newHeight = container.clientHeight;
+            const newRadius = Math.min(newWidth, newHeight) * 0.4;
+            
+            svg.attr("viewBox", `0 0 ${newWidth} ${newHeight}`);
+            
+            // Update the boundary circle
+            svg.select(".boundary-circle")
+                .attr("cx", newWidth / 2)
+                .attr("cy", newHeight / 2)
+                .attr("r", newRadius);
+            
+            // Update forces
+            simulation.force("center", d3.forceCenter(newWidth / 3, newHeight / 3));
+            simulation.force("radial", d3.forceRadial(d => d.id === "ROME" ? 0 : newRadius, newWidth / 2, newHeight / 2));
+            simulation.force("x", d3.forceX(newWidth / 2));
+            simulation.force("y", d3.forceY(newHeight / 2));
+            
+            // Restart simulation
+            simulation.alpha(0.3).restart();
+        });
+
+        // Update positions on each tick of the simulation
+        simulation.on("tick", () => {
+            // Update curved links
+            link.attr("d", function(d) {
+                const dx = d.target.x - d.source.x,
+                      dy = d.target.y - d.source.y,
+                      dr = Math.sqrt(dx * dx + dy * dy) * 1.5; // Curve strength
+                return `M${d.source.x},${d.source.y}A${dr},${dr} 0 0,1 ${d.target.x},${d.target.y}`;
+            });
+
+            node
+                .attr("transform", d => `translate(${d.x}, ${d.y})`);
+
+            labels
+                .attr("x", d => d.x)
+                .attr("y", d => d.y);
+        });
+
+        // Drag functions
+        function dragstarted(event, d) {
+            if (!event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x;
+            d.fy = d.y;
+        }
+
+        function dragged(event, d) {
+            d.fx = event.x;
+            d.fy = event.y;
+        }
+
+        function dragended(event, d) {
+            if (!event.active) simulation.alphaTarget(0);
+            // Only release non-Venice nodes
+            if (d.id !== "ROME") {
+                d.fx = null;
+                d.fy = null;
+            }
+        }
+    </script>
 </body>
 </html>
