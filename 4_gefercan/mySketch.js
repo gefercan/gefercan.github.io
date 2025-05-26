@@ -152,7 +152,7 @@ function sineCosineSquare(x1){
 function text1(rima){
 		noStroke();
 		fill(250);
-		textSize(32);
+		textSize(42);
 		text(rima,width/4,height/2,1000,1500);
 }
 
