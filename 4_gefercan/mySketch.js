@@ -52,7 +52,7 @@ function setup() {
 function draw() {
 	
 	
-	if(frameCount<(fxrand()*100)){
+	if(frameCount<(fxrand()*1400)){
 		//background variation
 		background(palette[fxmap1],palette2[fxmap1]*2,fxcolourmap);
 		//color and transparence of video
