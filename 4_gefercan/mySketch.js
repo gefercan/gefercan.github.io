@@ -18,7 +18,7 @@ let palette2=[22,55,92,98,78,200,20,90,30,50,19];
 
 function preload(){
 	//load images
-	img=loadImage("Annotation1.png");
+	img=loadImage('Annotation1.png');
 	imgMask=loadImage("https://gefercan.github.io/4_gefercan/_Annotation1.png");
 	//calls video
 	video1=createVideo(['VID_33760530_062556_659.mp4'],video1Load);
