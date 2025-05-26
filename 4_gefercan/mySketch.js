@@ -19,7 +19,7 @@ let palette2=[22,55,92,98,78,200,20,90,30,50,19];
 function preload(){
 	//load images
 	img=loadImage("Annotation1.png");
-	imgMask=loadImage("Annotation1.png");
+	imgMask=loadImage("_Annotation1.png");
 	//calls video
 	video1=createVideo(['VID_33760530_062556_659.mp4'],video1Load);
 	//avoid video to be outside the canvas
@@ -52,7 +52,7 @@ function setup() {
 function draw() {
 	
 	
-	if(frameCount<(fxrand()*1300)){
+	if(frameCount<(fxrand()*100)){
 		//background variation
 		background(palette[fxmap1],palette2[fxmap1]*2,fxcolourmap);
 		//color and transparence of video
