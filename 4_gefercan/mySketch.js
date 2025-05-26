@@ -153,7 +153,7 @@ function text1(rima){
 		noStroke();
 		fill(250);
 		textSize(32);
-		text(rima,0,width/1.7,600,500);
+		text(rima,width/4,width/1.7,1600,1500);
 }
 
 function elements(){
