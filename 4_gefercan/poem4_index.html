@@ -1,42 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+<title>Sketch Title</title>
 
 <head>
-	<title>"Green and red (@_@)"</title>
 	<meta charset="utf-8" />
-	<meta property="og:title" content="german fernandez cantos, portfolio">
-	<meta property="og:site_name" content="german-fernandez.com">
-	<meta property="og:description" content="Illustration, infographics and design//ilustración, infografía y diseño">
-	<meta property="og:url" content="http://www.german-fernandez.com">
-	<meta property="og:image" content="http://www.german-fernandez.com/images/fondo_elephant_1073.jpg">
-	<meta name="twitter:title" content="German Fernandez Cantos, portfolio ">
-	<meta name="twitter:description" content=" Illustration, infographics and design// ilustración, infografía y diseño">
-	<meta name="twitter:image" content="http://www.german-fernandez.com/images/fondo_elephant_1073.jpg">
-	<meta name="twitter:card" content="summary_large_image">
+	<!-- Line below allows OpenProcessing compatibility, you can remove before uploading to FXHASH -->
+	<script src="https://openprocessing.org/openprocessing_sketch.js"></script>
+	<script src="./p5.min.js"></script>
+	<script src="./mySketch.js"></script>
+	<link rel="stylesheet" type="text/css" href="./style.css">
 
-
-<!--here setting responsive design-->
-	<meta name="viewport"  content="width=device-width, initial-scale=1">
-	<!-- keep the line below for OpenProcessing compatibility -->
-	<!--<script src="https://openprocessing.org/openprocessing_sketch.js"></script>-->
-	<link rel="stylesheet" media="(min-width: 1700px)" href="css/pieza1_landscape.css"  type="text/css">
-	<link rel="stylesheet" media="(max-width: 1699px)" href="css/pieza1_landscape.css"  type="text/css">
-	<link rel="stylesheet" media="(max-width: 1200px)" href="css/pieza1_portrait.css"  type="text/css">
-	<link rel="stylesheet" media="(max-width: 680px)" href="css/pieza1_portrait.css"  type="text/css">
+	<script id="fxhash-snippet">
+		//---- do not edit the following code (you can indent as you wish)
+		let alphabet = "123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ"
+		var fxhash = "oo" + Array(49).fill(0).map(_ => alphabet[(Math.random() * alphabet.length) | 0]).join('')
+		let b58dec = str => [...str].reduce((p, c) => p * alphabet.length + alphabet.indexOf(c) | 0, 0)
+		let fxhashTrunc = fxhash.slice(2)
+		let regex = new RegExp(".{" + ((fxhashTrunc.length / 4) | 0) + "}", 'g')
+		let hashes = fxhashTrunc.match(regex).map(h => b58dec(h))
+		let sfc32 = (a, b, c, d) => {
+			return () => {
+				a |= 0;
+				b |= 0;
+				c |= 0;
+				d |= 0
+				var t = (a + b | 0) + d | 0
+				d = d + 1 | 0
+				a = b ^ b >>> 9
+				b = c + (c << 3) | 0
+				c = c << 21 | c >>> 11
+				c = c + t | 0
+				return (t >>> 0) / 4294967296
+			}
+		}
+		var fxrand = sfc32(...hashes)
+		// true if preview mode active, false otherwise
+		// you can append preview=1 to the URL to simulate preview active
+		var isFxpreview = new URLSearchParams(window.location.search).get('preview') === "1"
+		// call this method to trigger the preview
+		function fxpreview() {
+			console.log("fxhash: TRIGGER PREVIEW")
+		}
+		//---- /do not edit the following code
+	</script>
 </head>
 
-<body draggable="false">
-
-
-	<img id="image1" src="images/Annotation1.png" alt="a head surrounded by two small bird-like being, sideview" crossorigin="anonymous" draggable="false">
-	<img id="image2" src="images/Annotation2.png" alt="a lace flowing around above the head" crossorigin="usecredentials" draggable="false"  >
-	<img id="image3" src="images/bird.png" alt="bird with umbrella" crossorigin="usecredentials" draggable="false"  >
-	<img id="image4" src="images/bird.png" alt="bird with umbrella" crossorigin="usecredentials" draggable="false"  >
-
-	<script src="scripts/p5.js" defer></script>
-	<script src="scripts/mySketch.js" defer></script>
-	<script src="scripts/pieza1.js" defer></script>
-
+<body>
 
 </body>
 
