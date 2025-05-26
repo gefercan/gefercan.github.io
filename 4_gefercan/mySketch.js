@@ -21,7 +21,9 @@ function preload(){
 	img=loadImage("Annotation1.png");
 	imgMask=loadImage("_Annotation1.png");
 	//calls video
-	video1=createVideo(['VID_33760530_062556_659.mp4'],video1Load);
+	video1=createVideo(['https://gefercan.github.io/4_gefercan
+
+/VID_33760530_062556_659.mp4'],video1Load);
 	//avoid video to be outside the canvas
 	video1.hide();
 }
