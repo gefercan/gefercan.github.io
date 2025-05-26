@@ -202,7 +202,7 @@ function cover(){
 			 "(x,y Cartesian coordinates):" + mouseX+","+ floor(mouseY), width/20,(height/4)-20,200,900);
 	//blocks for framing
 	noStroke();
-  fill(180)
+  	fill(180)
 	rect(width/20,400,20,50);
 	rect(width/20+30,400,10,50);
 	//random makes rectangle increase and decrease illusion
