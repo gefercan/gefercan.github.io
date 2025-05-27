@@ -6,8 +6,9 @@
 	<meta charset="utf-8" />
 	<!-- Line below allows OpenProcessing compatibility, you can remove before uploading to FXHASH -->
 	<script src="https://openprocessing.org/openprocessing_sketch.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.11.7/lib/p5.min.js"></script>
 	<script src="p5.min.js"></script>
-	<script src="sketchPoem4.js"></script>
+
 
 	<style>
 		html,body {
@@ -59,8 +60,256 @@
 	</script>
 </head>
 
-<body>
-sxy
+<body>  xxxx
+<script>
+	//german fernandez cantos
+//artist and designer
+//february 2023
+//small exploration on geometric forms
+//small words of poems in the background
+
+	//create global variables
+	let rimas=["*///DETENTE sombra de mi bien esquivo, colourful canapes,rapidly consumed with an inappropriate amount of social distancing.",
+					 "IMAGO/MUNDI/image*of_the_n3w media the movement the flow the color, as a message is shared, it falls apart the stingy realization that the electricity fascination is not for everyone",
+					 "Nevertheless, the poet fathoms, the economic_sense is in the defintion of a consecrated transaction delimited by the mutable boundaries of the consensus",
+					 "But if I say, in the middle of the balmy night, Sombra del hechizo que mas quiero, being hidden, somehow,in the darkness that surrounds the//transitions/of/the/afternoon to the evening",
+					 "Seeing through your hair, I thought those were the feelings in the air, the fear, and again, the foggy, ethereal sensation of uncertainty.",
+					 "One/winter morning. Nuestras vidas son los rios, maybe it is Sunday, or maybe in the afternoon of a weekday or maybe some other day",
+					 "The//spurious mind works in mysterious ways,que la vida es suegno y patterns,*repetitions,*iterations of/circles/that go round and round ",
+					 "It//will*happen again! it will happen again!, said one character, prophetically, in the series.Indeed.",
+					 "001 and 002, and more even. Like*Chamberlain coming back from Berlin or Moctezuma receiving Hernan Cortes.",
+					 " a continuous development of an smoky column srising up in the outskirts, Like//in the serie Dark, like in the Ecclesiastes, like in Cien Años de Soledad.",
+					 "avive el seso y despierte, your hand, your dface, your skin, your subtle boundary, shy,gazing a subtle undercurrent of things repeating themselves."
+					];
+	let cv;
+  let fxmap1;
+	let fxmap_width;
+	let fxmap_height;
+	let fxmap_colour;
+	let period;
+	let amplitude;
+	let angle;
+	let radius;
+  let colors;
+
+
+
+	//preloading 
+	//function preload(){
+	//not used here
+	//}
+
+function setup() {
+	print ("look , I can code!");
+	//set angle mode
+	angleMode(DEGREES);
+	//create canvas
+	cv = createCanvas(windowWidth, windowHeight);
+	//mapping
+	fxmap1 = floor(map(fxrand(),max(fxrand()),min(fxrand()),0,12,true));
+	fxmap1 = floor(map(fxrand(),max(fxrand()),min(fxrand()),0,10,true));
+	fxmap_width = map(fxrand(),max(fxrand()),min(fxrand()),-200,200,true);
+	fxmap_height = map(fxrand(),max(fxrand()),min(fxrand()),-200,200,true);
+	fxmap_colour = map(fxrand(),max(fxrand()*500),min(fxrand()*1000),60,250,true);
+	//colours palette
+	colors= {	uno:color(fxmap_colour,50,200),
+						dos:color(fxmap_colour,250,220),
+						tres:color(fxmap_colour,210,220),
+						cuatro:[fxmap_colour,20,100],
+					 	cinco:[fxmap_colour,110,50,10]
+					};
+	}
+
+function draw() {
+//count frames and animate them untilparameter of frame count is reached and then stop
+		if(frameCount<(fxrand()*50)){
+			//calling functions
+			noFill();
+			stroke(10);
+			
+			rect_frame();cover();text11(rimas[floor(fxmap1)]);	
+			strokeWeight(fxrand()*50);
+			drawing(); 	
+			}
+		else {
+			//stopping
+			fxpreview();
+			}
+}
+
+//functions called
+//upper background
+function drawing(){
+		push();
+		arc1(colors.tres,colors.dos);
+		//rotate(12);
+		//rotate(12);
+		background(fxrand()*200,20);
+		translate(-width/(fxrand()*200),-height/(fxrand()*200));
+		background(fxrand()*500,20);
+		radial_coordinates();
+		translate(fxrand()*200,-height/(fxrand()*200));
+		background(fxrand()*600,20);
+		text1();
+		//movingArc(200,300);
+		pop();
+}
+
+	function rect_frame(){
+		for(a=width/20; a>=width/20 && a<width-(width/20);a=a+fxrand()*1000){
+		strokeWeight(20);stroke(120);
+		rect(width/20,height/20,width-width/10,height-height/10);
+		line(width/fxmap_height+a,height/20,width-width/20,height-height/20);
+		line(width/fxmap_height+a,height/20,width/20,height-height/20);
+		}
+	}
+
+function arc1(a,b){
+		push();
+		noFill();
+		for(i=10;i<width;i=i+130){
+			 stroke(a);
+			 //arc(width/2,height/2,i+45,height/2,fxrand()*i,fxrand()*1000,i+45,height/2);
+			 rotate(fxrand()*10);
+			stroke(b);
+			circle(fxrand()*1000,height/2,200);
+			 arc(width/2,height/2,width,(fxrand()*1000),30,90);
+			 i=i+45;
+			}
+		pop();
+
+	}
+
+//lower background
+function radial_coordinates(){
+	push();
+	translate(width/2, height/2);
+	angleMode(DEGREES);
+
+	for(angle=0; angle<359;angle=angle+5){
+		//calculate polar coordinates
+		radius = fxrand()*width/4 ;
+		let x = radius * cos(angle);
+		let y = radius * sin(angle);
+		
+		//execute functions and create elements
+		rotate(angle+fxrand()*50);
+		leaf2(0,0,x,y,fxrand()*20+angle,y,fxmap_colour+angle,fxmap_colour-angle);
+		movingArc(x,y);
+		}
+	pop();	
+}
+
+//random curves
+function movingArc(x,y){
+	//color of curves
+		noFill();
+		stroke(fxrand()*120,fxrand()*72);
+	//loop for curves
+	for (x1=0;x1<50;x1=x1+10){
+		strokeWeight(fxrand()*2);
+		ellipse(x,y, fxrand()*100);
+		//arc(fxrand()*50, fxrand()*100,   x,y,   x1,x);
+		circle(fxrand()*50, fxrand()*100,300);
+		//arc(x,y,   x1,x,   fxrand()*100,fxrand()*100);
+		//arc(fxrand()*50,  fxrand()*200,   x,y,   x1,x );
+		//arc(x,y,   x1,x,   fxrand()*90,fxrand()*200,x );
+		strokeWeight(0.2);
+		bezier(width/2,height/2,tan(x-width/2)-fxrand()*6-x,cos(x-width/2)-fxrand()*5,tan(x-width/2)-fxrand()*5,width/2,height/2);
+		bezier(width/2,height/2,sin(x-width/2)-fxrand()*6-x,x*2,x/2,fxrand()*6+200,width/2,height/2);
+		bezier(width/2,height/2,tan(x-width/2)-fxrand()*6-x,width-x,height-x,x+fxrand()*6,width/2,height/2);
+	}
+	
+}
+//a text
+function text1(){
+	push();
+	noStroke();
+  fill(15,35);
+	textSize(25);
+	text(fxrand()*1000 + " " + frameCount,100,200);
+	text(floor(frameCount),100,300);
+	textSize(32);
+	text(rimas[floor(fxmap1)],100,350,500,500);
+	pop();
+}
+//a leaf
+function leaf2(transX, transY,x,y,a,b,color1,color2){
+	push();
+	translate(transX,transY);
+	strokeWeight((fxrand()*5));
+	stroke(color2,(fxrand()*5));
+	noFill();
+	line (x-a-b, y, x,y,  x,y-b);
+	line (x,y-b, x-a-b,y-b);
+	line (x+a+b, y-(fxrand()*5), x,y, x,y-b);
+	line (x, y, x,y-b, x+a+b,y-b);
+	pop();
+}
+
+
+function text11(rima){
+		noStroke();
+		fill(36);
+		textSize(39);
+		text(rima,width/4,height/2,1000,1500);
+}
+
+
+
+//texts for presentation
+function cover(){
+	//text settings
+	noStroke();
+  fill(180);
+	textAlign(LEFT);
+	textSize(14);
+	//texts
+	text(fxrand(),width/20,50);
+	text(fxrand()*1000,width/20,70);
+	text((frameCount)*100,width/20,90);
+	textSize(64);
+	//textbox settings and text
+	textSize(12);
+	// first textbox
+	text("Visual composition together:" +
+			 " you move the cursor and I set the elements move" +
+			 " in random disarray, thus being " +
+			 "combined and recombined. Until it stops",width/20,120,290,320);
+	//second textbox
+	text(" Since loading this,the frame count is: " + frameCount + " frames" +
+			 " ,while the frame rate has been around: " + floor(frameRate())+" frames per second" +
+			 " and the time seeing this being: " + floor(millis()/1000)+ " seconds" +
+			 " being the current position of the cursor over the screen"+
+			 "(x,y Cartesian coordinates):" + mouseX+","+ floor(mouseY), width/20,(height/4)-20,200,900);
+	//blocks for framing
+	noStroke();
+  fill(180)
+	rect(width/20,400,20,50);
+	rect(width/20+30,400,10,50);
+	//random makes rectangle increase and decrease illusion
+	rect(width/20+50,400,random(50),50);
+	//more line settings
+	strokeWeight(2);
+	stroke(113);
+	line(width/20,20,width-(width/20),20);
+	line(width/20,100,width/10 + 200,100);
+	line(width/20,180,width/10 + 200,180);
+	line(width/20,330,width/10 + 200,330);
+	line(width/20,height-20,width-(width/20),height-20);
+	noStroke();
+	fill(250);
+	}
+//--------------------END
+
+
+
+
+
+
+
+
+</script>
 </body>
 
 </html>
