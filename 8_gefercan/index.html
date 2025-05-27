@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Sketch Title</title>
+<title>SketchXTitle</title>
 
 <head>
 	<meta charset="utf-8" />
@@ -8,11 +8,10 @@
 	<script src="https://openprocessing.org/openprocessing_sketch.js" async ></script>
 	<script src="https://cdn.jsdelivr.net/npm/p5@1.11.7/lib/p5.min.js" async ></script>
 
-	
- <style>
-		 html,body {
-		 margin: 0;
-		 padding:0;
+	<style>
+		html,body {
+			margin: 0;
+			padding:0;
 		}
 
 		main {
@@ -24,7 +23,7 @@
 			display: block;
 		}
 	</style>
-	
+
 	<script id="fxhash-snippet">
 		//---- do not edit the following code (you can indent as you wish)
 		let alphabet = "123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ"
@@ -61,13 +60,12 @@
 </head>
 
 <body>
-	x
-<script>
-	let rimas=["Please turn on the oven, for the food is almost ready, and the bread is warm.And I will put my head inside, and flowers will grow, dreams will be born and ideas will come to light, so they can die  putrid  in this world.",
+	<script>
+		let rimas=["Please turn on the oven, for the food is almost ready, and the bread is warm.And I will put my head inside, and flowers will grow, dreams will be born and ideas will come to light, so they can die  putrid  in this world.",
 					 "and the skin will burn, after the crown fall from the eyes,while the sound of the wind protrudes itself from the horizon lost, in the silver water of the illusion.",
 					 "Still, my skull is in my hands, I do not have yet a new brand,and where I am now, no more I am.",
 					 "See, watch, feel, touch; click and push, draw and text",
-					 "Click, touch, press, scroll. Click,click,click touch, press, scroll,press.Touch",
+					 "Click, to/////////ll. Click,click,click touch, press, scroll,press.Touch",
 					 "battery and love,electricity and lust,neon and rage,smoke and flow.",
 					 "now, are the  reference in this world only the towers I see,floating as overlords?",
 					 "ffff...F.F.S. slowly like in a stage, develop the moments of the piece, a white screen is everything we see at the beginning",
@@ -77,58 +75,45 @@
 					];
 let img;
 let fxcolourmap;
+let fxwidthmap; let fxheightmap;
 let fxmap1;
-let palette=[200,120,190,230,150,220,155,192,198,178,111];
-let palette2=[22,55,92,98,78,200,20,90,30,50,19];
+let palette=[200,100,198,236,150,220,155,102,191,178,171];
+let palette2=[22,55,92,98,78,200,20,90,30,50,15];
 
 function preload(){
 	//load images
 	img=loadImage("Annotation1.png");
 	imgMask=loadImage("_Annotation1.png");
-	//calls video
-	video1=createVideo(['VID_33760530_062556_659.mp4'],video1Load);
-	//avoid video to be outside the canvas
-	video1.hide();
 }
 
 function setup() {
 	//setting fx hash variable from 0 to 4
 	fxmap1 = floor(map(fxrand(),max(fxrand()),min(fxrand()),0,10,true));
-	console.log((fxmap1));
-	angleMode(DEGREES);
+	console.log("this is "+fxmap1);
 	let fxwidthmap = map(fxrand(),max(fxrand()),min(fxrand()),width/3,width-(width/3),true);
 	let fxheightmap = map(fxrand(),max(fxrand()),min(fxrand()),height/3,height-(height/3),true);
 	fxcolourmap = map(fxrand(),max(fxrand()),min(fxrand()),60,240,true);
-	
+	angleMode(DEGREES);
 	//create canvas
 	let cv = createCanvas(innerWidth,innerHeight);
 	//assign name a canvas
 	cv.id ("mycanvas");
-	
-	//load pixels of the images
-	img.loadPixels();
-	//video1.size(width/2,height/2,width/2,height/2);
-			noStroke();
+		img.loadPixels();
+		noStroke();
 		fill(250);
 		textSize(32);
 		text(floor(fxrand()*1000),10,width/1.7,600,500);
 }
 
 function draw() {
-	
-	
 	if(frameCount<(fxrand()*100)){
 		//background variation
 		background(palette[fxmap1],palette2[fxmap1]*2,fxcolourmap);
-		//color and transparence of video
 		tint(palette[fxmap1],120);
-		//display video
-		image(video1,palette2[fxmap1],0, width-(palette[fxmap1]),height);
-		video1.loop();
+		image(img,palette2[fxmap1],0, width-(palette[fxmap1]),height);
 		the_hash();
 		cover();
 		elements();
-		//mask image in front
 		imgMask1(palette[fxmap1]);
 		//oscillating circle
 		sineCosineSquare(palette2[(fxmap1)]);
@@ -141,10 +126,8 @@ function draw() {
 		fxpreview();
 		
 	}
-
-
-	
 }
+
  function the_hash(){
 	 	push();
 		noStroke();
@@ -152,47 +135,44 @@ function draw() {
 		textSize(200);
 		text(floor(fxrand()*1000),width-(width/3),height-(height/4),600,500);
 		strokeWeight(2);
-	 	stroke(100);noFill();
+	 	stroke(100);
+	 	noFill();
 	  ellipse(width-(width/4),width-(width/3.5),200);
-	 pop();
+	 	pop();
  }
 
-function video1Load(){
-  video1.loop();
-  video1.volume(0);
-}
 
 function imgMask1(x1){
 	image(img,mouseX,height/4-palette[fxmap1]);
 	tint(x1,palette[fxmap1],fxcolourmap);
-	image(img,-mouseX-fxcolourmap,height/4-palette[fxmap1]);
+	image(img,mouseX-fxcolourmap,height/4-palette[fxmap1]);
 	var x= mouseX;
 	var y= mouseY;
-	var unoz = x >=innerWidth/20 && y >=innerWidth/20 ;
-	var dosz = x <=innerWidth-(innerWidth/20) && y <=innerWidth-(innerWidth/20);
+	var unoz = x >=innerWidth/120 && y >=innerWidth/120 ;
+	var dosz = x <=innerWidth-(innerWidth/120) && y <=innerWidth-(innerWidth/120);
 	var tresz = unoz && dosz;
 	if (tresz){
-			ellipse(x, y, 80);
-			img.mask(imgMask,0,palette2[fxmap1]);
-			pixel(palette[fxmap1]);
+			ellipse(x, y, 180);
+			img.mask(imgMask,24,palette2[fxmap1]);
+		  pixel(palette[fxmap1]);
 		}
  }
 	
 //alters image into pixel circles
 function pixel(z1){
-		for(x=0;x<img.width;x =x+50){
-				for(y=0;y<img.height;y =y+50){
-					//fill(img.get(x,y),50);
-					stroke(img.get(x,y),50);
+		for(x=0;x<width;x =x+50){
+				for(y=0;y<height;y =y+50){
+					noFill();
+					stroke(100,101,102,30);
 					strokeWeight(0.5);
 					ellipse(tan(frameCount/x)*z1+mouseX, sin(frameCount/y)*z1+mouseY,cos(z1)*x);
 					push();
 					translate(palette[fxmap1]+x,mouseY-fxmap1);
 					ellipse( sin(frameCount/x)*mouseX,tan(frameCount/z1)*x, tan(z1*x)*x);
 					pop();
-					//ellipse(x,y,z1);
+					ellipse(x,y,z1);
 					ellipse(cos(frameCount/y)*x-mouseY,tan(frameCount/x)*z1-mouseX,cos(z1/x)/x);
-					//ellipse(cos(frameCount/y)*z1+mouseY,sin(frameCount/x)*z1+mouseX,cos(frameCount/z1)*x,sin(frameCount/z1)*y);
+					ellipse(cos(frameCount/y)*z1+mouseY,sin(frameCount/x)*z1+mouseX,cos(frameCount/z1)*x,sin(frameCount/z1)*y);
 					}
 			 }
 	}
@@ -217,8 +197,8 @@ function sineCosineSquare(x1){
 function text1(rima){
 		noStroke();
 		fill(250);
-		textSize(32);
-		text(rima,0,width/1.7,600,500);
+		textSize(39);
+		text(rima,width/4,height/2,(width/2+width/5),1500);
 }
 
 function elements(){
@@ -283,7 +263,7 @@ function cover(){
 	noStroke();
 	fill(250);
 	}
-</script>
+	</script>
 </body>
 
 </html>
