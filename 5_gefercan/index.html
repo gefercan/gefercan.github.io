@@ -5,16 +5,68 @@
 <head>
 	<title> "05_piece(*_0)"</title>
 	<meta charset="utf-8" />
-	<!-- keep the line below for OpenProcessing compatibility -->
 	<script src="p5.js" async></script>
-	<link rel="stylesheet" media="(min-width: 1700px)" href="pieza2_landscape.css"  type="text/css">
-	<link rel="stylesheet" media="(max-width: 1699px)" href="pieza2_landscape.css"  type="text/css">
+	<!--keep the line below for OpenProcessing compatibility -->
+	<!-- @charset "UTF-8"; CSS Document */ <link rel="stylesheet" media="(min-width: 1700px)" href="style.css"  type="text/css">
+	<link rel="stylesheet" media="(max-width: 1699px)" href="style.css"  type="text/css">
 	<link rel="stylesheet" media="(max-width: 1200px)" href="pieza2_portrait.css"  type="text/css">
-	<link rel="stylesheet" media="(max-width: 680px)" href="pieza2_portrait.css"  type="text/css">
+	<link rel="stylesheet" media="(max-width: 680px)" href="pieza2_portrait.css"  type="text/css">-->
+
+<style>
+html,
+body {
+	position:relative;
+	margin: 0;
+	padding: 0;
+	background-image:url("https://2.bp.blogspot.com/-fxlibykhOc0/URYrhuk630I/AAAAAAAAAzA/953UIXjBx2g/s1600/nube.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position:bottom;
+	justify-content:center;
+}
+
+#image1{
+	width:20%;
+	position:fixed;
+	z-index:4;
+	bottom:0%;
+	top:0%;
+	left:90%;
+	transform: translate(-50%,1%);
+	transform: rotate(180deg);
+	opacity:0.3;
+}
+
+#image2{
+	width:20%;
+
+	position:absolute;
+	z-index:2;
+	display:flex;
+	justify-content: center;
+	top:0%;
+	left:0%;
+	transform: translate(-50%, -50%);
+	transform: rotate(180deg);
+	opacity:0.4;
+}
+#text_box{
+	color:gray;
+	font-family: Helvetica,Arial,sans-serif;
+	font-size: 3em;
+	position:fixed;
+	bottom:0px;
+	z-index:8;
+}
+#pieza1{
+	z-index:-2;
+}
+</style>
 </head>
-
+	
+	
+	
 <body >
-
 
 	<img id="image1" src="images/women.png" alt="elephant1" crossorigin="anonymous" draggable="false">
 	<img id="image2" src="images/floating_being.png" alt="elephant2" crossorigin="usecredentials" draggable="false">
@@ -24,7 +76,6 @@
     But the city is anything but a realm of quietness let be said.
 	</div>
 	<script src="mySketch2.js" async></script>
-	<script src="pieza2.js" async></script>
 </body>
 
 </html>
