@@ -1,6 +1,6 @@
 # Articles
 
-Different texts I wrote about topics that interest me. Some has been published before. More upcoming texts soon.
+Different texts I wrote about topics that interest me. Some have been published before. More upcoming texts soon.
 
 Copyright (c) 2015-2022 german fernandez. All rights reserved.
 
