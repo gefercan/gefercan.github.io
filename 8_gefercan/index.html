@@ -106,7 +106,7 @@ function setup() {
 	//load pixels of the images
 	img.loadPixels();
 	//video1.size(width/2,height/2,width/2,height/2);
-			noStroke();
+		noStroke();
 		fill(250);
 		textSize(32);
 		text(floor(fxrand()*1000),10,width/1.7,600,500);
@@ -121,8 +121,8 @@ function draw() {
 		//color and transparence of video
 		tint(palette[fxmap1],120);
 		//display video
-		image(video1,palette2[fxmap1],0, width-(palette[fxmap1]),height);
-		video1.loop();
+		//image(video1,palette2[fxmap1],0, width-(palette[fxmap1]),height);
+		//video1.loop();
 		the_hash();
 		cover();
 		elements();
