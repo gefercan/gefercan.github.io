@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Sketch Title8</title>
+<title>Sketch Title</title>
 
 <head>
 	<meta charset="utf-8" />
 	<!-- Line below allows OpenProcessing compatibility, you can remove before uploading to FXHASH -->
-	<script src="https://openprocessing.org/openprocessing_sketch.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/p5@1.11.7/lib/p5.min.js"></script>
+	<script src="https://openprocessing.org/openprocessing_sketch.js" async ></script>
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.11.7/lib/p5.min.js" async ></script>
 
-	<style>
-				html,body {
-				margin: 0;
-				padding:0;
-			}
+	
+ <style>
+		 html,body {
+		 margin: 0;
+		 padding:0;
+		}
 
-			main {
-				text-align: center;
-				width: 100%;
-			}
+		main {
+			text-align: center;
+			width: 100%;
+		}
 
-			canvas {
-				display: block;
-			}
+		canvas {
+			display: block;
+		}
 	</style>
 	
 	<script id="fxhash-snippet">
@@ -60,8 +61,9 @@
 </head>
 
 <body>
+	x
 <script>
-		let rimas=["Please turn on the oven, for the food is almost ready, and the bread is warm.And I will put my head inside, and flowers will grow, dreams will be born and ideas will come to light, so they can die  putrid  in this world.",
+	let rimas=["Please turn on the oven, for the food is almost ready, and the bread is warm.And I will put my head inside, and flowers will grow, dreams will be born and ideas will come to light, so they can die  putrid  in this world.",
 					 "and the skin will burn, after the crown fall from the eyes,while the sound of the wind protrudes itself from the horizon lost, in the silver water of the illusion.",
 					 "Still, my skull is in my hands, I do not have yet a new brand,and where I am now, no more I am.",
 					 "See, watch, feel, touch; click and push, draw and text",
@@ -84,9 +86,9 @@ function preload(){
 	img=loadImage("Annotation1.png");
 	imgMask=loadImage("_Annotation1.png");
 	//calls video
-	//video1=createVideo(['VID_33760530_062556_659.mp4'],video1Load);
+	video1=createVideo(['VID_33760530_062556_659.mp4'],video1Load);
 	//avoid video to be outside the canvas
-	//video1.hide();
+	video1.hide();
 }
 
 function setup() {
@@ -106,7 +108,7 @@ function setup() {
 	//load pixels of the images
 	img.loadPixels();
 	//video1.size(width/2,height/2,width/2,height/2);
-		noStroke();
+			noStroke();
 		fill(250);
 		textSize(32);
 		text(floor(fxrand()*1000),10,width/1.7,600,500);
@@ -115,14 +117,14 @@ function setup() {
 function draw() {
 	
 	
-	if(frameCount<(fxrand()*1200)){
+	if(frameCount<(fxrand()*100)){
 		//background variation
 		background(palette[fxmap1],palette2[fxmap1]*2,fxcolourmap);
 		//color and transparence of video
 		tint(palette[fxmap1],120);
 		//display video
-		//image(video1,palette2[fxmap1],0, width-(palette[fxmap1]),height);
-		//video1.loop();
+		image(video1,palette2[fxmap1],0, width-(palette[fxmap1]),height);
+		video1.loop();
 		the_hash();
 		cover();
 		elements();
@@ -215,8 +217,8 @@ function sineCosineSquare(x1){
 function text1(rima){
 		noStroke();
 		fill(250);
-		textSize(42);
-		text(rima,width/4,height/2,1000,1500);
+		textSize(32);
+		text(rima,0,width/1.7,600,500);
 }
 
 function elements(){
