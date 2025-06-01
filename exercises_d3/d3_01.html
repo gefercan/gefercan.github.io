@@ -78,12 +78,22 @@
 	#network {
             z-index:5;
         }
-        
+
+	#key{
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: none;
+            padding: 2%;
+            border-radius: 4px;
+            font-size: 12px;
+	    z-index:3;
+	}
         .legend {
             position: absolute;
             top: 20px;
-            right: 20px;
-            background-color: none;
+            left: 20px;
+            background-color: white;
             padding: 2%;
             border-radius: 4px;
             font-size: 12px;
@@ -142,15 +152,15 @@
 	First using apps as that helped me to shape the data, and then with the help of LLMs such as ClaudeAI and ChatGPT. The attempts with the former were better than the latter in term of outputs. In some 	regard, it is still like before, reading and tweaking here and there until arriving to some convincing result and knowing how to read between the lines, as always is when dealing with code.</p>
     </div>
     
-    <div class="legend">
+    <div id="key" class="legend">
 
-	<div class="legend-item">
+	<div id="key-item1" class="legend-item">
                 <svg class="legend-color" height="15" width="15">
                     <polygon points="7.5,0 15,7.5 7.5,15 0,7.5" fill="red"/>
                 </svg>
                 <span>Artist</span>
      	</div>
-     	<div class="legend-item">
+     	<div id="key-item2"class="legend-item">
                 <svg class="legend-color" height="15" width="15">
                     <polygon points="6,0 12,2.5 15,7.5 12,12.5 6,15 0,12.5 -3,7.5 0,2.5" fill="blue"/>
                 </svg>
