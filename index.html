@@ -320,17 +320,14 @@ position: relative;
 	    background-position: 40% 50%;--------*/
 	}
 .fondo iframe {
-  position: absolute;
-  top: -10%;
-  left: -10%;
-  width: 100vw;
-  height: 100vh;
-  transform: translate(-50%, -50%);
-  
-  /* If you want it to behave like a background cover: */
-  min-width: 100%; 
-  min-height: 100%;
-  object-fit: cover;
+	 width: 100vw;
+ 	 height: 56.25vw; /* Strategy for 16:9 Aspect Ratio (9/16 = 0.5625) */
+	  min-height: 100vh;
+	  min-width: 177.77vh; /* Strategy for 16:9 (16/9 = 1.7777) */
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
 }
 
         /* Mobile Styles */
