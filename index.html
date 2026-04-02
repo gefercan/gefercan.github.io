@@ -316,10 +316,22 @@ position: relative;
   height: 100vh;   /* Or any specific height */
   overflow: hidden;  
 	    /*----------background-image:url("https://gefercan.github.io/images/gefercan_cover1.png");
-	    background-size:50%;background-repeat: no-repeat;
+	    background-size:50%;backgroundfondo-repeat: no-repeat;
 	    background-position: 40% 50%;--------*/
 	}
-
+.fondo iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  transform: translate(-50%, -50%);
+  
+  /* If you want it to behave like a background cover: */
+  min-width: 100%; 
+  min-height: 100%;
+  object-fit: cover;
+}
 
         /* Mobile Styles */
         @media (max-width: 768px) {
