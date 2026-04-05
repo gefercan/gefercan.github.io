@@ -332,7 +332,7 @@
             flex-grow: 1;margin:0px; padding:0px;
             position: relative;
             width: 100%;            top: -20;
-            left: -120;
+            left: -220;
             background: #000;
 /* The fallback image logic */
             /* background-image: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=1920'); */
@@ -346,14 +346,17 @@
         .video-container iframe {
             position: absolute;margin:0px; padding:0px;
             top: -20;
-            left: -120;
+            left: -220;
             width: 120%;
             height: 120%;
             border: none;
 			opacity:0.4;
 
         }
-
+ #fondo{
+	 padding:50%;
+	 overflow:hidden;
+ }
 
 
 
@@ -455,9 +458,14 @@
 					referrerpolicy="strict-origin-when-cross-origin" allowfullscreen >  poster="hero-image.jpg"
 
                 </iframe>
+			   <div id="fondo">
+			   </div>
             </main>
         </div>
 
+
+
+		
     <script>
         // Sample works data
         const works = [
