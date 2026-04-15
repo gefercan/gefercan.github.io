@@ -255,7 +255,7 @@
                 display: flex;
             }
 
-            nav ul {
+    		nav ul {
                 position: fixed;
                 top: 80px;
                 left: -100%;
@@ -279,7 +279,15 @@
 
             nav ul li a {
                 padding: 20px;
+				font-size:3em;
             }
+
+
+        	nav ul li a:hover,
+        	nav ul li a.active {
+            background-color: #f0f0f0;font-size:3em;
+        }
+
 
             .projects-grid {
                 grid-template-columns: 1fr;
