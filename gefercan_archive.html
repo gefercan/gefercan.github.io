@@ -9,18 +9,7 @@
     <meta name="description" content="Paintings and other works from this peruvian artist and designer/ Ilustraciones, infografias y otros trabajos de este disenador peruano.">
     <meta name="keywords" content="Illustration, Infographics, Information graphics, Information design, design, art, artist, draughtsman, concept art, Painting, drawing, Infografia, Arte, Fine arts,contemporary art, contemporary design, peruvian artist, latin-american artist, identity, self-expression, information design dubai,illustration dubai, gefercan, first peruvian artist in Dubai, dibujo, pintura, pintura contemporanea, arte contemporaneo, infografia, arte, art, concept, idea, expression, gefercan, videoart, videoimage, dibujo, bocetti, acrylic painting, peru, visual thinking, visual art,peru art, creation, creator">
 <!--here comes og tags for google verification-->
-    <meta name="author" content="German Fernandez, &lt;!DOCTYPE html&gt;
-&lt;html lang=" en"="">
-
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="last-modified" content="Thu, 11 May 2025 19:11:42 GMT">
-    <meta name="description" content="Paintings and other works from this peruvian artist and designer/ Ilustraciones, infografias y otros trabajos de este disenador peruano.">
-    <meta name="keywords" content="Illustration, Infographics, Information graphics, Information design, design, art, artist, draughtsman, concept art, Painting, drawing, Infografia, Arte, Fine arts,contemporary art, contemporary design, peruvian artist, latin-american artist, identity, self-expression, information design dubai,illustration dubai, gefercan, first peruvian artist in Dubai, dibujo, pintura, pintura contemporanea, arte contemporaneo, infografia, arte, art, concept, idea, expression, gefercan, videoart, videoimage, dibujo, bocetti, acrylic painting, peru, visual thinking, visual art,peru art, creation, creator">
-<!--here comes og tags for google verification-->
-    <meta name="author" content="German Fernandez, gefercan">
-
+    <meta name="author" content="German Fernandez">
     <meta name="copyright" content="© 2000-2026 german fernandez">
     <meta charset="utf-8">
     <meta name="HandheldFriendly" content="True">
@@ -201,7 +190,7 @@
             border: 1px solid #000;
         }
 
-/* Works Page */
+        /* Works Page */
         .works-container {
             background: white;
             padding: 40px 20px;
@@ -657,7 +646,7 @@
         }
 
 		
-@media (max-width: 768px) {
+        @media (max-width: 768px) {
             .works-layout {
                 grid-template-columns: 1fr;
                 gap: 0;
@@ -794,7 +783,7 @@
 	    background-image:url("https://gefercan.github.io/images/gefercan_cover1.png");
 	    background-size:100%;
 	    background-position: 10% 10%;  
-	}
+	}}
         
     </style>
 
@@ -932,7 +921,7 @@
     <script>
         // Works data (from archive_table). To add a picture, put its URL or path in "image",
         // e.g. image: "https://gefercan.github.io/images/resurreccion.jpg". Empty = placeholder.
-        const works = [
+/*         const works = [
             { year: 1997, title: "Resurreccion", event: "Other", height: 32, width: 29, technique: "drawing", medium: "graphite", support: "paper", category: "other", availability: "available", image: "", print: "sdfasdfasdfas", price: "sdfasdfsda", commentary: "sdsdfas", keywords: "sadfasfddsa" },
             { year: 1997, title: "Cat", event: "Other", height: 32, width: 29, technique: "drawing", medium: "pencil", support: "paper", category: "fantastic image", availability: "available", image: "", print: "dfasdfasdf", price: "sdfasdf", commentary: "asdfsad", keywords: "sdfsdafsd" },
             { year: 1998, title: "Tondo", event: "Other", height: 50, width: 50, technique: "drawing", medium: "pencil", support: "paper", category: "women body", availability: "lost", image: "", print: "asdfasfd", price: "asdfasfdd", commentary: "asdfasdfd", keywords: "" },
@@ -953,7 +942,103 @@
             { year: 2004, title: "Sin titulo I", event: "ICPNA Acuarela (Group show)", height: 42, width: 40, technique: "painting", medium: "watercolor", support: "paper", category: "abstract", availability: "available", image: "", print: "no", price: "ZCxZC", commentary: "ZcxZCx", keywords: "ZcxZcx" },
             { year: 2004, title: "Sin titulo I", event: "ICPNA Acuarela (Group show)", height: 64, width: 60, technique: "painting", medium: "watercolor", support: "paper", category: "abstract", availability: "destroyed", image: "", print: "no", price: "ZcxZCx", commentary: "zcxXC", keywords: "ZcxZCxZC" },
             { year: 2005, title: "Libro Arte", event: "Other", height: 20, width: 20, technique: "collage", medium: "other", support: "paper", category: "other", availability: "painted over/changed", image: "", print: "XcZxcZcx", price: "ZcxZCx", commentary: "ZcxZcx", keywords: "ZzxcZ" }
-        ];
+        ]; */
+
+                // ===== PASTE YOUR CSV BETWEEN THE TWO BACKTICKS BELOW (header row included) =====
+        const WORKS_CSV = `
+year,title,event,size height (cm),size width(cm),technique,medium,support,category,availability,image (jpeg),print available,price,commentary,keywords
+1997,Resurreccion,Other,32,29,drawing,graphite,paper,other,available,sdfsadfsdf,sdfasdfasdfas,sdfasdfsda,sdsdfas,sadfasfddsa
+1997,Cat,Other,32,29,drawing,pencil,paper,fantastic image,available,sssssssd,dfasdfasdf,sdfasdf,asdfsad,sdfsdafsd
+1998,Tondo,Other,50,50,drawing,pencil,paper,women body,lost,sdfasdfadsf,asdfasfd,asdfasfdd,asdfasdfd,
+1998,Retablo,Other,32,29,drawing,ballpoint pen,paper,fantastic image,lost,asdfasdfasdf,asdfadsf,asdfafsd,asdfasfd,asdfasfdsdf
+1998,Virgen,Other,30,30,printmaking,ink,paper,woman portrait,available,na,asdfasdf,asdfasdf,asfdasdf,sadfasdf
+2000,De Lias y Raqueles,ICPNA Acuarela (Group show),80,40,painting,watercolor,paper,women body,available,na,sadfasdf,asdfasfd,asdfasdf,asdfasdf
+2002,Fito,Other,32,29,drawing,pencil,paper,other,available,asdfasdf,sadfafsd,sadfdsf,asfdadsf,asdfasdfSSSSS
+2002,El Mundo : arbol,Other,29,34,drawing,graphite,paper,fantastic image,lost,na,sadfasfd,asdfasdf,safdasdf,asdfadsf
+2002,El Mundo: Carnaval,Other,29,34,drawing,graphite,paper,fantastic image,lost,na,dafadsdf,asdfasdf,sadfafsd,asdfasdf
+2002,El Mundo: Cementerio,Other,29,34,drawing,graphite,paper,fantastic image,lost,na,asfdadsf,asfdasd,sadfasdf,asdfdfs
+2002,El Mundo: Caballeros,Other,29,34,drawing,graphite,paper,fantastic image,lost,na,sadfsdfa,sdfasdf,sadfadsf,sadfasfd
+2002,El Mundo: musicos,Other,29,34,drawing,graphite,paper,fantastic image,lost,na,xcv,xcv,xcv,xcv
+2002,El Mundo: Entierro,Other,29,34,drawing,graphite,paper,fantastic image,lost,na,xcv,xcv,xcv,vcx
+2003,La calle: city face,Other,12,10,drawing,ballpoint pen,paper,fantastic image,zxc,zxc,zxc,zxc,zxc,zc
+2003,Woman City,Other,29,21,drawing,pencil,paper,woman portrait,available,na,zxc,xzcz,zxc,zxc
+2003,na,New Peruvian Illustration,30,30,painting,tempera,cardboard,fantastic image,available,na,ZcxZcx,zcxZxC,CxZcZCx,ZzxcZcx
+2003,na,New Peruvian Illustration,30,30,painting,tempera,cardboard,fantastic image,available,na,ZcxZcxZ,XCZCx,ZCXZC,ZcxZCZc
+2004,Sin titulo I,ICPNA Acuarela (Group show),42,40,painting,watercolor,paper,abstract,available,na,no,ZCxZC,ZcxZCx,ZcxZcx
+2004,Sin titulo I,ICPNA Acuarela (Group show),64,60,painting,watercolor,paper,abstract,distroyed,na,no,ZcxZCx,zcxXC,ZcxZCxZC
+2005,Libro Arte,Other,20,20,collage,other,paper,other,painted over/changed,na,XcZxcZcx,ZcxZCx,ZcxZcx,ZzxcZ`       ;
+
+        // Folder used when the image column has just a file name (e.g. "tondo.jpg")
+        const IMAGE_BASE = 'https://gefercan.github.io/images/';
+
+        // Converts the CSV above into the works list used by the page
+        function csvToWorks(csvText) {
+            const lines = csvText.replace(/\r/g, '').split('\n').map(l => l.trim()).filter(l => l !== '');
+
+            // Re-join lines that were wrapped: every work starts with a 4-digit year
+            const records = [];
+            let header = '';
+            lines.forEach(line => {
+                if (/^\d{4}\s*,/.test(line)) records.push(line);
+                else if (records.length) records[records.length - 1] += ' ' + line;
+                else header += (header ? ' ' : '') + line;
+            });
+
+            // Split one CSV line into fields (supports "quoted, values")
+            const splitRow = row => {
+                const out = [];
+                let cur = '', quoted = false;
+                for (let i = 0; i < row.length; i++) {
+                    const ch = row[i];
+                    if (ch === '"' && quoted && row[i + 1] === '"') { cur += '"'; i++; }
+                    else if (ch === '"') quoted = !quoted;
+                    else if (ch === ',' && !quoted) { out.push(cur.trim()); cur = ''; }
+                    else cur += ch;
+                }
+                out.push(cur.trim());
+                return out;
+            };
+
+            // Match each header to a field name; fall back to the standard column order
+            const fieldOrder = ['year', 'title', 'event', 'height', 'width', 'technique', 'medium', 'support',
+                                'category', 'availability', 'image', 'print', 'price', 'commentary', 'keywords'];
+            let columns = fieldOrder;
+            if (header) {
+                const found = splitRow(header).map(h => {
+                    const name = h.toLowerCase();
+                    return fieldOrder.find(key => name.includes(key)) || null;
+                });
+                if (found.filter(Boolean).length >= 5) columns = found;
+            }
+
+            const fixes = { distroyed: 'destroyed' };
+
+            return records.map(record => {
+                const values = splitRow(record);
+                const work = {};
+                fieldOrder.forEach(key => work[key] = '');
+                columns.forEach((key, i) => { if (key) work[key] = values[i] !== undefined ? values[i] : ''; });
+
+                work.year = parseInt(work.year, 10) || work.year;
+                work.height = parseFloat(work.height) || '';
+                work.width = parseFloat(work.width) || '';
+                if (!work.title || work.title.toLowerCase() === 'na') work.title = 'Untitled';
+                if (fixes[work.availability.toLowerCase()]) work.availability = fixes[work.availability.toLowerCase()];
+
+                // Only real image files are used; anything else shows the placeholder
+                const img = work.image;
+                if (/\.(jpe?g|png|webp|gif)$/i.test(img)) {
+                    work.image = /^(https?:)?\/\//.test(img) || img.startsWith('/') ? img : IMAGE_BASE + img;
+                } else {
+                    work.image = '';
+                }
+                return work;
+            });
+        }
+
+        const works = csvToWorks(WORKS_CSV);
+
+
 
         // Navigation functions
         function showPage(pageId) {
