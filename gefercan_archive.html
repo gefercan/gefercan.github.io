@@ -1,0 +1,1261 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="last-modified" content="Thu, 11 May 2025 19:11:42 GMT">
+    <meta name="description" content="Paintings and other works from this peruvian artist and designer/ Ilustraciones, infografias y otros trabajos de este disenador peruano.">
+    <meta name="keywords" content="Illustration, Infographics, Information graphics, Information design, design, art, artist, draughtsman, concept art, Painting, drawing, Infografia, Arte, Fine arts,contemporary art, contemporary design, peruvian artist, latin-american artist, identity, self-expression, information design dubai,illustration dubai, gefercan, first peruvian artist in Dubai, dibujo, pintura, pintura contemporanea, arte contemporaneo, infografia, arte, art, concept, idea, expression, gefercan, videoart, videoimage, dibujo, bocetti, acrylic painting, peru, visual thinking, visual art,peru art, creation, creator">
+<!--here comes og tags for google verification-->
+    <meta name="author" content="German Fernandez, &lt;!DOCTYPE html&gt;
+&lt;html lang=" en"="">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="last-modified" content="Thu, 11 May 2025 19:11:42 GMT">
+    <meta name="description" content="Paintings and other works from this peruvian artist and designer/ Ilustraciones, infografias y otros trabajos de este disenador peruano.">
+    <meta name="keywords" content="Illustration, Infographics, Information graphics, Information design, design, art, artist, draughtsman, concept art, Painting, drawing, Infografia, Arte, Fine arts,contemporary art, contemporary design, peruvian artist, latin-american artist, identity, self-expression, information design dubai,illustration dubai, gefercan, first peruvian artist in Dubai, dibujo, pintura, pintura contemporanea, arte contemporaneo, infografia, arte, art, concept, idea, expression, gefercan, videoart, videoimage, dibujo, bocetti, acrylic painting, peru, visual thinking, visual art,peru art, creation, creator">
+<!--here comes og tags for google verification-->
+    <meta name="author" content="German Fernandez, gefercan">
+
+    <meta name="copyright" content="© 2000-2026 german fernandez">
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+<!--here comes og tags for social media-->
+    <meta property="og:title" content="german fernandez cantos, portfolio">
+    <meta property="og:site_name" content="german-fernandez.com">
+    <meta property="og:description" content="Illustration, infographics and design//ilustración, infografía y diseño">
+    <meta property="og:url" content="http://www.german-fernandez.com">
+    <meta property="og:image" content="http://www.german-fernandez.com/images/fondo_elephant_1073.jpg">
+    <meta name="twitter:title" content="German Fernandez Cantos, portfolio ">
+    <meta name="twitter:description" content=" Illustration, infographics and design// ilustración, infografía y diseño">
+    <meta name="twitter:image" content="http://www.german-fernandez.com/images/fondo_elephant_1073.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <title> gefercan </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #000;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            z-index: 1000;
+            padding: 20px;
+            /*-----------border-bottom: 1px solid #eee;--------*/
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: normal;
+            color: #000;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 0;
+        }
+
+        nav ul li {
+            background: white;
+            border: 1px solid #000;
+            margin-left: -1px;
+        }
+
+        nav ul li:first-child {
+            margin-left: 0;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 12px 20px;
+            color: #000;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: #f0f0f0;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: #000;
+            transition: 0.3s;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
+        }
+
+        .page {
+    
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Home Page */
+        .home-image {
+            width: 100%;
+            height: calc(100vh - 80px);
+            object-fit: cover;
+        }
+
+        /* Projects Page */
+        .projects-container {
+            background: white;
+            padding: 40px 20px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .project-item {
+            padding: 20px;
+            border: 1px solid #eee;
+        }
+
+        .project-item h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+            font-weight: normal;
+        }
+
+		.project-item h4 {
+            font-size: 15px;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .project-item p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .projects-section {
+            margin-bottom: 50px;
+        }
+
+        .projects-section h2 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        /* Works Page */
+        .works-container {
+            background: white;
+            padding: 40px 20px;
+        }
+
+        .works-submenu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0;
+            margin-bottom: 40px;
+            border: 1px solid #000;
+        }
+
+/* Works Page */
+        .works-container {
+            background: white;
+            padding: 40px 20px;
+        }
+
+        .works-submenu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0;
+            margin-bottom: 40px;
+            border: 1px solid #000;
+        }
+
+        .works-submenu button {
+            background: white;
+            border: none;
+            border-right: 1px solid #000;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .works-submenu button:last-child {
+            border-right: none;
+        }
+
+        .works-submenu button:hover,
+        .works-submenu button.active {
+            background-color: #f0f0f0;
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .work-item {
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .work-item:hover {
+            opacity: 0.8;
+        }
+
+        .work-placeholder {
+            width: 100%;
+            aspect-ratio: 9/8;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .work-title {
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* Work Detail Modal */
+        .work-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .work-modal-content {
+            background: white;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 40px;
+            position: relative;
+        }
+
+        .work-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .work-modal img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .work-modal h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .work-modal p {
+            line-height: 1.6;
+        }
+
+                /* Works archive: sidebar filters, toolbar, grid and table views */
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: 300;
+            font-style: normal;
+            font-size: 20px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            direction: ltr;
+            -webkit-font-smoothing: antialiased;
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+            vertical-align: middle;
+        }
+
+        .works-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .works-sidebar {
+            position: sticky;
+            top: 110px;
+            max-height: calc(100vh - 130px);
+            overflow-y: auto;
+            border-top: 1px solid #000;
+            padding-top: 16px;
+        }
+
+        .works-sidebar-head {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .works-filters {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .works-field {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .works-field select,
+        .works-field input {
+            font-family: inherit;
+            font-size: 14px;
+            color: #000;
+            padding: 6px 8px;
+            width: 100%;
+            border: 1px solid #000;
+            border-radius: 0;
+            background: #fff;
+        }
+
+        .works-reset,
+        .works-filter-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: #fff;
+            border: 1px solid #000;
+            padding: 8px 14px;
+            font-family: inherit;
+            font-size: 14px;
+            color: #000;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .works-reset:hover,
+        .works-filter-toggle:hover {
+            background-color: #f0f0f0;
+        }
+
+        .works-filter-toggle {
+            display: none;
+        }
+
+        .works-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 20px;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid #000;
+        }
+
+        .works-toolbar-left {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .works-toolbar .works-view {
+            flex-direction: row;
+            flex-wrap: nowrap;
+            margin-bottom: 0;
+        }
+
+        .works-toolbar .works-view button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: none;
+            border-right: 1px solid #000;
+        }
+
+        .works-toolbar .works-view button:last-child {
+            border-right: none;
+        }
+
+        .works-sort {
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .works-sort select {
+            width: auto;
+        }
+
+        .works-count {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .work-placeholder.has-image {
+            background-size: cover;
+            background-position: center;
+        }
+
+        .work-placeholder span {
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .work-year {
+            font-size: 12px;
+            color: #666;
+            text-align: center;
+        }
+
+        .works-table-wrap {
+            overflow-x: auto;
+        }
+
+        .works-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .works-table th {
+            text-align: left;
+            font-weight: normal;
+            font-size: 12px;
+            color: #666;
+            padding: 8px;
+            border-bottom: 1px solid #000;
+            white-space: nowrap;
+        }
+
+        .works-table td {
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+            vertical-align: middle;
+        }
+
+        .works-table tbody tr {
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .works-table tbody tr:hover {
+            background-color: #f0f0f0;
+        }
+
+        .works-thumb {
+            width: 72px;
+            font-size: 10px;
+        }
+
+        .works-empty {
+            padding: 40px 0;
+            color: #666;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            display: none;
+            background: rgba(17, 17, 17, 0.97);
+        }
+
+        .lightbox.open {
+            display: flex;
+        }
+
+        .lightbox-stage {
+            flex: 1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 80px;
+            min-width: 0;
+        }
+
+        .lightbox-stage img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .lightbox-placeholder {
+            width: min(70%, 520px);
+            aspect-ratio: 9/8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border: 1px solid #555;
+            color: #999;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .lightbox-placeholder .material-symbols-outlined {
+            font-size: 40px;
+        }
+
+        .lightbox-btn {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: transparent;
+            border: 1px solid #fff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .lightbox-btn:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        .lightbox-btn .material-symbols-outlined {
+            font-size: 28px;
+        }
+
+        .lightbox-prev { left: 20px; top: 50%; transform: translateY(-50%); }
+        .lightbox-next { right: 20px; top: 50%; transform: translateY(-50%); }
+        .lightbox-close { right: 20px; top: 20px; }
+
+        .lightbox-counter {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            color: #ccc;
+            font-size: 12px;
+        }
+
+        .lightbox-info {
+            width: 360px;
+            flex-shrink: 0;
+            background: #fff;
+            overflow-y: auto;
+            padding: 40px 30px;
+        }
+
+        .lightbox-info h3 {
+            font-size: 22px;
+            font-weight: normal;
+            line-height: 1.3;
+            margin-bottom: 4px;
+        }
+
+        .lightbox-year {
+            color: #666;
+            margin-bottom: 24px;
+        }
+
+        .lightbox-info dl {
+            display: grid;
+            grid-template-columns: 110px 1fr;
+            border-top: 1px solid #000;
+            font-size: 14px;
+        }
+
+        .lightbox-info dt,
+        .lightbox-info dd {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .lightbox-info dt {
+            color: #666;
+            font-size: 12px;
+            padding-top: 10px;
+        }
+
+        .lightbox-info dd {
+            word-break: break-word;
+        }
+
+        .lightbox-empty {
+            color: #bbb;
+        }
+
+        body.lightbox-lock {
+            overflow: hidden;
+        }
+
+		
+@media (max-width: 768px) {
+            .works-layout {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .works-sidebar {
+                position: static;
+                max-height: none;
+                display: none;
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+                border-bottom: 1px solid #000;
+            }
+
+            .works-sidebar.open {
+                display: block;
+            }
+
+            .works-filter-toggle {
+                display: inline-flex;
+            }
+
+            .works-toolbar {
+                align-items: stretch;
+            }
+
+            .works-toolbar .works-view button {
+                border-bottom: none;
+                border-right: 1px solid #000;
+            }
+
+            .works-toolbar .works-view button:last-child {
+                border-right: none;
+            }
+
+            .works-sort {
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+            }
+
+            .works-sort select {
+                width: 100%;
+            }
+
+            .works-table .col-hide-sm {
+                display: none;
+            }
+
+            .lightbox {
+                flex-direction: column;
+                overflow-y: auto;
+            }
+
+            .lightbox-stage {
+                flex: none;
+                min-height: 60vh;
+                padding: 70px 16px 80px;
+            }
+
+            .lightbox-prev,
+            .lightbox-next {
+                top: auto;
+                bottom: 16px;
+                transform: none;
+            }
+
+            .lightbox-info {
+                width: 100%;
+                overflow: visible;
+                padding: 30px 20px;
+            }
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                transition: left 0.3s;
+                border-top: 1px solid #eee;
+            }
+
+            nav ul.show {
+                left: 0;
+            }
+
+            nav ul li {
+                border: none;
+                border-bottom: 1px solid #eee;
+                margin: 0;
+            }
+
+            nav ul li a {
+                padding: 20px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .works-submenu {
+                flex-direction: column;
+            }
+
+            .works-submenu button {
+                border-right: none;
+                border-bottom: 1px solid #000;
+            }
+
+            .works-submenu button:last-child {
+                border-bottom: none;
+            }
+
+            .work-modal-content {
+                padding: 20px;
+                margin: 20px;
+            }
+	  	
+	  #fondo{
+	    width:95%;
+ 	    padding:5% 5% 185% 5%;
+	    margin:1% 1% 1% 1%;
+	    background-image:url("https://gefercan.github.io/images/gefercan_cover1.png");
+	    background-size:100%;
+	    background-position: 10% 10%;  
+	}
+        
+    </style>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block" />
+</head>
+
+<!-------body--- -->
+
+<body>
+    
+    <header>
+        <div class="header-content">
+             <a href="./index.html" class="logo" > german fernandez cantos</a>
+            <nav>
+                <ul id="nav-menu">
+                    <li> <a href="./gefercan_projects.html"> projects</a></li>
+		            <li>  archive </li>  
+                    <li> <a href="./gefercan_bio.html"> cv bio </a></li> 
+                    <li> <a href="./gefercan_contact.html"> contact</a> </li>
+                    
+                </ul>
+            </nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+
+
+
+    <main>
+
+
+		
+        <!-- Works Page -->
+        <div id="works" class="page">
+            <div class="works-container">
+                <div class="works-layout">
+
+                    <!-- Filters sidebar -->
+                    <aside class="works-sidebar" id="works-sidebar">
+                        <div class="works-sidebar-head">
+                            <span class="material-symbols-outlined">tune</span> filters
+                        </div>
+                        <div class="works-filters" id="works-filters">
+                            <!-- Filters are generated from the works data by JavaScript -->
+                        </div>
+                    </aside>
+
+                    <div class="works-main">
+                        <div class="works-toolbar">
+                            <div class="works-toolbar-left">
+                                <button class="works-filter-toggle" onclick="toggleWorkFilters()">
+                                    <span class="material-symbols-outlined">tune</span> filters
+                                </button>
+                                <div class="works-submenu works-view">
+                                    <button class="active" data-view="grid" onclick="setView('grid')">
+                                        <span class="material-symbols-outlined">grid_view</span> image grid
+                                    </button>
+                                    <button data-view="table" onclick="setView('table')">
+                                        <span class="material-symbols-outlined">table_rows</span> image table
+                                    </button>
+                                </div>
+                                <span class="works-count" id="works-count"></span>
+                            </div>
+                            <label class="works-field works-sort">
+                                <span class="material-symbols-outlined">sort</span>
+                                <select id="works-sort" onchange="setSort(this.value)" aria-label="sort by">
+                                    <option value="year-asc">chronological (oldest first)</option>
+                                    <option value="year-desc">chronological (newest first)</option>
+                                    <option value="title-asc">alphabetical (A–Z)</option>
+                                    <option value="title-desc">alphabetical (Z–A)</option>
+                                </select>
+                            </label>
+                        </div>
+
+                        <div class="works-grid" id="works-grid">
+                            <!-- Works will be generated by JavaScript -->
+                        </div>
+
+                        <div class="works-table-wrap" id="works-table-wrap" style="display: none;">
+                            <table class="works-table">
+                                <thead>
+                                    <tr>
+                                        <th>image</th>
+                                        <th>title</th>
+                                        <th>year</th>
+                                        <th>technique</th>
+                                        <th class="col-hide-sm">medium / support</th>
+                                        <th class="col-hide-sm">size (cm)</th>
+                                        <th class="col-hide-sm">event</th>
+                                        <th class="col-hide-sm">availability</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="works-table-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+    <!-- Work Lightbox -->
+    <div id="work-modal" class="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+        <div class="lightbox-stage" id="lightbox-stage">
+            <span class="lightbox-counter" id="lightbox-counter"></span>
+            <div id="lightbox-media"></div>
+            <button class="lightbox-btn lightbox-prev" onclick="stepLightbox(-1)" aria-label="previous work">
+                <span class="material-symbols-outlined">chevron_left</span>
+            </button>
+            <button class="lightbox-btn lightbox-next" onclick="stepLightbox(1)" aria-label="next work">
+                <span class="material-symbols-outlined">chevron_right</span>
+            </button>
+            <button class="lightbox-btn lightbox-close" onclick="closeWorkModal()" aria-label="close">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <div class="lightbox-info">
+            <h3 id="lightbox-title"></h3>
+            <div class="lightbox-year" id="lightbox-year"></div>
+            <dl id="lightbox-details"></dl>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        // Works data (from archive_table). To add a picture, put its URL or path in "image",
+        // e.g. image: "https://gefercan.github.io/images/resurreccion.jpg". Empty = placeholder.
+        const works = [
+            { year: 1997, title: "Resurreccion", event: "Other", height: 32, width: 29, technique: "drawing", medium: "graphite", support: "paper", category: "other", availability: "available", image: "", print: "sdfasdfasdfas", price: "sdfasdfsda", commentary: "sdsdfas", keywords: "sadfasfddsa" },
+            { year: 1997, title: "Cat", event: "Other", height: 32, width: 29, technique: "drawing", medium: "pencil", support: "paper", category: "fantastic image", availability: "available", image: "", print: "dfasdfasdf", price: "sdfasdf", commentary: "asdfsad", keywords: "sdfsdafsd" },
+            { year: 1998, title: "Tondo", event: "Other", height: 50, width: 50, technique: "drawing", medium: "pencil", support: "paper", category: "women body", availability: "lost", image: "", print: "asdfasfd", price: "asdfasfdd", commentary: "asdfasdfd", keywords: "" },
+            { year: 1998, title: "Retablo", event: "Other", height: 32, width: 29, technique: "drawing", medium: "ballpoint pen", support: "paper", category: "fantastic image", availability: "lost", image: "", print: "asdfadsf", price: "asdfafsd", commentary: "asdfasfd", keywords: "asdfasfdsdf" },
+            { year: 1998, title: "Virgen", event: "Other", height: 30, width: 30, technique: "printmaking", medium: "ink", support: "paper", category: "woman portrait", availability: "available", image: "", print: "asdfasdf", price: "asdfasdf", commentary: "asfdasdf", keywords: "sadfasdf" },
+            { year: 2000, title: "De Lias y Raqueles", event: "ICPNA Acuarela (Group show)", height: 80, width: 40, technique: "painting", medium: "watercolor", support: "paper", category: "women body", availability: "available", image: "", print: "sadfasdf", price: "asdfasfd", commentary: "asdfasdf", keywords: "asdfasdf" },
+            { year: 2002, title: "Fito", event: "Other", height: 32, width: 29, technique: "drawing", medium: "pencil", support: "paper", category: "other", availability: "available", image: "", print: "sadfafsd", price: "sadfdsf", commentary: "asfdadsf", keywords: "asdfasdfSSSSS" },
+            { year: 2002, title: "El Mundo: Arbol", event: "Other", height: 29, width: 34, technique: "drawing", medium: "graphite", support: "paper", category: "fantastic image", availability: "lost", image: "", print: "sadfasfd", price: "asdfasdf", commentary: "safdasdf", keywords: "asdfadsf" },
+            { year: 2002, title: "El Mundo: Carnaval", event: "Other", height: 29, width: 34, technique: "drawing", medium: "graphite", support: "paper", category: "fantastic image", availability: "lost", image: "", print: "dafadsdf", price: "asdfasdf", commentary: "sadfafsd", keywords: "asdfasdf" },
+            { year: 2002, title: "El Mundo: Cementerio", event: "Other", height: 29, width: 34, technique: "drawing", medium: "graphite", support: "paper", category: "fantastic image", availability: "lost", image: "", print: "asfdadsf", price: "asfdasd", commentary: "sadfasdf", keywords: "asdfdfs" },
+            { year: 2002, title: "El Mundo: Caballeros", event: "Other", height: 29, width: 34, technique: "drawing", medium: "graphite", support: "paper", category: "fantastic image", availability: "lost", image: "", print: "sadfsdfa", price: "sdfasdf", commentary: "sadfadsf", keywords: "sadfasfd" },
+            { year: 2002, title: "El Mundo: Musicos", event: "Other", height: 29, width: 34, technique: "drawing", medium: "graphite", support: "paper", category: "fantastic image", availability: "lost", image: "", print: "xcv", price: "xcv", commentary: "xcv", keywords: "xcv" },
+            { year: 2002, title: "El Mundo: Entierro", event: "Other", height: 29, width: 34, technique: "drawing", medium: "graphite", support: "paper", category: "fantastic image", availability: "lost", image: "", print: "xcv", price: "xcv", commentary: "xcv", keywords: "vcx" },
+            { year: 2003, title: "La calle: city face", event: "Other", height: 12, width: 10, technique: "drawing", medium: "ballpoint pen", support: "paper", category: "fantastic image", availability: "unknown", image: "", print: "zxc", price: "zxc", commentary: "zxc", keywords: "zc" },
+            { year: 2003, title: "Woman City", event: "Other", height: 29, width: 21, technique: "drawing", medium: "pencil", support: "paper", category: "woman portrait", availability: "available", image: "", print: "zxc", price: "xzcz", commentary: "zxc", keywords: "zxc" },
+            { year: 2003, title: "Untitled", event: "New Peruvian Illustration", height: 30, width: 30, technique: "painting", medium: "tempera", support: "cardboard", category: "fantastic image", availability: "available", image: "", print: "ZcxZcx", price: "zcxZxC", commentary: "CxZcZCx", keywords: "ZzxcZcx" },
+            { year: 2003, title: "Untitled", event: "New Peruvian Illustration", height: 30, width: 30, technique: "painting", medium: "tempera", support: "cardboard", category: "fantastic image", availability: "available", image: "", print: "ZcxZcxZ", price: "XCZCx", commentary: "ZCXZC", keywords: "ZcxZCZc" },
+            { year: 2004, title: "Sin titulo I", event: "ICPNA Acuarela (Group show)", height: 42, width: 40, technique: "painting", medium: "watercolor", support: "paper", category: "abstract", availability: "available", image: "", print: "no", price: "ZCxZC", commentary: "ZcxZCx", keywords: "ZcxZcx" },
+            { year: 2004, title: "Sin titulo I", event: "ICPNA Acuarela (Group show)", height: 64, width: 60, technique: "painting", medium: "watercolor", support: "paper", category: "abstract", availability: "destroyed", image: "", print: "no", price: "ZcxZCx", commentary: "zcxXC", keywords: "ZcxZCxZC" },
+            { year: 2005, title: "Libro Arte", event: "Other", height: 20, width: 20, technique: "collage", medium: "other", support: "paper", category: "other", availability: "painted over/changed", image: "", print: "XcZxcZcx", price: "ZcxZCx", commentary: "ZcxZcx", keywords: "ZzxcZ" }
+        ];
+
+        // Navigation functions
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update navigation
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => link.classList.remove('active'));
+            
+            // Close mobile menu
+            document.getElementById('nav-menu').classList.remove('show');
+        }
+
+        function toggleMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('show');
+        }
+
+        // Works functions
+        const workFilters = [
+            { key: 'technique', label: 'technique' },
+            { key: 'year', label: 'year' },
+            { key: 'medium', label: 'material' },
+            { key: 'support', label: 'support' },
+            { key: 'category', label: 'theme' },
+            { key: 'event', label: 'event' },
+            { key: 'availability', label: 'availability' }
+        ];
+
+        const worksState = { view: 'grid', sort: 'year-asc', search: '', filters: {} };
+        let worksFiltersBuilt = false;
+
+        function escapeHtml(value) {
+            return String(value == null ? '' : value)
+                .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+        }
+
+        function hasValue(value) {
+            return value !== undefined && value !== null && String(value).trim() !== '' && String(value).toLowerCase() !== 'na';
+        }
+
+        function workSize(work) {
+            return hasValue(work.height) && hasValue(work.width) ? `${work.height} × ${work.width}` : '';
+        }
+
+        function workThumb(work, extraClass) {
+            if (hasValue(work.image)) {
+                return `<div class="work-placeholder has-image ${extraClass}" style="background-image: url('${escapeHtml(work.image)}');" role="img" aria-label="${escapeHtml(work.title)}"></div>`;
+            }
+            return `<div class="work-placeholder ${extraClass}"><span>${escapeHtml(work.technique)}<br>${escapeHtml(work.year)}</span></div>`;
+        }
+
+        function buildWorkFilters() {
+            const container = document.getElementById('works-filters');
+            let html = `<label class="works-field">search
+                    <input type="search" id="works-search" placeholder="title, keyword…" oninput="setSearch(this.value)">
+                </label>`;
+
+            workFilters.forEach(filter => {
+                const values = [...new Set(works.map(w => w[filter.key]).filter(hasValue).map(String))];
+                values.sort((a, b) => filter.key === 'year' ? a - b : a.localeCompare(b, 'es', { sensitivity: 'base' }));
+                const options = values.map(v => {
+                    const count = works.filter(w => String(w[filter.key]) === v).length;
+                    return `<option value="${escapeHtml(v)}">${escapeHtml(v)} (${count})</option>`;
+                }).join('');
+                html += `<label class="works-field">${filter.label}
+                        <select data-filter="${filter.key}" onchange="setFilter('${filter.key}', this.value)">
+                            <option value="">all</option>${options}
+                        </select>
+                    </label>`;
+            });
+
+            html += `<button class="works-reset" onclick="resetWorkFilters()">clear filters</button>`;
+            container.innerHTML = html;
+            worksFiltersBuilt = true;
+        }
+
+        function getVisibleWorks() {
+            const query = worksState.search.trim().toLowerCase();
+            const list = works.filter(work => {
+                const matchesFilters = Object.entries(worksState.filters)
+                    .every(([key, value]) => !value || String(work[key]) === value);
+                if (!matchesFilters) return false;
+                if (!query) return true;
+                return [work.title, work.year, work.event, work.technique, work.medium, work.support, work.category, work.keywords, work.commentary]
+                    .join(' ').toLowerCase().includes(query);
+            });
+
+            const byTitle = (a, b) => a.title.localeCompare(b.title, 'es', { sensitivity: 'base' });
+            const byYear = (a, b) => a.year - b.year;
+            const sorters = {
+                'year-asc': (a, b) => byYear(a, b) || byTitle(a, b),
+                'year-desc': (a, b) => byYear(b, a) || byTitle(a, b),
+                'title-asc': (a, b) => byTitle(a, b) || byYear(a, b),
+                'title-desc': (a, b) => byTitle(b, a) || byYear(a, b)
+            };
+            return list.sort(sorters[worksState.sort]);
+        }
+
+        function renderWorks() {
+            if (!worksFiltersBuilt) buildWorkFilters();
+
+            const list = getVisibleWorks();
+            const grid = document.getElementById('works-grid');
+            const tableWrap = document.getElementById('works-table-wrap');
+            const tableBody = document.getElementById('works-table-body');
+
+            document.getElementById('works-count').textContent =
+                list.length === works.length ? `${works.length} works` : `${list.length} of ${works.length} works`;
+
+            grid.style.display = worksState.view === 'grid' ? '' : 'none';
+            tableWrap.style.display = worksState.view === 'table' ? '' : 'none';
+            grid.innerHTML = '';
+            tableBody.innerHTML = '';
+
+            if (!list.length) {
+                grid.style.display = '';
+                tableWrap.style.display = 'none';
+                grid.innerHTML = '<p class="works-empty">No works match these filters.</p>';
+                return;
+            }
+
+            list.forEach(work => {
+                if (worksState.view === 'grid') {
+                    const item = document.createElement('div');
+                    item.className = 'work-item';
+                    item.tabIndex = 0;
+                    item.innerHTML = `
+                        ${workThumb(work, '')}
+                        <div class="work-title">${escapeHtml(work.title)}</div>
+                        <div class="work-year">${escapeHtml(work.year)}</div>
+                    `;
+                    item.onclick = () => openWorkModal(work);
+                    item.onkeydown = e => { if (e.key === 'Enter') openWorkModal(work); };
+                    grid.appendChild(item);
+                } else {
+                    const row = document.createElement('tr');
+                    row.tabIndex = 0;
+                    row.innerHTML = `
+                        <td>${workThumb(work, 'works-thumb')}</td>
+                        <td>${escapeHtml(work.title)}</td>
+                        <td>${escapeHtml(work.year)}</td>
+                        <td>${escapeHtml(work.technique)}</td>
+                        <td class="col-hide-sm">${escapeHtml(work.medium)} on ${escapeHtml(work.support)}</td>
+                        <td class="col-hide-sm">${escapeHtml(workSize(work))}</td>
+                        <td class="col-hide-sm">${escapeHtml(work.event)}</td>
+                        <td class="col-hide-sm">${escapeHtml(work.availability)}</td>
+                    `;
+                    row.onclick = () => openWorkModal(work);
+                    row.onkeydown = e => { if (e.key === 'Enter') openWorkModal(work); };
+                    tableBody.appendChild(row);
+                }
+            });
+        }
+
+        function setView(view) {
+            worksState.view = view;
+            document.querySelectorAll('.works-view button').forEach(btn =>
+                btn.classList.toggle('active', btn.dataset.view === view));
+            renderWorks();
+        }
+
+        function setSort(sort) {
+            worksState.sort = sort;
+            renderWorks();
+        }
+
+        function setFilter(key, value) {
+            worksState.filters[key] = value;
+            renderWorks();
+        }
+
+        function setSearch(value) {
+            worksState.search = value;
+            renderWorks();
+        }
+
+        function resetWorkFilters() {
+            worksState.filters = {};
+            worksState.search = '';
+            document.querySelectorAll('#works-filters select').forEach(select => select.value = '');
+            document.getElementById('works-search').value = '';
+            renderWorks();
+        }
+
+        function toggleWorkFilters() {
+            document.getElementById('works-sidebar').classList.toggle('open');
+        }
+
+        // Lightbox: browses the works currently shown (respects filters and sort)
+        let lightboxList = [];
+        let lightboxIndex = 0;
+
+        function openWorkModal(work) {
+            lightboxList = getVisibleWorks();
+            lightboxIndex = Math.max(0, lightboxList.indexOf(work));
+            renderLightbox();
+            document.getElementById('work-modal').classList.add('open');
+            document.body.classList.add('lightbox-lock');
+            document.querySelector('.lightbox-close').focus();
+        }
+
+        function stepLightbox(direction) {
+            if (!lightboxList.length) return;
+            lightboxIndex = (lightboxIndex + direction + lightboxList.length) % lightboxList.length;
+            renderLightbox();
+        }
+
+        function renderLightbox() {
+            const work = lightboxList[lightboxIndex];
+            const media = document.getElementById('lightbox-media');
+
+            media.innerHTML = hasValue(work.image)
+                ? `<img src="${escapeHtml(work.image)}" alt="${escapeHtml(work.title)}">`
+                : `<div class="lightbox-placeholder">
+                        <span class="material-symbols-outlined">image</span>
+                        <span>image not available yet</span>
+                   </div>`;
+            media.style.cssText = hasValue(work.image) ? 'width:100%;height:100%;display:flex;align-items:center;justify-content:center;' : 'display:contents;';
+
+            document.getElementById('lightbox-counter').textContent = `${lightboxIndex + 1} / ${lightboxList.length}`;
+            document.getElementById('lightbox-title').textContent = work.title;
+            document.getElementById('lightbox-year').textContent = work.year;
+
+            const fields = [
+                ['year', work.year],
+                ['technique', work.technique],
+                ['medium', work.medium],
+                ['support', work.support],
+                ['size', workSize(work) ? `${workSize(work)} cm (h × w)` : ''],
+                ['theme', work.category],
+                ['event', work.event],
+                ['availability', work.availability],
+                ['print available', work.print],
+                ['price', work.price],
+                ['commentary', work.commentary],
+                ['keywords', work.keywords]
+            ];
+            document.getElementById('lightbox-details').innerHTML = fields
+                .map(([label, value]) => `<dt>${label}</dt><dd>${hasValue(value) ? escapeHtml(value) : '<span class="lightbox-empty">—</span>'}</dd>`)
+                .join('');
+
+            const single = lightboxList.length < 2;
+            document.querySelector('.lightbox-prev').style.display = single ? 'none' : '';
+            document.querySelector('.lightbox-next').style.display = single ? 'none' : '';
+        }
+
+        function closeWorkModal() {
+            document.getElementById('work-modal').classList.remove('open');
+            document.body.classList.remove('lightbox-lock');
+        }
+
+        // Close lightbox when clicking the dark area around the work
+        document.getElementById('work-modal').onclick = function(e) {
+            if (e.target === this || e.target.id === 'lightbox-stage') {
+                closeWorkModal();
+            }
+        }
+
+        // Keyboard: Esc closes, arrows browse
+        document.addEventListener('keydown', function(e) {
+            if (!document.getElementById('work-modal').classList.contains('open')) return;
+            if (e.key === 'Escape') closeWorkModal();
+            if (e.key === 'ArrowLeft') stepLightbox(-1);
+            if (e.key === 'ArrowRight') stepLightbox(1);
+        });
+
+        // Swipe on touch screens
+        (function() {
+            let startX = null;
+            const stage = document.getElementById('lightbox-stage');
+            stage.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+            stage.addEventListener('touchend', e => {
+                if (startX === null) return;
+                const dx = e.changedTouches[0].clientX - startX;
+                if (Math.abs(dx) > 50) stepLightbox(dx < 0 ? 1 : -1);
+                startX = null;
+            });
+        })();
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            renderWorks();
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const nav = document.querySelector('nav');
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.getElementById('nav-menu');
+            
+            if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+                navMenu.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+
+</html>
