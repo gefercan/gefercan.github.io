@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+	
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
@@ -946,27 +947,236 @@
 
                 // ===== PASTE YOUR CSV BETWEEN THE TWO BACKTICKS BELOW (header row included) =====
         const WORKS_CSV = `
-year,title,event,size height (cm),size width(cm),technique,medium,support,category,availability,image (jpeg),print available,price,commentary,keywords
-1997,Resurreccion,Other,32,29,drawing,graphite,paper,other,available,sdfsadfsdf,sdfasdfasdfas,sdfasdfsda,sdsdfas,sadfasfddsa
-1997,Cat,Other,32,29,drawing,pencil,paper,fantastic image,available,sssssssd,dfasdfasdf,sdfasdf,asdfsad,sdfsdafsd
-1998,Tondo,Other,50,50,drawing,pencil,paper,women body,lost,sdfasdfadsf,asdfasfd,asdfasfdd,asdfasdfd,
-1998,Retablo,Other,32,29,drawing,ballpoint pen,paper,fantastic image,lost,asdfasdfasdf,asdfadsf,asdfafsd,asdfasfd,asdfasfdsdf
-1998,Virgen,Other,30,30,printmaking,ink,paper,woman portrait,available,na,asdfasdf,asdfasdf,asfdasdf,sadfasdf
-2000,De Lias y Raqueles,ICPNA Acuarela (Group show),80,40,painting,watercolor,paper,women body,available,na,sadfasdf,asdfasfd,asdfasdf,asdfasdf
-2002,Fito,Other,32,29,drawing,pencil,paper,other,available,asdfasdf,sadfafsd,sadfdsf,asfdadsf,asdfasdfSSSSS
-2002,El Mundo : arbol,Other,29,34,drawing,graphite,paper,fantastic image,lost,na,sadfasfd,asdfasdf,safdasdf,asdfadsf
-2002,El Mundo: Carnaval,Other,29,34,drawing,graphite,paper,fantastic image,lost,na,dafadsdf,asdfasdf,sadfafsd,asdfasdf
-2002,El Mundo: Cementerio,Other,29,34,drawing,graphite,paper,fantastic image,lost,na,asfdadsf,asfdasd,sadfasdf,asdfdfs
-2002,El Mundo: Caballeros,Other,29,34,drawing,graphite,paper,fantastic image,lost,na,sadfsdfa,sdfasdf,sadfadsf,sadfasfd
-2002,El Mundo: musicos,Other,29,34,drawing,graphite,paper,fantastic image,lost,na,xcv,xcv,xcv,xcv
-2002,El Mundo: Entierro,Other,29,34,drawing,graphite,paper,fantastic image,lost,na,xcv,xcv,xcv,vcx
-2003,La calle: city face,Other,12,10,drawing,ballpoint pen,paper,fantastic image,zxc,zxc,zxc,zxc,zxc,zc
-2003,Woman City,Other,29,21,drawing,pencil,paper,woman portrait,available,na,zxc,xzcz,zxc,zxc
-2003,na,New Peruvian Illustration,30,30,painting,tempera,cardboard,fantastic image,available,na,ZcxZcx,zcxZxC,CxZcZCx,ZzxcZcx
-2003,na,New Peruvian Illustration,30,30,painting,tempera,cardboard,fantastic image,available,na,ZcxZcxZ,XCZCx,ZCXZC,ZcxZCZc
-2004,Sin titulo I,ICPNA Acuarela (Group show),42,40,painting,watercolor,paper,abstract,available,na,no,ZCxZC,ZcxZCx,ZcxZcx
-2004,Sin titulo I,ICPNA Acuarela (Group show),64,60,painting,watercolor,paper,abstract,distroyed,na,no,ZcxZCx,zcxXC,ZcxZCxZC
-2005,Libro Arte,Other,20,20,collage,other,paper,other,painted over/changed,na,XcZxcZcx,ZcxZCx,ZcxZcx,ZzxcZ`       ;
+year,title,event,size height (cm),size width
+(cm),technique,medium,support,category,availability,image (jpeg),print
+available,price,commentary,keywords
+1997,Resurreccion,Other,32,29,drawing,graphite,paper,other,available,,,,,
+1997,Cat,Other,32,29,drawing,pencil,paper,fantastic image,available,,,,,
+1998,Tondo,Other,50,50,drawing,pencil,paper,women body,lost,,,,,
+1998,Retablo,Other,32,29,drawing,ballpoint pen,paper,fantastic image,lost,,,,,
+1998,Virgen,Other,30,30,printmaking,ink,paper,woman portrait,available,na,,,,
+2000,De Lias y Raqueles,ICPNA Acuarela (Group
+show),80,40,painting,watercolor,paper,women body,available,na,,,,
+2002,Fito,Other,32,29,drawing,pencil,paper,other,available,,,,,
+2002,El Mundo : arbol,Other,29,34,drawing,graphite,paper,fantastic
+image,lost,na,,,,
+2002,El Mundo: Carnaval,Other,29,34,drawing,graphite,paper,fantastic
+image,lost,na,,,,
+2002,El Mundo: Cementerio,Other,29,34,drawing,graphite,paper,fantastic
+image,lost,na,,,,
+2002,El Mundo: Caballeros,Other,29,34,drawing,graphite,paper,fantastic
+image,lost,na,,,,
+2002,El Mundo: musicos,Other,29,34,drawing,graphite,paper,fantastic
+image,lost,na,,,,
+2002,El Mundo: Entierro,Other,29,34,drawing,graphite,paper,fantastic
+image,lost,na,,,,
+2003,La calle: city face,Other,12,10,drawing,ballpoint
+pen,paper,fantastic image,,,,,,
+2003,Woman City,Other,29,21,drawing,pencil,paper,woman portrait,available,na,,,,
+2003,na,New Peruvian
+Illustration,30,30,painting,tempera,cardboard,fantastic
+image,available,na,,,,
+2003,na,New Peruvian
+Illustration,30,30,painting,tempera,cardboard,fantastic
+image,available,na,,,,
+2004,Sin titulo I,ICPNA Acuarela (Group
+show),42,40,painting,watercolor,paper,abstract,available,na,no,,,
+2004,Sin titulo I,ICPNA Acuarela (Group
+show),64,60,painting,watercolor,paper,abstract,distroyed,na,no,,,
+2005,Libro Arte,Other,20,20,collage,other,paper,other,painted
+over/changed,na,,,,
+2006,,,,,,,,,,,,,,
+2007,na,ICPNA Acuarela (Group
+show),40,60,painting,watercolor,paper,abstract,available,na,,,,
+2007,na,ICPNA Acuarela (Group
+show),60,60,painting,watercolor,paper,abstract,available,na,,,,
+2008,Women I - local women talking,Other,30,30,painting,acrylic,canvas
+(stretched),women body,sold,na,,,,
+2008,Women II - local women
+talking,Other,30,30,painting,acrylic,canvas (stretched),women
+body,sold,na,,,,
+2009,Labyrinth 1,DPict (Group Show),30,30,collage,other,paper
+(collaged),fantastic image,available,na,,,,
+2009,Labyrinth 1,DPict (Group Show),30,30,collage,other,paper
+(collaged),fantastic image,available,na,,,,
+2009,Labyrinth 1,DPict (Group Show),30,30,collage,other,paper
+(collaged),fantastic image,available,na,,,,
+2010,Union,Other,32,29,drawing,ballpoint pen,paper,fantastic
+image,available,na,,,,
+2010,Oceano,Other,32,29,drawing,ballpoint pen,paper,fantastic
+image,available,na,,,,
+2010,Angel,Other,30,21,drawing,chalk,paper,fantastic image,available,na,,,,
+2012,Woman I (Dancer),Genius (group show),50,50,painting,acrylic,paper
+(collaged),fantastic image,lost,na,no,,,
+2012,Woman II (Orpheus),Genius (group
+show),50,50,painting,acrylic,paper (collaged),fantastic
+image,lost,na,no,,,
+2013,A Pastoral Scene,The Journeyman 1,30,40,drawing,ballpoint
+pen,cardboard collage,fantastic image,sold,na,,,,
+2013,A Quiet Scene,The Journeyman 1,30,30,mixed
+technique,acrylic,canvas (stretched),fantastic
+image,available,na,no,,,
+2013,Battle scene,The Journeyman 1,40,40,drawing,ballpoint pen,paper
+(collaged),fantastic image,available,na,,,,
+2013,Birth,The Journeyman 1,30,30,mixed technique,acrylic,canvas
+(stretched),fantastic image,available,na,no,,,
+2013,Electric Delusion,The Journeyman 1,30,40,drawing,ballpoint
+pen,cardboard collage,fantastic image,sold,na,,,,
+2013,Fauna,The Journeyman 1,30,30,mixed technique,acrylic,cardboard
+collage,fantastic image,available,na,no,,,
+2013,Forking Paths Installation 1,The Journeyman
+1,200,250,drawing,ink,cardboard box,fantastic image,distroyed,na,,,,
+2013,Forking Paths Installation 2,The Journeyman
+1,200,250,drawing,ink,cardboard box,fantastic image,distroyed,na,,,,
+2013,Forking Paths Installation 3,The Journeyman
+1,300,400,painting,acrylic,cardboard box,fantastic image,sold,na,,,,
+2013,History Box,The Journeyman
+1,18,18,painting,acrylic,wood,historical image,lost,na,,,,
+2013,History is a Wild Thing 1,Wild Things (Group
+Show),50,50,drawing,ballpoint pen,paper (collaged),fantastic
+image,sold,na,,,,
+2013,History is a Wild Thing 2,Wild Things (Group
+Show),50,50,drawing,ballpoint pen,paper (collaged),fantastic
+image,sold,na,,,,
+2013,Hunter bird hunting birds,The Journeyman
+1,40,40,drawing,ballpoint pen,paper (collaged),fantastic
+image,available,na,,,,
+2013,Reception I: Welcome,The Journeyman
+1,120,150,painting,acrylic,canvas (stretched),fantastic
+image,lost,na,,,,
+2013,Reception II: Laughter,The Journeyman
+1,120,150,painting,acrylic,canvas (stretched),fantastic image,painted
+over/changed,na,,,,
+2013,Reception III: A Travellers tale,The Journeyman
+1,120,150,painting,acrylic,canvas (stretched),fantastic image,painted
+over/changed,na,,,,
+2013,Scape 1: Silence,The Journeyman 1,120,50,painting,acrylic,canvas
+(stretched),fantastic image,sold,na,,,,
+2013,Scape 2: Discovery,The Journeyman
+1,120,50,painting,acrylic,canvas (stretched),fantastic
+image,sold,na,,,,
+2013,Soldier Musicians Playing Chess,The Journeyman
+1,30,40,drawing,ballpoint pen,cardboard collage,fantastic
+image,available,na,,,,
+2013,Sound Hero battling another Sound Hero,The Journeyman
+1,40,40,drawing,ballpoint pen,paper (collaged),fantastic
+image,available,na,no,,,
+2013,The Book of Travel,The Journeyman 1,30,40,drawing,ballpoint
+pen,cardboard collage,fantastic image,painted over/changed,na,,,,
+2013,The Elephant in his studio,The Journeyman
+1,40,40,drawing,ballpoint pen,paper (collaged),fantastic
+image,sold,na,no,,,
+2013,"The Emperor, the Equidna and the Garden",The Journeyman
+1,40,40,drawing,ballpoint pen,paper (collaged),fantastic
+image,available,na,,,,
+2013,"Traveller traveling, Hunting hunted",The Journeyman
+1,100,100,drawing,acrylic,canvas (stretched),fantastic image,painted
+over/changed,na,,,,
+2013,Traveller's Farewell,The Journeyman 1,40,40,drawing,ballpoint
+pen,paper (collaged),fantastic image,available,na,,,,
+2013,Vai Vedrai,The Journeyman 1,100,100,drawing,acrylic,canvas
+(stretched),fantastic image,painted over/changed,na,,,,
+2014,Labyrinth,SIKKA,300,300,painting,acrylic,cardboard box,fantastic
+image,painted over/changed,na,,,,
+2015,Mural StreetCon,Other,200,300,painting,acrylic,wall,fantastic
+image,distroyed,na,,,,
+2016,Dictionary 1,The Journeyman 2,60,150,painting,acrylic,canvas
+(unstretched),fantastic image,painted over/changed,na,no,,,
+2016,Dictionary 2,The Journeyman 2,60,150,painting,acrylic,canvas
+(unstretched),fantastic image,painted over/changed,na,no,,,
+2016,"Fernando Sarrunaegui y Juan Ibarburuena, painters",The
+Journeyman 2,50,50,drawing,graphite,canvas (stretched),fantastic
+image,painted over/changed,na,,,,
+2016,"Map of the City, which includes the Universe",The Journeyman
+2,120,150,painting,acrylic,canvas (stretched),fantastic
+image,sold,na,no,,,
+2016,na,Repercussions,,,painting,acrylic,canvas
+(unstretched),fantastic image,,na,,,,
+2016,na,Repercussions,,,painting,acrylic,canvas
+(unstretched),fantastic image,,na,,,,
+2016,na,Repercussions,,,painting,acrylic,canvas
+(unstretched),fantastic image,,na,,,,
+2016,na,Repercussions,,,painting,acrylic,canvas
+(unstretched),fantastic image,,na,,,,
+2016,Stage 1 : Zombieman,The Journeyman
+2,45,60,drawing,graphite,canvas (unstretched),fantastic
+image,sold,na,,,,
+2016,Stage 2: Gordian Knot,The Journeyman
+2,45,60,drawing,graphite,canvas (unstretched),fantastic
+image,sold,na,,,,
+2016,Stage 3: Splash!,The Journeyman 2,45,60,drawing,graphite,canvas
+(unstretched),fantastic image,sold,na,,,,
+2016,Stage 4: Everywhere they are,The Journeyman
+2,45,60,drawing,graphite,canvas (unstretched),fantastic
+image,sold,na,,,,
+2016,Tarjeta de Visita 1,The Journeyman
+2,110,80,drawing,graphite,cardboard,fantastic image,painted
+over/changed,na,,,,
+2016,Tarjeta de Visita 2,The Journeyman
+2,110,80,drawing,graphite,cardboard,fantastic image,painted
+over/changed,na,,,,
+2016,The Mickey,The Journeyman 2,50,30,drawing,graphite,canvas
+(stretched),fantastic image,available,na,,,,
+2016,"The Soul Catcher, Head of Winds",The Journeyman
+2,50,30,drawing,graphite,canvas (stretched),fantastic image,painted
+over/changed,na,,,,
+2016,Three essays for an interpretation,The Journeyman
+2,237,450,painting,acrylic,canvas (unstretched),fantastic
+image,distroyed,na,no,,,
+2016,Track 01: Provisional Dictionary of Interpretations,The
+Journeyman 2,180,150,painting,acrylic,canvas (stretched),fantastic
+image,painted over/changed,na,no,,,
+2016,Track 02: Song for the time (35 views of the city),The Journeyman
+2,180,150,painting,acrylic,canvas (stretched),fantastic
+image,sold,na,no,,,
+2016,"Track 03: The Carnival, the Silence and the Color",The
+Journeyman 2,180,150,painting,acrylic,canvas (stretched),fantastic
+image,sold,na,no,,,
+2016,Track 04: The Fallen (Blue and Gold),The Journeyman
+2,120,150,painting,acrylic,canvas (stretched),fantastic image,painted
+over/changed,na,no,,,
+2016,Track 05: The (Struggling) Machineman. The song of the tumultuous
+waves,The Journeyman 2,120,150,painting,acrylic,canvas
+(stretched),fantastic image,available,na,no,,,
+2016,Track 06: The floating man,The Journeyman
+2,120,150,painting,acrylic,canvas (stretched),fantastic
+image,lost,na,no,,,
+2016,Track 07 Finding meaning,The Journeyman
+2,76,76,painting,acrylic,canvas (stretched),woman
+portrait,available,na,no,,,
+2016,Track 08 The singer and the dog,The Journeyman
+2,76,76,painting,acrylic,canvas (stretched),woman
+portrait,available,na,no,,,
+2016,Track 09 The tales of two mask (Bonus track),The Journeyman
+2,100,100,painting,acrylic,canvas (stretched),women body,sold,na,no,,,
+2016,Votive Mask,The Journeyman 2,25,25,drawing,graphite,canvas
+(stretched),fantastic image,sold,na,,,,
+2017,Dinner,Other,180,150,painting,acrylic,canvas
+(stretched),fantastic image,sold,na,no,,,
+2017,Box,Other,30,20,collage,ballpoint pen,cardboard box,fantastic
+image,distroyed,,,,,
+2018,Flowers (The art of giving),Other,100,100,painting,acrylic,canvas
+(stretched),other,painted over/changed,,,,,
+2019,Self-Portrait,Other,100,100,painting,acrylic,canvas
+(stretched),other,available,na,,,,
+2022,A-B=C,Alserkal Week ,variable,variable,videoart,light
+projector,other,historical image,available,na,no,,,
+2023,Creature 1,RCA course,20,13,painting,acrylic,cardboard,fantastic
+image,available,na,,,,
+2023,Portrait,RCA course,20,13,painting,acrylic,cardboard,fantastic
+image,available,na,,,,
+2024,Event,ADCF Art Residence,200,300,painting,acrylic,canvas
+(unstretched),,available,na,no,,,
+2025,Floating being,Wakos,30,30,drawing,ceramic,ceramics,,available,na,no,,,
+2025,The boy who sailed,SIKKA,1100,800,painting,acrylic,syntethic
+fabric,,available,na,no,,,
+2025,The fox above and the fox
+below,Wakos,30,30,drawing,ceramic,ceramics,,sold,na,no,,,
+2026,Flow,SIKKA,200,600,painting,acrylic,drywall panel
+(prepared),,available,na,no,,,
+2026,Game of Mirrors,AUD colab,300,250,painting,acrylic,wall,fantastic
+image,available,na,no,,,
+`       ;
 
         // Folder used when the image column has just a file name (e.g. "tondo.jpg")
         const IMAGE_BASE = 'https://gefercan.github.io/images/';
