@@ -1,0 +1,56 @@
+@charset "UTF-8";
+/* CSS Document */
+
+html,
+body {
+	position:relative;
+	margin: 0;
+	padding: 0;
+	background-image:url("https://2.bp.blogspot.com/-fxlibykhOc0/URYrhuk630I/AAAAAAAAAzA/953UIXjBx2g/s1600/nube.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position:bottom;
+	justify-content:center;
+}
+
+#image1{
+	width:20%;
+	position:fixed;
+	z-index:4;
+	bottom:0%;
+	top:0%;
+	left:90%;
+	transform: translate(-50%,1%);
+	transform: rotate(180deg);
+	opacity:0.3;
+}
+
+
+#image2{
+	width:20%;
+
+	position:absolute;
+	z-index:2;
+	display:flex;
+	justify-content: center;
+	top:0%;
+	left:0%;
+	transform: translate(-50%, -50%);
+	transform: rotate(180deg);
+	opacity:0.4;
+}
+
+
+#text_box{
+	color:gray;
+	font-family: Helvetica,Arial,sans-serif;
+	font-size: 3em;
+	position:fixed;
+	bottom:0px;
+	z-index:8;
+}
+
+
+#pieza1{
+	z-index:-2;
+}

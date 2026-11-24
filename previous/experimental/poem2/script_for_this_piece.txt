@@ -1,0 +1,399 @@
+
+window.onload= function(){
+//declare theglobal object windows that is the browser from there it calls the constructor fucntion//
+
+/*si invocas las funciones
+*antes de declararlas'
+*te sale function out of scope
+*asi que primero declaras 
+*las variables, luego las funciones
+*y luego las invocas,everything nested en la funcion wrapper
+*que en este caso es myFunction()*/
+	
+function MyFunction() {
+	//myFunction is the constructor function//
+	//and should be written in camelCase//
+
+/*-----------------------template functions--------------------------------------------------------*/
+	function createButton(x,y){
+		x.addEventListener("onclick",y);
+	}
+	
+	function changeButton(x,y,z){
+		x.removeEventListener("onclick",y);
+		x.removeEventListener("onclick",z);
+	}
+	
+	function deactivateButton(x,y){
+		x.removeEventListener("onclick",y);
+	}
+/*-----------------------background (video)--------------------------------------------------------*/
+	
+	var e = document.getElementById ("film");
+
+/*---------------------layer1----------------------------------------------------------*/
+	
+	var flowera = document.getElementById ("flowera");
+	var flowerb = document.getElementById ("flowerb");
+	var beingc = document.getElementById ("being1");
+	var beingd = document.getElementById ("being2");
+
+/*-----------------------layer3--------------------------------------------------------*/
+
+	var a = document.getElementById ("headfaceimage");
+	var b = document.getElementById ("headtopimage");
+
+/*-----------------------layerintermediate--------------------------------------------------------*/
+
+
+	var x6 = document.getElementsByClassName("flowers");
+
+
+/*-----------------------layer4 --------------------------------------------------------*/
+	
+	var b1=0;
+	
+	var f = document.getElementById ("portraitwoman");
+	var g = document.getElementById ("package");
+	var h0 = document.getElementById ("grid1");
+	var h1 = document.getElementById ("grid-item1");
+	var h2 = document.getElementById ("grid-item2");
+	var i = document.getElementById ("grid2");
+	var l = document.getElementById ("base");
+	var m = document.getElementById ("package0");
+	var n = document.getElementById	("box1");
+	var o = document.getElementById ("box2");
+	var p = document.getElementById	("box3");
+	var q = document.getElementById ("box4");
+	var r = document.getElementById ("box5");
+	var s = document.getElementById ("box6");
+	var t = document.getElementById ("box7");
+
+	var a1= document.getElementById("box8");
+	var a2= document.getElementById("box9");
+	var a3= document.getElementById("box11");
+	var a4= document.getElementById("box12");
+	var a5= document.getElementById("box13");
+	var a6= document.getElementById("box14");
+	var a7= document.getElementById("box15");
+	var a8= document.getElementById("box16");
+	var a9= document.getElementById("box17");
+	var a10= document.getElementById("box18");
+	var a11= document.getElementById("box19");
+
+
+	
+	//declares all variables calling DOM elements//
+	
+
+	
+	/*function dissapearHead(){
+
+		c.style.opacity = ("0.5");
+		b.style.bottom = ("25em");
+		b.style.opacity = ("0.9");
+		f.innerHTML = ("is this waiting <br> the time,<br>waiting the time");
+		
+		g.innerHTML = ("waiting the time,<br>waiting the time<br> but somehow<br> living (*)");
+		
+		h.style.opacity = ("0.9");
+		zzzz.style.opacity = ("0.8");
+		new Person1();
+		new Person2();
+	}*/
+	
+	
+	function calculatePosition(element){
+
+		/*this function calculates a random position substracting the size 
+			of the lement from the size of the window space 
+			to create a variable and then multiply that variable by math random*/
+
+		var x= document.body.offsetHeight-element.clientHeight; 
+				var y= document.body.offsetWidth-element.clientWidth;
+				var randomX = Math.floor(Math.random()*x);
+				var randomY = Math.floor(Math.random()*y-10);
+				return [randomX,randomY];
+				}
+			
+
+	function createSkull( ) {
+		
+		var xzy=document.createElement("img");
+		var xy= calculatePosition(xzy);
+		document.getElementById("container").appendChild(xzy);
+		xzy.src=("images/floating_head.png");
+		xzy.style.position=("fixed");
+		xzy.classList.add("calavera");
+		xzy.style.padding=("5%");
+		xzy.style.position=("fixed");
+		xzy.style.zIndex=("22");
+		xzy.style.filter=("brightness(44%)");
+		//this function creates the floating heads, just appending childs to container 
+		xzy.style.left= xy[0] + "px";
+		xzy.style.top = xy[1] + "px";	
+	}
+	
+	
+	//call an element via DOM and assing the number created 
+	//in calculatePosition to the coordiantes x and y	
+		
+	function createFlower(){
+		var zxy=document.createElement("img");
+		var xy= calculatePosition(zxy);
+		document.getElementById("package").appendChild(zxy);
+		zxy.src="images/floating_flower.png";
+		zxy.classList.add("flowers");
+		zxy.innerHTML=("xxx");
+		zxy.width=("2%");
+		zxy.style.padding=("4%");
+		zxy.style.position=("fixed");
+		zxy.style.zIndex=("22");
+		
+		zxy.style.left= xy[0] + "px";
+		zxy.style.top = xy[1] + "px";
+		
+	}
+
+	function create1Flower1Skull(){
+		createFlower();
+		createSkull();
+	}
+	//creates an element and assign a random position//
+	
+
+	
+	
+	function Conditional(){
+		
+		g.style.opacity="0.5";
+	
+		setTimeout( function(){
+			if (b<18) {
+				a1.innerHTML = "Good day";
+				a2.innerHTML = "Here";
+				a3.innerHTML = "Wait";
+				t.innerHTML = "Wait";
+				b1++;
+				console.log(b);
+			}
+		},20300);
+		
+		setTimeout(function Loop1(){
+			
+			for (b1=0;b1<28;b1++) {
+		
+				console.log(b);
+			
+				a4.innerHTML= b-5;
+				a5.innerHTML= b+34;
+				a7.innerHTML= b+123;
+				new createSkull();
+			}
+		},20500);
+
+		setTimeout( function(){
+		
+			if (b1<18) {
+				a1.innerHTML = "oh";
+				a8.innerHTML = "hey!";
+				a9.innerHTML = "Wait";
+				b++;
+				new createSkull();
+				console.log(b1);
+			}
+		},6000);
+		
+	}
+
+
+	
+		
+	// a series of setTimeOuts in different timing //
+	//changes text in divs and also crate new Persons//
+	
+	function rainingFlowers(){
+		
+				
+		function fallingFlowers(){
+			
+			var a1b = document.getElementById("film");
+			var s2 = document.createElement("img");
+			var s1 = document.createElement("div");
+			var s3 = document.getElementById("box4");
+		
+			s1.class = ("flowers");
+			s1.style.zIndex = ("23");
+			s1.style.position = ("fixed");
+			s1.style.padding = ("4%");
+			s2.src = "images/floating_flower.png";
+			s2.style.position=("absolute");
+			
+			document.body.appendChild(s1);
+			s1.appendChild(s2);
+			s1.classList.add("flower");
+			
+			
+			s1.style.top = (Math.random(312)*95) + "em";
+			s1.style.left =  (Math.random(212)*135) + "em";
+			
+			s3.innerHTML= a1b.currentTime;
+			s3.style.fontSize = (3*1) + "em";
+			s3.style.padding = (3*2) +"em";
+			s3.style.position="absolute";
+			s3.style.color="white";
+			s3.style.opacity= "0.5";
+
+			}
+		
+		
+		function invoke (f,start,interval,end ){
+			if (!start) {start =0;}
+			if (arguments.length <= 2)
+			{setTimeout(f,start);}
+			
+			else{
+				setTimeout (repeat,start);
+				function repeat(){
+							var h = setInterval(f,interval);
+							if(end) setTimeout(function() {clearInterval(h);},end);
+								}
+				}
+		}
+		
+		invoke(fallingFlowers,10,31000,60000);
+		
+	}	
+	
+
+
+	function movingForward(){
+			console.log(1);
+			e.currentTime=12;
+			e.play();
+			h1.style.opacity="0.5";
+			m.style.opacity="0.9";
+			n.innerHTML= b.getBoundingClientRect().x*100;
+			o.innerHTML= b.getBoundingClientRect().x*20;
+			p.innerHTML= b.getBoundingClientRect().x*60;
+		
+			new create1Flower1SkullFlower();
+			
+		
+		
+	}
+		
+	function movingBackward(){
+			console.log(1);
+			new createSkull();
+			e.currentTime=24;
+			h1.style.opacity="0.3";
+			m.style.opacity="0.3";
+			new createSkull();
+		
+		
+	}
+
+	setTimeout(function ( ){
+			movingBackward();
+			var cv=["1","2","3","4","shey","6",3,4,true,456,7,8,9,2,33,44,55,34];
+			var count;
+			new createFlower();
+		
+				for( count=cv[0]; count<cv.length; count++){
+					a10.innerHTML = cv[count];
+					a11.innerHTML = cv[count]+1;
+					a1.innerHTML = cv[count]+2;
+					new createFlower();
+				}
+	},1000);
+	
+	setTimeout( function(){
+			new movingForward();
+			new createSkull();
+			var cvb=0;
+		
+			if (cvb<18) {
+				a1.innerHTML = "image";
+				a2.innerHTML = "Now";
+				a3.innerHTML = b+"dibujo";
+				cvb++;
+				new createFlower();
+				console.log(cvb);
+				}
+		},2000);
+	
+	setTimeout( function(){
+		
+				if (b<18) {
+				a1.innerHTML = "Go";
+				a10.innerHTML = "Now";
+				a11.innerHTML = "Wait";
+				console.log(b1);}
+				new create1Flower1Skull();
+		
+		},3000);
+	
+	setTimeout( function(){
+		
+				if (b<18) {
+				a1.innerHTML = "Go";
+				a10.innerHTML = "Now";
+				a11.innerHTML = "Wait";
+				console.log(b1);}
+				new createFlower();
+				new createSkull();
+		},4000);
+	
+	setTimeout( function(){
+		
+				if (b<18) {
+				a1.innerHTML = "Go";
+				a10.innerHTML = "Now";
+				a11.innerHTML = "Wait";
+				console.log(b1);}
+		
+				new create1Flower1Skull();
+				
+		},5000);
+	
+	setInterval(function(){	
+			g.style.backgroundColor=("#004455");
+			h2.style.opacity=("1");
+			m.style.opacity=("0.3");
+			new create1Flower1Skull();
+		},1000);
+	
+	setInterval( function(){
+			g.style.backgroundColor=("#990056");
+			h2.style.opacity="0.3";
+			m.style.opacity="0.7";
+			new create1Flower1Skull();
+			},1900);
+	
+
+	
+	rainingFlowers();
+	
+
+
+	a.x=document.innerWidth/2;
+	e.currentTime=0;
+	e.play();
+	
+	
+	
+	
+
+	
+	
+
+	
+
+}
+
+/*new MyFunction();*/
+}
+
+
+
