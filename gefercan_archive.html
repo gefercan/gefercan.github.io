@@ -452,9 +452,38 @@
             color: #666;
         }
 
-        .work-placeholder.has-image {
-            background-size: cover;
-            background-position: center;
+        .work-placeholder {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .work-placeholder.has-image img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: #f5f5f5;
+        }
+
+        .works-load-csv {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 12px;
+            color: #666;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            padding: 4px 8px;
+        }
+
+        .works-load-csv:hover {
+            color: #000;
+            border-color: #000;
+        }
+
+        .works-load-csv .material-symbols-outlined {
+            font-size: 16px;
         }
 
         .work-placeholder span {
@@ -852,6 +881,11 @@
                                     </button>
                                 </div>
                                 <span class="works-count" id="works-count"></span>
+                                <label class="works-load-csv" title="load a csv with the archive columns">
+                                    <span class="material-symbols-outlined">upload_file</span> load csv
+                                    <input type="file" accept=".csv,text/csv" onchange="loadCsvFile(this)" hidden>
+                                </label>
+                                <span class="works-count" id="works-source"></span>
                             </div>
                             <label class="works-field works-sort">
                                 <span class="material-symbols-outlined">sort</span>
@@ -1301,45 +1335,93 @@ image,available,gefercan.github.io/images/archive/lightbox/,gefercan.github.io/i
 
 `       ;
 
-        // Folder used when the image column has just a file name (e.g. "tondo.jpg")
-        const IMAGE_BASE = 'https://gefercan.github.io/images/';
+        // ===== CSV LOADING =====
+        // 1. The page first tries to load CSV_FILE (same folder as this page, e.g. on GitHub Pages).
+        // 2. If that fails (e.g. page opened with file://), it uses the CSV pasted in WORKS_CSV above.
+        // 3. The "load csv" button lets you pick any CSV with the same columns from your computer.
+        const CSV_FILE = 'archive_gefercan.csv';
 
-        // Converts the CSV above into the works list used by the page
+        // Used when an image column holds only a file name (e.g. "tondo.jpeg")
+        const IMAGE_BASE = 'https://gefercan.github.io/images/archive/';
+        const LIGHTBOX_FOLDER = 'lightbox/';
+        const THUMBNAIL_FOLDER = 'thumbnails/';
+
+        // Header text -> field name. First match wins, so the more specific checks come first.
+        const COLUMN_RULES = [
+            ['thumbnail',    h => h.includes('thumb')],
+            ['lightbox',     h => h.includes('lightbox') || h.startsWith('image') || h === 'jpeg'],
+            ['height',       h => h.includes('height')],
+            ['width',        h => h.includes('width')],
+            ['print',        h => h.includes('print')],
+            ['availability', h => h.includes('availab')],
+            ['year',         h => h === 'year'],
+            ['title',        h => h.includes('title')],
+            ['event',        h => h.includes('event')],
+            ['technique',    h => h.includes('technique')],
+            ['medium',       h => h.includes('medium')],
+            ['support',      h => h.includes('support')],
+            ['category',     h => h.includes('category')],
+            ['price',        h => h.includes('price')],
+            ['commentary',   h => h.includes('comment')],
+            ['keywords',     h => h.includes('keyword')]
+        ];
+        // Standard column order of archive_gefercan.csv (used if no header row is found)
+        const FIELD_ORDER = ['year', 'title', 'event', 'height', 'width', 'technique', 'medium', 'support',
+                             'category', 'availability', 'lightbox', 'thumbnail', 'print', 'price', 'commentary', 'keywords'];
+
+        // Split one CSV line into fields (supports "quoted, values" and "" escapes)
+        function splitCsvRow(row) {
+            const out = [];
+            let cur = '', quoted = false;
+            for (let i = 0; i < row.length; i++) {
+                const ch = row[i];
+                if (ch === '"' && quoted && row[i + 1] === '"') { cur += '"'; i++; }
+                else if (ch === '"') quoted = !quoted;
+                else if (ch === ',' && !quoted) { out.push(cur.trim()); cur = ''; }
+                else cur += ch;
+            }
+            out.push(cur.trim());
+            return out;
+        }
+
+        // Turns whatever is in an image cell into a usable URL, or '' for "no image"
+        function resolveImageUrl(value, folder) {
+            let src = String(value || '').trim().replace(/^"|"$/g, '');
+            if (!src) return '';
+            src = src.replace(/,(jpe?g|png|webp|gif|avif)$/i, '.$1');           // typo "name,jpeg"
+            if (!/\.(jpe?g|png|webp|gif|avif)(\?.*)?$/i.test(src)) return '';   // folder only / not an image
+            if (/^(https?:)?\/\//i.test(src) || src.startsWith('/') || src.startsWith('./') || src.startsWith('data:')) return src;
+            if (/^[\w-]+(\.[\w-]+)+\//.test(src)) return 'https://' + src;     // "gefercan.github.io/..." without https://
+            if (src.includes('/')) return src;                                   // relative path, e.g. "images/x.jpeg"
+            return IMAGE_BASE + folder + src;                                    // bare file name
+        }
+
+        // Converts CSV text into the works list used by the page
         function csvToWorks(csvText) {
-            const lines = csvText.replace(/\r/g, '').split('\n').map(l => l.trim()).filter(l => l !== '');
+            const lines = String(csvText).replace(/^﻿/, '').replace(/\r/g, '')
+                .split('\n').map(l => l.trim()).filter(l => l !== '');
+
+            // Skip anything before the header row (e.g. e-mail text pasted along with the CSV)
+            let start = lines.findIndex(l => /^"?year"?\s*,/i.test(l));
+            const hasHeader = start !== -1;
+            if (!hasHeader) start = lines.findIndex(l => /^\d{4}\s*,/.test(l));
+            if (start === -1) return [];
 
             // Re-join lines that were wrapped: every work starts with a 4-digit year
-            const records = [];
             let header = '';
-            lines.forEach(line => {
+            const records = [];
+            lines.slice(start).forEach((line, i) => {
                 if (/^\d{4}\s*,/.test(line)) records.push(line);
                 else if (records.length) records[records.length - 1] += ' ' + line;
-                else header += (header ? ' ' : '') + line;
+                else if (hasHeader) header += (i ? ' ' : '') + line;
             });
 
-            // Split one CSV line into fields (supports "quoted, values")
-            const splitRow = row => {
-                const out = [];
-                let cur = '', quoted = false;
-                for (let i = 0; i < row.length; i++) {
-                    const ch = row[i];
-                    if (ch === '"' && quoted && row[i + 1] === '"') { cur += '"'; i++; }
-                    else if (ch === '"') quoted = !quoted;
-                    else if (ch === ',' && !quoted) { out.push(cur.trim()); cur = ''; }
-                    else cur += ch;
-                }
-                out.push(cur.trim());
-                return out;
-            };
-
-            // Match each header to a field name; fall back to the standard column order
-            const fieldOrder = ['year', 'title', 'event', 'height', 'width', 'technique', 'medium', 'support',
-                                'category', 'availability', 'image', 'print', 'price', 'commentary', 'keywords'];
-            let columns = fieldOrder;
+            let columns = FIELD_ORDER;
             if (header) {
-                const found = splitRow(header).map(h => {
-                    const name = h.toLowerCase();
-                    return fieldOrder.find(key => name.includes(key)) || null;
+                const found = splitCsvRow(header).map(h => {
+                    const name = h.toLowerCase().replace(/\s+/g, ' ').trim();
+                    const rule = COLUMN_RULES.find(([, test]) => test(name));
+                    return rule ? rule[0] : null;
                 });
                 if (found.filter(Boolean).length >= 5) columns = found;
             }
@@ -1347,29 +1429,83 @@ image,available,gefercan.github.io/images/archive/lightbox/,gefercan.github.io/i
             const fixes = { distroyed: 'destroyed' };
 
             return records.map(record => {
-                const values = splitRow(record);
+                const values = splitCsvRow(record);
                 const work = {};
-                fieldOrder.forEach(key => work[key] = '');
-                columns.forEach((key, i) => { if (key) work[key] = values[i] !== undefined ? values[i] : ''; });
+                FIELD_ORDER.forEach(key => work[key] = '');
+                columns.forEach((key, i) => { if (key && !work[key]) work[key] = values[i] !== undefined ? values[i] : ''; });
 
                 work.year = parseInt(work.year, 10) || work.year;
-                work.height = parseFloat(work.height) || '';
-                work.width = parseFloat(work.width) || '';
+                work.height = parseFloat(work.height) || work.height;
+                work.width = parseFloat(work.width) || work.width;
                 if (!work.title || work.title.toLowerCase() === 'na') work.title = 'Untitled';
-                if (fixes[work.availability.toLowerCase()]) work.availability = fixes[work.availability.toLowerCase()];
+                const av = work.availability.toLowerCase();
+                if (fixes[av]) work.availability = fixes[av];
 
-                // Only real image files are used; anything else shows the placeholder
-                const img = work.image;
-                if (/\.(jpe?g|png|webp|gif)$/i.test(img)) {
-                    work.image = /^(https?:)?\/\//.test(img) || img.startsWith('/') ? img : IMAGE_BASE + img;
-                } else {
-                    work.image = '';
-                }
+                // Big image for the lightbox, small one for grid/table. Each falls back to the other.
+                work.lightbox = resolveImageUrl(work.lightbox, LIGHTBOX_FOLDER);
+                work.thumbnail = resolveImageUrl(work.thumbnail, THUMBNAIL_FOLDER);
+                if (!work.thumbnail) work.thumbnail = work.lightbox;
+                if (!work.lightbox) work.lightbox = work.thumbnail;
+                work.image = work.thumbnail; // kept for compatibility
                 return work;
             });
         }
 
-        const works = csvToWorks(WORKS_CSV);
+        let works = [];
+
+        function setWorks(list, sourceLabel) {
+            works = list;
+            worksFiltersBuilt = false;
+            worksState.filters = {};
+            worksState.search = '';
+            const source = document.getElementById('works-source');
+            if (source) source.textContent = sourceLabel ? `source: ${sourceLabel}` : '';
+            renderWorks();
+        }
+
+        async function loadWorks() {
+            try {
+                const res = await fetch(CSV_FILE + '?v=' + Date.now(), { cache: 'no-store' });
+                if (!res.ok) throw new Error(res.status);
+                const list = csvToWorks(await res.text());
+                if (!list.length) throw new Error('empty csv');
+                setWorks(list, CSV_FILE);
+            } catch (err) {
+                console.warn(`Could not load ${CSV_FILE} (${err.message}); using the CSV pasted in the page.`);
+                setWorks(csvToWorks(WORKS_CSV), 'embedded csv');
+            }
+        }
+
+        // "load csv" button: read a CSV chosen from the computer
+        function loadCsvFile(input) {
+            const file = input.files && input.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = () => {
+                const list = csvToWorks(reader.result);
+                if (!list.length) { alert('No works found in ' + file.name + '. Check that it has the archive columns.'); return; }
+                setWorks(list, file.name);
+            };
+            reader.readAsText(file, 'utf-8');
+            input.value = '';
+        }
+
+        // Image that falls back to a second URL, then to the text placeholder, if it fails to load
+        function imageFailed(img) {
+            const fallback = img.dataset.fallback;
+            if (fallback && img.src !== fallback) {
+                img.dataset.fallback = '';
+                img.src = fallback;
+                return;
+            }
+            const box = img.parentElement;
+            img.remove();
+            if (box) {
+                box.classList.remove('has-image');
+                box.classList.add('image-missing');
+            }
+        }
+
 
 
 
@@ -1424,10 +1560,12 @@ image,available,gefercan.github.io/images/archive/lightbox/,gefercan.github.io/i
         }
 
         function workThumb(work, extraClass) {
-            if (hasValue(work.image)) {
-                return `<div class="work-placeholder has-image ${extraClass}" style="background-image: url('${escapeHtml(work.image)}');" role="img" aria-label="${escapeHtml(work.title)}"></div>`;
+            const label = `<span>${escapeHtml(work.technique)}<br>${escapeHtml(work.year)}</span>`;
+            if (hasValue(work.thumbnail)) {
+                const fallback = work.lightbox !== work.thumbnail ? escapeHtml(work.lightbox) : '';
+                return `<div class="work-placeholder has-image ${extraClass}">${label}<img src="${escapeHtml(work.thumbnail)}" data-fallback="${fallback}" alt="${escapeHtml(work.title)}" loading="lazy" decoding="async" onerror="imageFailed(this)"></div>`;
             }
-            return `<div class="work-placeholder ${extraClass}"><span>${escapeHtml(work.technique)}<br>${escapeHtml(work.year)}</span></div>`;
+            return `<div class="work-placeholder ${extraClass}">${label}</div>`;
         }
 
         function buildWorkFilters() {
@@ -1590,13 +1728,38 @@ image,available,gefercan.github.io/images/archive/lightbox/,gefercan.github.io/i
             const work = lightboxList[lightboxIndex];
             const media = document.getElementById('lightbox-media');
 
-            media.innerHTML = hasValue(work.image)
-                ? `<img src="${escapeHtml(work.image)}" alt="${escapeHtml(work.title)}">`
-                : `<div class="lightbox-placeholder">
+            const placeholder = `<div class="lightbox-placeholder">
                         <span class="material-symbols-outlined">image</span>
                         <span>image not available yet</span>
                    </div>`;
-            media.style.cssText = hasValue(work.image) ? 'width:100%;height:100%;display:flex;align-items:center;justify-content:center;' : 'display:contents;';
+            const showPlaceholder = () => {
+                media.innerHTML = placeholder;
+                media.style.cssText = 'display:contents;';
+            };
+            if (hasValue(work.lightbox)) {
+                media.style.cssText = 'width:100%;height:100%;display:flex;align-items:center;justify-content:center;';
+                media.innerHTML = '';
+                const img = new Image();
+                img.alt = work.title;
+                let triedFallback = false;
+                img.onerror = () => {
+                    if (!triedFallback && hasValue(work.thumbnail) && work.thumbnail !== work.lightbox) {
+                        triedFallback = true;
+                        img.src = work.thumbnail;
+                    } else if (lightboxList[lightboxIndex] === work) {
+                        showPlaceholder();
+                    }
+                };
+                img.src = work.lightbox;
+                media.appendChild(img);
+                // Preload neighbours so browsing feels instant
+                [1, -1].forEach(d => {
+                    const next = lightboxList[(lightboxIndex + d + lightboxList.length) % lightboxList.length];
+                    if (next && hasValue(next.lightbox)) new Image().src = next.lightbox;
+                });
+            } else {
+                showPlaceholder();
+            }
 
             document.getElementById('lightbox-counter').textContent = `${lightboxIndex + 1} / ${lightboxList.length}`;
             document.getElementById('lightbox-title').textContent = work.title;
@@ -1660,7 +1823,7 @@ image,available,gefercan.github.io/images/archive/lightbox/,gefercan.github.io/i
 
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
-            renderWorks();
+            loadWorks();
         });
 
         // Close mobile menu when clicking outside
